@@ -4,19 +4,19 @@
 
 #  JavaScript
 
-* [Text](https://github.com/moonshark/CodingGuides/tree/master/JavaScript)
+* [JavaScript Guide](https://github.com/moonshark/CodingGuides/tree/master/JavaScript)
 
 #  jQuery
 
-* [Text](https://github.com/moonshark/CodingGuides/tree/master/jQuery)
+* [jQuery](https://github.com/moonshark/CodingGuides/tree/master/jQuery)
 
 #  React
 
-* [Text](https://github.com/moonshark/CodingGuides/tree/master/React)
+* [React Guide](https://github.com/moonshark/CodingGuides/tree/master/React)
 
-#  Vue JS
+#  Vue JS 2
 
-* [Text](https://github.com/moonshark/CodingGuides/tree/master/Vue%20JS%202)
+* [Vue JS 2](https://github.com/moonshark/CodingGuides/tree/master/Vue%20JS%202)
 
 # Other FE
 

@@ -1,8 +1,7 @@
 # Snippets
 
-* [Understanding jQuery](#understandingjquery)
 * [Chaining Events, Delay and SetInterval](#chaining-events)
-* [preventDefault(), stopPropagation()](#events)
+* [preventDefault(), stopPropagation()](#preventDefault)
 * [Most Used](#mostused)
 * [Data Attributes](#data-attr)
 * [Document Ready/Resize](#doc-ready)
@@ -14,8 +13,6 @@
 * [Media Queries](#mq)
 * [Sliding Panels off Page on to Page](#sliding-panels)
 * [Closing Container when clicking on body but not container](#clicking-anything-other-than)
-
-<a name="understandingjquery"></a>
 
 ## Understanding jQuery
 
@@ -98,9 +95,10 @@ $('#btn').click(function (e) {
 
 You can see more possible ways to look at the object data, [here](https://api.jquery.com/category/events/event-object/)
 
-<a name="events"></a>
+<a name="preventDefault"></a>
 
 Here is an [article](https://medium.com/@jacobwarduk/how-to-correctly-use-preventdefault-stoppropagation-or-return-false-on-events-6c4e3f31aedb) explaining the differences. This is a demo of [how stopPropagation() works](https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_stoppropagation)
+
 
 ## event.preventDefault()
 
@@ -135,6 +133,18 @@ Usually seen in jQuery code, it Prevents the browsers default behaviour, Prevent
 a.addEventListener('click', (event) => {
   fileUpload();
   return false;
+});
+```
+
+## Using preventDefault() and stopPropagation()
+
+This is how you stop all things being clicked on doing the functions above
+
+```javascript
+$(".btn").click(function(e)
+{
+  e.preventDefault(); // stops any default link
+  e.stopPropagation(); // stop the click function below being called if we click in the mega menu or a link
 });
 ```
 
@@ -174,7 +184,7 @@ $(".navigation__icon").click(function () {
 });
 ```
 
-Toggle with direction
+Toggle with direction 
 ```javascript
 $('.search-field-wrapper').stop().toggle('slide',{
     direction: 'right'
@@ -257,6 +267,52 @@ $('.spoiler').on('click', 'button', function(event){
  //  or
    $(this).hide();
 })
+```
+
+Expand element
+```javascript
+$( ".btn--read-more" ).click(function() {
+    $( ".slide" ).slideToggle( "fast" );
+
+    if($(this).hasClass('active')) {
+      $(this).html('More');
+      $(this).removeClass('active');
+    } else {
+      $(this).html('Less');
+      $(this).addClass('active');
+    }
+
+    return false;
+});
+```
+
+Another Method of view more/less
+
+```javascript
+function showMoreAlt(){
+   $('#showToggle').click(function(){
+    // targets every div after the 4th of .quick-links__item and slides
+    $('.quick-links__item:nth-of-type(4) ~ div').slideToggle('slow', function(){
+      // if the div has display block then
+      if($('.quick-links__item:nth-of-type(4) ~ div').css('display') == 'block'){
+        // the button text is view less as it is expanded
+        $('#showToggle').text("View less");
+      }else{
+        // if not then it will need a view more
+        $('#showToggle').text("View more");
+      }
+    });
+    return false;
+  });
+```
+```html
+<div class="product-text__more">
+    <a href="#nogo">Read more</a>
+</div>
+
+<div class="product-text__full">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+</div>
 ```
 
 <a name="data-attr"></a>
@@ -537,6 +593,59 @@ Targetting a specific media query
     document.write('<script src="js/pikaday.min.js.gz"><\/script>')
 }
 ```
+
+Basic version
+
+```javascript
+$(function() {
+ 
+    $(window).resize(function() {
+ 
+        if(Modernizr.mq('(min-width: 767px)')) {
+            // below 767 do something
+          }
+          else 
+          { 
+             // else do something else
+          }
+        }
+    }).trigger('resize');
+});
+```
+
+
+Assign the carousel to only show below 959px using Modernizr
+
+```javascript
+$(function() {
+  var slider = null;
+
+    $(window).resize(function() {
+
+        if(Modernizr.mq('(max-width: 959px)')) {
+          if (slider == null) {
+
+            slider = $('.destinations__list').bxSlider({
+                slideWidth: 225,
+                minSlides: 1,
+                maxSlides: 4,
+                slideMargin: 10,
+                pager: false,
+                controls: false,
+                infiniteLoop: false
+            });
+          }
+        }
+        else if (slider != null) {
+          slider.destroySlider();
+          slider = null;
+        }
+    }).trigger('resize');
+
+});
+```
+
+
 
 <a name="sliding-panels"></a>
 
