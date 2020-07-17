@@ -3,7 +3,6 @@
 A collections of snippets, codepen examples and plugins that I use regularly so they can be easily accessible.
 
 * [jQuery Snippets](#jquery-snippets)
-* [CodePen Examples](#codepen-examples)
 * [Plugins](#plugins)
 * [Typography](#typography)
 * [YouTube / Vimeo](#youtube)
@@ -18,7 +17,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 * [Modals/Lightbox](#modals)
 * [Menus](#menus)
 * [Forms](#forms)
-* [GIT Commands](https://github.com/moonshark/jQuery/blob/master/git.md)
 
 
 <a name="jquery-snippets"></a>
@@ -27,29 +25,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 
 * [Snippets](https://github.com/moonshark/jQuery/blob/master/jQuery/jquery-snippets.md), another collection of [snippets](http://blog.teamtreehouse.com/14-handy-jquery-code-snippets-for-developers)
 * [CheatSheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
-
-<a name="ajax-json"></a>
-
-## AJAX and Json
-
-* [AJAX and Json](https://github.com/moonshark/jQuery/blob/master/ajax-json.md)
-
-<a name="codepen-examples"></a>
-
-## CodePen Examples
-
-* [Playground](https://codepen.io/kmp/pen/JayKmw/)
-* [Modals/Lightbox](https://codepen.io/collection/DpRGxk/), also this [demo](http://drublic.github.io/css-modal/#!), [here too](https://fancyapps.com/fancybox/3/)
-* [Menus](https://codepen.io/collection/ANdoOo/)
-* [Tabs](https://codepen.io/collection/XygeQB/)
-* [Accordion](https://codepen.io/collection/Djydro/)
-* [Sliders](https://codepen.io/collection/AegxQN/)
-* [Pinned Elements](https://codepen.io/collection/XQdYeP/)
-* [Packery/Isotope](https://codepen.io/collection/XKaJGj/)
-* [YouTube](https://codepen.io/collection/AkgVQN/)
-* [Show More/Less](https://codepen.io/kmp/pen/ammZEo), also this [plugin](http://jedfoster.com/Readmore.js/)
-* [Multiple Events on One Button](https://codepen.io/kmp/pen/WRVpzP)
-* [Datepicker with 2 Calendars](https://codepen.io/kmp/pen/yaNEbE)
 
 
 <a name="plugins"></a>
