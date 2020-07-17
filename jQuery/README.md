@@ -2,8 +2,8 @@
 
 A collections of snippets, codepen examples and plugins that I use regularly so they can be easily accessible.
 
-* [jQuery Snippets](#jquery-snippets)
-* [Plugins](#plugins)
+* [jQuery Snippets](https://github.com/moonshark/CodingGuides/blob/master/jQuery/jquery-snippets.md)
+* [Collection of Plugins](#plugins)
 * [Typography](#typography)
 * [YouTube / Vimeo](#youtube)
 * [Page Effects](#page-effects)
@@ -29,7 +29,7 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 
 <a name="plugins"></a>
 
-## Plugins
+## Collection of Plugins
 
 * [jQueryPlugins.net](https://jquery-plugins.net/tutorial)
 * [unHead.com](http://www.unheap.com/)
@@ -44,7 +44,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 * Replicate typing on screen using [TypedJs](https://mattboldt.com/demos/typed-js/)
 * Changing text in a headline, [rotating words](https://codyhouse.co/demo/animated-headlines/index.html), here is [how to do it](https://codyhouse.co/gem/css-animated-headlines/)
 * [DotDotDot](http://dotdotdot.frebsite.nl/)
-* Prevent an orphan on a line use &nbsp; instead of a space so heading will always use 2 words for a new line
 
 <a name="youtube"></a>
 
@@ -52,7 +51,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 
 * [VideoJs](https://github.com/videojs/video.js)
 * [FitVidJS](http://fitvidsjs.com/)
-* CodePen Examples - [Play/Pause Button](https://codepen.io/chriscoyier/pen/zawHg), [Another Play/Pause](https://codepen.io/kmp/pen/yggQxL),  [FancyBox using iFrame embed](https://codepen.io/kmp/pen/Zeajpj), [Click to Open Modal and Play, stop when closed](https://codepen.io/kmp/pen/RRxEkz)
 * [Vimeo - pause when scroll away (needs tweaking as no longer working as it should)](https://jsfiddle.net/kphv21fv/), stop video on [button press](http://jsfiddle.net/JxBE4/)
 
 
@@ -100,8 +98,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 * [Leafo Sticky Kit](http://leafo.net/sticky-kit/)
 * [Sticky JS](http://stickyjs.com/)
 * [jQuery Pin](http://webpop.github.io/jquery.pin/)
-* [CodePen Sticky Element](https://codepen.io/kmp/pen/LNOYBW)
-* [CodePen Sticky Element within Container](https://codepen.io/kmp/pen/qpZdYO)
 
 <a name="mobile-hover-touch"></a>
 
@@ -117,7 +113,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 ## Sliders
 
 * [Slick Slider](http://kenwheeler.github.io/slick/)
-* CodePen Examples - [Slick Slider inside hidden elements](https://codepen.io/kmp/pen/bowByx), [Slick with Counter (check version of Slick)](https://codepen.io/kmp/pen/YVOmrP/)
 
 <a name="packery"></a>
 
@@ -125,34 +120,18 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 
 * [Masonry](https://masonry.desandro.com/), [article](https://designshack.net/articles/css/masonry/) to help and [here](https://osvaldas.info/responsive-jquery-masonry-or-pinterest-style-layout) and also [here](https://www.creativebloq.com/css3/get-started-jquery-masonry-8123019)
 * [DeSandro CodePen Examples](https://codepen.io/desandro/pens/tags/?selected_tag=packery)
-* CodePen Examples - [IsoTope with Packery](https://codepen.io/kmp/pen/VjAPJR), [Social Media Wall with Filtering](https://codepen.io/kmp/pen/GZORYd)
 
 <a name="tabs"></a>
 
 ## Tabs/Accordion
 
 * [Tabs to Accordion](https://webthemez.com/demo/easy-responsive-tabs/Index.html)
-* [CodePen Accordion](https://codepen.io/kmp/pen/eymvBX)
-* [CodePen Tab Examples](https://codepen.io/collection/XygeQB/)
 
-<a name="modals"></a>
-
-## Modals/Lightbox
-
-* [CodePen - Fancybox 3 All Examples](https://codepen.io/kmp/pen/XqPLbj)
-* [CodePen - Lightbox All Examples](https://codepen.io/kmp/pen/zqRerZ)
-*  CodePen - Modals - 	[Examples One with overlapping modals](https://codepen.io/kmp/pen/WwMYdZ), [Examples Two](https://codepen.io/kmp/pen/oxEQwK)
 
 <a name="menus"></a>
 
 ## Menus
 
-* [CodePen - Different CSS Hamburger Styles](https://codepen.io/designcouch/pen/Atyop)
-* [CodePen - Dropdown Menu, but not setup for mobile](https://codepen.io/kmp/pen/bMWVPo)
-* [CodePen - Slide/Push Menu Overlay from the side](https://codepen.io/kmp/pen/eveOXK)
-* [CodePen - Responsive Nav with SubMenus](https://codepen.io/kmp/pen/yVzjOg)
-* [CodePen - Basic/Standard Responsive Menu with no submenus](https://codepen.io/kmp/pen/PzKYLr)
-* [CodePen - Mega Menu with click to open and close (See Access Legal too)](https://codepen.io/kmp/pen/MmxONM)
 * [Mega Menu Example SAW, on click on Mobile/Tablet](http://bhsaw.kmpassociates.co.uk/_pages/homepage.html)
 * [Fixed background when scrolling an overlay panel](http://www.luxiyalu.com/playground/overlay/), here is a [tutorial](http://luxiyalu.com/scrolling-on-overlay/)
 * [Nice collection of Mega Menu styles](https://speckyboy.com/hamburger-mega-menus/)
