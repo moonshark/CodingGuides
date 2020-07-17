@@ -1,5 +1,6 @@
 # JavaScript
 
+*[CodePen Cheat Sheet](https://codepen.io/kmp/full/mderYqw)
 * [Arrays](https://github.com/moonshark/CodingGuides/blob/master/JavaScript/Javascript-arrays.md)
 * [Functions](https://github.com/moonshark/CodingGuides/blob/master/JavaScript/Javascript-functions.md)
 * [Loops](https://github.com/moonshark/CodingGuides/blob/master/JavaScript/Javascript-loops.md)

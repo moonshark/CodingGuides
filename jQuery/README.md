@@ -2,8 +2,6 @@
 
 A collections of snippets, codepen examples and plugins that I use regularly so they can be easily accessible.
 
-* [JavaScript](#javascript)
-* [JavaScript Cheat Sheet - Moonshark](https://www.moonshark.co.uk/js-tuts/)
 * [jQuery Snippets](#jquery-snippets)
 * [CodePen Examples](#codepen-examples)
 * [Plugins](#plugins)
@@ -21,16 +19,6 @@ A collections of snippets, codepen examples and plugins that I use regularly so 
 * [Menus](#menus)
 * [Forms](#forms)
 * [GIT Commands](https://github.com/moonshark/jQuery/blob/master/git.md)
-
-<a name="javascript"></a>
-
-## JavaScript
-
-Below are links to example of Arrays, Functions, Loops and Objects
-* [Arrays](https://github.com/moonshark/jQuery/blob/master/JavaScript/Javascript-arrays.md)
-* [Functions](https://github.com/moonshark/jQuery/blob/master/JavaScript/Javascript-functions.md)
-* [Loops](https://github.com/moonshark/jQuery/blob/master/JavaScript/Javascript-loops.md)
-* [Objects](https://github.com/moonshark/jQuery/blob/master/JavaScript/Javascript-objects.md)
 
 
 <a name="jquery-snippets"></a>
