@@ -43,18 +43,20 @@ Like ng-app, ng-controller is a directive that defines the controller scope. Thi
 
 An example of a filter is from the last demo. The price added in the controller is ’19’. To turn it into a currency value, so this:
 
-`<p class="title">{{ product.name | uppercase }} </p>
+``` html
+<p class="title">{{ product.name | uppercase }} </p>
 <p class="price">{{ product.price | currency }} </p>
-<p class="date">{{product.pubdate | date}}</p>`
+<p class="date">{{product.pubdate | date}}</p>
+```
 
 ---
 
 ## Quick Review
 
-⋅⋅* A module contains the different components of an AngularJS app
-⋅⋅* A controller manages the app's data
-⋅⋅* An expression displays values on the page
-⋅⋅* A filter formats the value of an expression
+* A module contains the different components of an AngularJS app
+* A controller manages the app's data
+* An expression displays values on the page
+* A filter formats the value of an expression
 
 ## Loop through array.
 

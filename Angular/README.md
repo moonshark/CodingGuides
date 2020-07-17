@@ -7,3 +7,4 @@
 * [directives-templateURL](https://github.com/moonshark/CodingGuides/blob/master/Angular/angular-directives-templateUrl.md)
 * [routing](https://github.com/moonshark/CodingGuides/blob/master/Angular/angular-routing.md)
 * [ng-click](https://github.com/moonshark/CodingGuides/blob/master/Angular/ng%20click.md)
+*[Basic Angular App Layout](https://github.com/moonshark/CodingGuides/blob/master/Angular/angular.md)
