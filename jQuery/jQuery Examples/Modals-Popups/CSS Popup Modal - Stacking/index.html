@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CSS Modal - Modals built out of pure CSS</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style type="text/css">
+
+			@charset "UTF-8";
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.has-overlay {
+  overflow: hidden;
+  height: auto;
+}
+.has-overlay > body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal--fade,
+.modal--show {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: none\9;
+}
+.modal--fade:target,
+.modal--show:target,
+.is-active.modal--fade,
+.is-active.modal--show {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  width: auto;
+  height: auto;
+  opacity: 1;
+}
+.is-active.modal--fade,
+.is-active.modal--show {
+  display: block\9;
+  height: 100% \9;
+  width: 100% \9;
+}
+.modal--fade:target,
+.modal--show:target,
+.is-active.modal--fade,
+.is-active.modal--show {
+  display: block\9;
+}
+.modal-inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 330px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.modal-content {
+  position: relative;
+  max-height: 400px;
+  max-height: 60vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-content > * {
+  max-width: 100%;
+}
+
+.modal-close {
+  display: block;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+}
+
+.modal-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.is-stacked {
+  -webkit-transform: translate(0, 0) scale(1, 1);
+  -moz-transform: translate(0, 0) scale(1, 1);
+  -o-transform: translate(0, 0) scale(1, 1);
+  -ms-transform: translate(0, 0) scale(1, 1);
+  transform: translate(0, 0) scale(1, 1);
+  opacity: 1;
+}
+.is-stacked .modal-inner {
+  -webkit-animation: scaleDown .7s ease both;
+  -moz-animation: scaleDown .7s ease both;
+  animation: scaleDown .7s ease both;
+}
+.is-stacked .modal-close {
+  opacity: 0;
+}
+
+
+
+
+.modal-inner {
+  border-radius: 2px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  max-width: 100%;
+  -webkit-transition: max-width 0.25s linear, margin-left 0.125s linear;
+  transition: max-width 0.25s linear, margin-left 0.125s linear;
+}
+
+
+.modal-content {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 1.2em;
+}
+
+.modal-close {
+  text-indent: -9999px;
+}
+.modal-close:before {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAEUlEQVQoz2NgeEYAjioYSQoAzOTmAXhPhyoAAAAASUVORK5CYII=");
+}
+
+
+
+		</style>
+
+	</head>
+	<body>
+
+		<div class="content" style="max-width: 800px; width: 100%; margin: 0 auto;">
+
+
+			<!-- Call the modal by clicking this link -->
+			<ul>
+
+				<li><a href="#modal-stackable">Login</a></li>
+			</ul>
+
+			<p>Disrupt brunch keffiyeh chillwave Williamsburg. Excepteur food truck thundercats voluptate ethical, whatever in craft beer leggings proident Vice pour-over polaroid. Terry Richardson hoodie Truffaut Wes Anderson kale chips, synth nostrud elit sint id cillum bespoke. Semiotics synth Cosby sweater brunch beard, lo-fi esse Godard Echo Park sapiente mollit wayfarers. Cillum lomo cliche, YOLO Cosby sweater fixie tumblr eu umami Schlitz assumenda culpa. Chillwave church-key plaid, labore nulla flannel kogi Tonx single-origin coffee cred ex sustainable. Mlkshk ennui polaroid post-ironic sunt, keytar semiotics sriracha fashion axe labore church-key art party.</p>
+
+<!-- When this iframe is on the page the css for is-active and is-stacked
+    does not work, when no iframe this works great. I have messaged on 
+    git hub and raised the issue 
+
+      <iframe src="//player.vimeo.com/video/139467519" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+  -->
+
+			<p>McSweeney's ex hashtag, officia beard id voluptate authentic gluten-free fingerstache 90's incididunt keytar butcher. Et meggings put a bird on it, retro yr artisan VHS chillwave ethical fixie culpa cliche wolf organic. Salvia keffiyeh fap Odd Future. Skateboard duis shabby chic put a bird on it. Stumptown flannel Williamsburg sartorial, seitan locavore Wes Anderson typewriter cliche. Elit ea nesciunt, keffiyeh cliche quis put a bird on it. Aesthetic food truck consequat, pop-up do commodo letterpress cornhole proident beard whatever Godard.</p>
+
+			<p>Literally consequat squid, consectetur cred banjo leggings letterpress salvia incididunt semiotics Tonx. Carles et velit letterpress, kale chips quis labore delectus blue bottle irony nesciunt sed. Gastropub sartorial tote bag, non nostrud sriracha Cosby sweater typewriter pour-over lo-fi. Lomo 8-bit skateboard you probably haven't heard of them consequat freegan. Quis accusamus Marfa fanny pack single-origin coffee raw denim. Tumblr food truck ennui Tonx exercitation. Veniam flannel vegan leggings DIY.</p>
+		</div>
+
+
+		<section class="modal--fade" id="modal-stackable"
+		tabindex="-1" role="dialog" aria-labelledby="stackable-label" aria-hidden="true">
+
+				<div class="modal-inner">
+					<div class="modal-content">
+						<h1>Pop Up 1</h1>
+						<p><a href="#modal-stackable-2">Open 2nd Form</a></p>
+					</div>
+					<a href="#!"  title="Close this modal" data-dismiss="modal" data-close="Close">&times;</a>
+				</div>
+
+				<a href="#!" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">&times;</a>
+			</section>
+
+			<section class="modal--show" id="modal-stackable-2"
+					tabindex="-1" role="dialog" aria-labelledby="stackable-label" aria-hidden="true">
+
+				<div class="modal-inner">
+					<div class="modal-content">
+            <h1>Pop Up 2</h1>
+          </div>
+					<a href="#!"  title="Close this modal" data-dismiss="modal" data-close="Close">Close this form and back to first one</a>
+				</div>
+
+				<a href="#!" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">&times;</a>
+			</section>
+
+
+
+      <!-- JS for Modal -->
+    <script src="modal.js"></script>
+
+		
+	</body>
+</html>

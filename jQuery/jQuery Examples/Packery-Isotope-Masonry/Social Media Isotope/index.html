@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A custom super responsive and bootstrap friendly version of bxSlider v4.1.2">
+    <meta name="author" content="rahisify.com">
+    <title>Isotope Filtering</title>
+
+    <style type="text/css">
+
+      .feed {
+        margin: 30px 0 0;
+      }
+
+
+
+        .item {
+          width: 100%;
+          margin: 0;
+          margin-bottom: 30px;
+          background: gray;
+
+         /* @include breakpoint($tablet-sml) {
+            width: 45%;
+            margin-left: 5%;
+          }*/
+
+            width: 23.5%;
+            /*margin-left: 2%;*/
+
+        /*  @include breakpoint($desktop) {
+            width: 260px;
+            margin-left: 30px;
+          }*/
+
+        }
+
+        .item__content p {
+            line-height: 1.2;
+            font-size: 16px;
+        }
+
+
+        .feed__content {
+          /*margin: 20px 0;
+
+          @include breakpoint($tablet-sml) {
+            margin-left: -5%;
+          }*/
+            margin-left: -1%;
+
+          /*@include breakpoint($desktop) {
+            margin-left: -30px;
+          }*/
+        }
+
+      .item__image {
+        height: 200px;
+      }
+
+      .gutter-sizer { width: 2%; }
+
+    </style>
+
+  </head>
+
+  <body>
+  
+
+    
+
+<div class="feed">  
+  <div class="inner">
+
+    <div class="feed__intro cf">
+      <h2>Recent activity</h2>
+        <select class="feed__filter custom-select" name="Filter">
+          <option value="*">Show all</option>
+          <option value=".item--twitter">Twitter</option>
+          <option value=".item--news">News</option>
+          <option value=".item--blog">Blog</option>
+        </select>
+    </div>
+
+
+
+    <div class="feed__content">
+
+    <div class="gutter-sizer"></div>
+
+            <article class="item item--news">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>News</h4>
+                        <span>21/02/2015</span>
+                    </div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article>    
+
+            <article class="item item--blog">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>Blog</h4>
+                        <span>21/02/2015</span>
+                        <span>Posted by Adam</span>
+                    </div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation Tensar Ballast Stabilisation Tensar Ballast Stabilisation Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article>      
+
+            <article class="item item--news">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>News</h4>
+                        <span>21/02/2015</span>
+                    </div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article>      
+
+            <article class="item item--twitter">
+                <div>
+                    
+                    <div class="item__content news">
+                        <h4>Twitter</h4>
+                        <span>@TensarGroup &bullet; Mar 29</span>
+                    </div>
+                    <div class="item__content">
+                        <p>#Tensar Ballast Stabilisation <a href="#">This is a link</a></p>
+                    </div>
+
+                    <footer>
+                        <ul class="cf">
+                            <li class="reply"><a href="#">Reply</a></li>
+                            <li class="retweet"><a href="#">Retweet</a></li>
+                            <li class="favourite"><a href="#">Favourite</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </article>      
+
+            <article class="item item--news">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>News</h4>
+                        <span>21/02/2015</span>
+                    </div>
+                    <div class="item__image" style="background-image: url('http://kmp.co.uk/wp-content/uploads/2013/07/KMP_Tensar_global-1366x580.jpg')"></div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article>      
+
+            <article class="item item--news">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>News</h4>
+                        <span>21/02/2015</span>
+                    </div>
+                    <div class="item__image" style="background-image: url('http://kmp.co.uk/wp-content/uploads/2013/07/KMP_Tensar_global-1366x580.jpg')"></div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article>  
+
+            <article class="item item--twitter">
+                <div>
+                    
+                    <div class="item__content news">
+                        <h4>Twitter</h4>
+                        <span>@TensarGroup &bullet; Mar 29</span>
+                    </div>
+                    <div class="item__content">
+                        <p>#Tensar Ballast Tensar Ballast Tensar Ballast Tensar Ballast Tensar Ballast Tensar Ballast Stabilisation <a href="#">This is a link</a></p>
+                    </div>
+
+                    <footer>
+                        <ul class="cf">
+                            <li class="reply"><a href="#">Reply</a></li>
+                            <li class="retweet"><a href="#">Retweet</a></li>
+                            <li class="favourite"><a href="#">Favourite</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </article>    
+
+            <article class="item item--news">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>News</h4>
+                        <span>21/02/2015</span>
+                    </div>
+                    <div class="item__image" style="background-image: url('http://kmp.co.uk/wp-content/uploads/2013/07/KMP_Tensar_global-1366x580.jpg')"></div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation</p>
+                    </div>
+                </a>
+            </article> 
+
+            <article class="item item--twitter">
+                <div>
+                    
+                    <div class="item__content news">
+                        <h4>Twitter</h4>
+                        <span>@TensarGroup &bullet; Mar 29</span>
+                    </div>
+                    <div class="item__content">
+                        <p>#Tensar Ballast Stabilisation <a href="#">This is a link</a></p>
+                    </div>
+
+                    <footer>
+                        <ul class="cf">
+                            <li class="reply"><a href="#">Reply</a></li>
+                            <li class="retweet"><a href="#">Retweet</a></li>
+                            <li class="favourite"><a href="#">Favourite</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </article>    
+
+            <article class="item item--twitter">
+                <div>
+                    
+                    <div class="item__content news">
+                        <h4>Twitter</h4>
+                        <span>@TensarGroup &bullet; Mar 29</span>
+                    </div>
+                    <div class="item__content">
+                        <p>#Tensar <a href="#">This is a link</a></p>
+                    </div>
+
+                    <footer>
+                        <ul class="cf">
+                            <li class="reply"><a href="#">Reply</a></li>
+                            <li class="retweet"><a href="#">Retweet</a></li>
+                            <li class="favourite"><a href="#">Favourite</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </article> 
+
+            <article class="item item--blog">
+                <a href="#nogo" class="block">
+                    
+                    <div class="item__content news">
+                        <h4>Blog</h4>
+                        <span>21/02/2015</span>
+                        <span>Posted by Adam</span>
+                    </div>
+                    <div class="item__content">
+                        <p>Tensar Ballast Stabilisation Tensar Ballast</p>
+                    </div>
+                </a>
+            </article>              
+
+    </div><!-- /.feed__content -->
+    
+
+
+  </div><!-- /.inner -->
+</div><!-- /.feed -->
+  
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Vendor -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+<script src="images-loaded.js"></script>
+<script src="isotope.js"></script>
+
+<script>
+
+(function(){
+
+function initUi() {
+    initIsotope();
+  }
+
+  function initIsotope() {
+
+      var $container = $('.feed__content').imagesLoaded( function() {
+          $container.isotope({
+              itemSelector: '.item',
+              layoutMode: 'masonry',
+              masonry: {
+                  gutter: '.gutter-sizer'
+              }
+          });
+      });
+
+
+      $('.feed__filter option:selected').addClass('active');       
+
+      $('.feed__filter').change(function(){
+        var selector = $(this).children("option:selected").attr('value');
+        $container.isotope({ filter: selector });
+
+        $('.feed__filter option').removeClass('active');
+        $(this).children("option:selected").addClass('active');
+
+        return false;
+      });     
+
+
+  }
+
+
+$(document).ready(function () {
+    initUi();
+  })
+
+}());
+
+</script>
+  </body>
+</html>

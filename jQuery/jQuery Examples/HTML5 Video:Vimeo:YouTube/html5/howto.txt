@@ -1,0 +1,30 @@
+How to do html 5 video
+
+Open original MP4 in handbrake - remove sound channel.
+Video size 1280 x 720
+fps - 24
+1000kbps
+
+The open the compressed MP4 into Miro to get the webm and ogv files needed
+webm is HD
+
+If new install of Miro you need to do the following to improve the quality of it.
+https://github.com/pculture/mirovideoconverter3/pull/24
+
+also try doing this: 
+
+http://www.zzzzzzzzz.net/fix-miro-3-0-ogg-conversion-quality/
+
+To find the file it is in dutts/movies/miro video convertor
+
+html is this:
+
+Add video on and 1st frame under poster.
+
+<video autoplay muted loop poster="files/typing-macbook.jpg">
+	<source src="files/typing-macbook.m4v" type="video/mp4">
+	<source src="files/typing-macbook.webm" type="video/webm">
+	<source src="files/typing-macbook.ogv" type="video/ogg">
+</video>
+
+Take a snapshot: http://www.tvcrit.com/tvcrit3/framegrab/VLC9/

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+
+<meta name="robots" content="noindex, nofollow"><!-- REMOVE THIS LINE FOR GO LIVE -->
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<style>
+
+.map__location {
+    height: 500px;
+}
+
+.map__location .box {
+    z-index: 99999;
+    padding: 0;
+    border: none;
+    width: 190px !important;
+}
+.map__location .box__content {
+    background: #fff;
+    position: relative;
+    padding: 15px;
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+}
+</style>
+
+
+</head>
+
+<body>
+
+        <div class="cf inner map-wrapper" id="map">
+            <div class="map">
+                <div class="filter">
+                    <a href="#nogo" data-role="map-marker-filter" data-marker-type="long-stay">
+                        Long Stay
+                    </a>
+                    <a href="#nogo" data-role="map-marker-filter" data-marker-type="short-stay">
+                        Short Stay
+     
+                    </a>
+                    <a href="#nogo" data-role="map-marker-filter" data-marker-type="blue-badge">
+                        Blue Badge Holders
+                    </a>
+                </div><!--/.map__filters -->
+                <!-- Google Map -->
+                <div id="location-filter-map"
+                     data-latitude=""
+                     data-longitude=""
+                     data-location-description=""
+                     data-location-name=""
+                     data-location-type="" class="map__item">
+                    <div id="google-filter-map" class="map__location">
+                    </div>
+                </div>
+            </div><!-- /.map -->
+        </div>
+
+
+
+
+<script type="text/javascript">
+    var cruiseDataJson = [{ "Line": "Cruise Line", "Vessle": "Ship Name 1", "Destination": "Med", "DepartureDate": "2016-04-12", "ReturnDate": "2016-04-19", "Terminals": [{ "Type": "Both", "Name": "Terminal 1", "Description": "Terminal Description", "Longitude": "-1.398927", "Latitude": "50.894933" }], "CarParks": [{ "Type": "long-stay", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.398127", "Latitude": "50.894943" }, { "Type": "short-stay", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.398997", "Latitude": "50.894983" }, { "Type": "blue-badge", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.397927", "Latitude": "50.895933" }] }, { "Line": "Cruise Line", "Vessle": "Ship Name 2", "Destination": "Med", "DepartureDate": "2016-05-12", "ReturnDate": "2016-05-19", "Terminals": [{ "Type": "Start", "Name": "Terminal 2", "Description": "Terminal Description", "Longitude": "-1.398927", "Latitude": "50.894933" }, { "Type": "End", "Name": "Terminal 3", "Description": "Terminal Description", "Longitude": "-1.388817", "Latitude": "50.894950" }], "CarParks": [{ "Type": "long-stay", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.398127", "Latitude": "50.894900" }, { "Type": "short-stay", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.398997", "Latitude": "50.894283" }, { "Type": "blue-badge", "Name": "Car park name", "Description": "Car park description", "Longitude": "-1.397127", "Latitude": "50.896133" }] }]; //cruise data
+    window.cruiseData = cruiseDataJson;
+</script>
+<!-- Add jQuery library -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyFYQOH0VXtUmbaGeo97Nk_AjpUG9iJ1I&libraries=places,geometry"></script>
+<script src="js/infobox.js"></script>
+<script src="js/maps-filters.js"></script>
+
+<script>
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A custom super responsive and bootstrap friendly version of bxSlider v4.1.2">
+    <meta name="author" content="rahisify.com">
+    <title>Date Picker</title>
+
+    <style type="text/css">
+
+.ui-datepicker {
+  /*padding-bottom: 10px;
+  width: 242px;*/
+  z-index: 20!important;
+  background: white;
+}
+
+
+.ui-datepicker .ui-datepicker-header {
+  /*position:relative;*/
+  padding:.2em 0 0;
+  background: white;
+  color: #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.ui-datepicker-calendar thead {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 5px;
+  width: 36px;
+  height: 22px;
+  background: url(datepicker-prev.png) no-repeat right center;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 6px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 6px;
+  background:url(datepicker-next.png) no-repeat left center;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+  text-indent:-9999px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+  color: #000;
+  height: 25px;
+  line-height: normal;
+  padding: 7px 0 0 0;
+  text-align: center;
+  font-size: 16px;
+  /*
+  UN COMMENT THIS - NEEDED FOR THE STYLING
+
+  .datepicker & {
+    border-bottom: 1px solid #39404A;
+    height: 40px;
+  }
+  .lt-ie8 & {
+    line-height: 38px;
+    padding: 0;
+  }*/
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  font-size:1em;
+  margin:1px 0;
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+  width: 100%;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 49%;
+}
+
+.ui-datepicker table {
+  margin: 0 auto;
+  width: 242px;
+  font-size: .9em;
+  border-collapse: collapse;
+  border: none;
+}
+/* 
+
+UN COMMENT THIS - NEEDED FOR THE STYLING
+
+.ui-datepicker table tr {
+  border-bottom: 1px solid #000;
+ .datepicker & {
+    border-bottom: 1px solid #000;
+  }
+  td {
+    border-right: 1px solid #000;
+    .datepicker & {
+      border-right: 1px solid #000;
+    }
+    &:first-of-type {
+      border-left: 1px solid #000;
+    }
+  }
+}*/
+
+
+.ui-datepicker td.ui-datepicker-today a {
+  background: yellow;
+}
+
+.ui-datepicker th {
+  color: #000;
+  background: white;
+  padding: .7em .3em;
+  text-align: center;
+  border: 0;
+  height: 34px;
+  font-weight: bold;
+}
+
+.ui-datepicker td {
+  border: 0;
+  padding: 0;
+  height: 38px;
+  width: 38px;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+  color: black;
+  background: white;
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  width: 38px;
+
+  /*
+    UN COMMENT THIS - NEEDED FOR THE STYLING
+
+  &.ui-state-active {
+    background: $yellow;
+    color: black;
+  }*/
+}
+
+.ui-datepicker td a:hover {
+  background: yellow;
+  color: black;
+}
+
+.ui-datepicker-unselectable span,
+.ui-state-disabled span {
+  color: #000!important;
+}
+
+/* if using with multiple calendars
+
+
+
+.ui-datepicker.ui-datepicker-multi {
+  width:518px;
+  position: relative;
+  margin: 20px auto;
+  padding: 6px;
+  border: 1px solid blue;
+}
+
+.ui-datepicker.ui-datepicker-multi:before,
+.ui-datepicker.ui-datepicker-multi:after {
+    content: " ";
+    display: table;
+}
+
+.ui-datepicker.ui-datepicker-multi:after {
+    clear: both;
+}
+
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float:left;
+
+  &:first-child {
+    table {
+      margin-right: 36px;
+    }
+  }
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+  margin:0 auto;
+}
+
+
+.ui-datepicker .ui-datepicker-unselectable span {
+  color: #dbdbdb;
+  background: white;
+  &:hover {
+    background: white;
+  }
+}
+
+.ui-datepicker-today a {
+  background: blue;
+}
+
+// Inline Pop Up Calendars
+
+#ui-datepicker-div {
+  padding: 0;
+  border: 1px solid blue;
+  display: none;
+
+  table {
+    width: 240px;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: 8px;
+  }
+}*/
+
+
+    </style>
+
+  </head>
+
+  <body>
+  
+
+<div class="form__row datepicker">
+      <label>When do you want to go?</label>
+      <input type="text" id="from" class="sml"  readonly="true" placeholder="From">
+      <input type="text" id="to" class="sml"  readonly="true" placeholder="To">
+</div>
+  
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Vendor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+<script>
+
+(function(){
+
+function initUi() {
+    initDatePicker();
+  }
+
+  function initDatePicker() {
+      // needed to get todays date, so cannot access old days
+      var dateToday = new Date();
+
+      $( "#from, #to" ).datepicker({
+        defaultDate: "+1w",
+            numberOfMonths: 1,
+            dateFormat: "dd-mm-yy",
+            minDate: dateToday,
+            onSelect: function( selectedDate ) {
+                if(this.id == 'from'){
+                  var dateMin = $('#from').datepicker("getDate");
+                  var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 1); 
+                  var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(),dateMin.getDate() + 365); 
+                  $('#to').datepicker("option","minDate",rMin);
+                  $('#to').datepicker("option","maxDate",rMax);   
+
+                  // this opens the second one when first been selected
+                  setTimeout(function(){
+                $( "#to" ).datepicker('show');
+              });         
+                }
+            }
+      });
+
+       /*$("#from").datepicker('option',"onClose", function() {
+        $( "#to" ).datepicker( "show" );
+       });*/
+
+   }
+
+
+$(document).ready(function () {
+    initUi();
+  })
+
+}());
+
+</script>
+  </body>
+</html>

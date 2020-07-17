@@ -1,0 +1,96 @@
+#product-results {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-results__slider {
+  display: none;
+}
+.product-results__slider .slick-slide {
+  padding: 5px;
+}
+.product-results__slider .slick-slide div {
+  background: green;
+  height: 100px;
+}
+.product-results__slider.slick-initialized {
+  display: block;
+}
+.product-results__slider .slick-arrows {
+  background: red;
+}
+.product-results__slider .slick-prev {
+  left: -45px;
+}
+[dir="rtl"] .product-results__slider .slick-prev {
+  left: auto;
+  right: -45px;
+}
+.product-results__slider .slick-next {
+  right: -45px;
+}
+[dir="rtl"] .product-results__slider .slick-next {
+  left: -45px;
+  right: auto;
+}
+.product-results__slider .slick-dots {
+  bottom: -40px;
+}
+.product-results__slider .slick-dots li {
+  width: 16px;
+  height: 16px;
+}
+.product-results__slider .slick-dots li button {
+  border-color: red;
+  width: 16px;
+  height: 16px;
+}
+.product-results__slider .slick-dots li.slick-active button {
+  background: red;
+  border-color: red;
+}
+
+#product-results {
+  margin: 40px 0;
+}
+#product-results .ui-widget-content {
+  border: none;
+  padding: 10px 0;
+}
+#product-results .ui-accordion-content {
+  overflow: visible;
+}
+#product-results .ui-accordion-header,
+#product-results > h3 {
+  background: none;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+#product-results .ui-accordion-header:focus,
+#product-results > h3:focus {
+  outline: 0;
+  border: none;
+}
+#product-results .ui-icon,
+#product-results .ui-widget-content .ui-icon {
+  display: none;
+}
+#product-results .ui-state-active,
+#product-results .ui-widget-content .ui-state-active,
+#product-results .ui-widget-header .ui-state-active,
+#product-results a.ui-button:active,
+#product-results .ui-button:active,
+#product-results .ui-button.ui-state-active:hover,
+#product-results .ui-state-default,
+#product-results .ui-widget-content .ui-state-default,
+#product-results .ui-widget-header .ui-state-default,
+#product-results .ui-button,
+#product-results html .ui-button.ui-state-disabled:hover,
+#product-results html .ui-button.ui-state-disabled:active {
+  border: none;
+  background: none;
+  color: red;
+}

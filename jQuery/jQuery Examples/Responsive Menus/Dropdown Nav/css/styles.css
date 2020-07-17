@@ -1,0 +1,104 @@
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.container {
+  width: 100%;
+  height: 1000px;
+  background: red;
+}
+
+nav {
+  position: relative;
+  background: #000;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  text-align: center;
+  display: block;
+  float: left;
+  list-style-type: none;
+  position: relative;
+  border-left: 1px solid #fff;
+}
+
+nav ul li:first-child {
+  background: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: AGaramond-Italic;
+  font-size: 1.1em;
+  background: #000;
+ z-index: 2;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  /*z-index: 99999;*/
+  padding: 15px;
+  border-top: 1px solid #494946;
+  color: #ffffff;
+  background: #000;
+  right: 0;
+  border: 1px solid white;
+  min-width: 200px;
+ margin-top: -1px;
+}
+
+
+.dropdown li {
+  display: block;
+  padding: 0;
+  background: none;
+  font-size: 1.125em;
+  text-align: left;
+  border-left: none;
+}
+
+
+
+#navigation > ul > li > span > a {
+  position: relative;
+}
+
+
+nav .dropdown a {
+  display: block;
+  padding: 0;
+  text-align: left;
+  font-style: normal;
+  font-size: 1em;
+  font-family: AGaramond-Regular;
+}
+
+nav .dropdown a:hover,
+nav .dropdown a:focus {
+  border: 0;
+  padding: 0;
+}
+
+
+
+#navigation > ul > li > span:hover .dropdown,
+#navigation > ul > li > span:focus .dropdown {
+  display: block;
+}

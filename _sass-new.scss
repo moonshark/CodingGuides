@@ -1,0 +1,114 @@
+// Use Variables in Sass Files - http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_
+
+$module: m-banner;
+
+.#{$module} {
+
+    .slick-initialized .#{$module} {
+        display: block;
+    }
+
+    .#{$module} {
+        &__blend {
+            opacity: 1;
+            z-index: 1;
+            mix-blend-mode: multiply;
+        }
+    }
+}
+
+// The above would create:
+
+.slick-initialized .m-banner {
+    display: block;
+}
+
+.m-banner__blend {
+    opacity: 1;
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+
+
+
+// Colour inside an SVG
+.icon-cross {
+    path {
+        fill: $horizon;
+    }
+}
+
+p {
+    // all except the last one get this styling
+      &:not(:last-child) {
+        margin: 0 auto rem(30px);
+      }
+    }
+
+$panel-bg-colours:   $eastern-blue, $turquoise-blue, $dark-tangerine, $carrot-orange, #e4d9c5;
+
+    @for $i from 1 through length($panel-bg-colours) {
+    .panel-bg-#{$i} {
+        background-color: nth($panel-bg-colours, $i);
+    }
+}
+
+// Multiple Button Styling
+
+@each $label, $map in $btn-config {
+    .btn--#{$label} {
+        background-color: map-get($map, bg);
+        color: map-get($map, colour);
+        border-color: map-get($map, border);
+        &:hover,
+        &:focus {
+            background-color: darken(map-get($map, border), 10%);
+            border-color: darken(map-get($map, bg), 10%);
+        }
+    }
+}
+
+
+$btn-config: (
+    primary: (
+        bg: $btn-primary-bg-colour,
+        colour: $btn-primary-colour,
+        border: $btn-primary-border-colour
+    ),
+    keyline: (
+        bg: $white,
+        colour: $cinnabar,
+        border: $cinnabar
+    ),
+    dark: (
+        bg: #414141,
+        colour: $white,
+        border: #414141
+    )
+);
+
+
+// &__rating {
+//     // 73 is the size I want, and 400 is the size of the element
+//     // it sits in so the 400 is the width of .mega-menu__item
+//     width: 400px; // this shown for help purposes
+//     padding: 0 percentage(73 / 400); // the 400 is the size of what it sits in
+
+//     // The number like 165 is from the PSD, this number is 
+//     // then divided by the max-container (1200px) and converts to %
+
+//     //      @function contextualiser($unit){
+//     //      $percent: percentage($unit / $original-width);
+
+//     padding: contextualiser(165) 0 contextualiser(138);
+
+//      // Convert pixel values to rem
+//     margin: rem(38px) 0 rem(50px);
+// }
+
+// .reviews-block {
+//     // Converts a px value to show a % size instead
+//     padding-top: contextualiser(60);
+//     padding-bottom: contextualiser(54);
+// }
+

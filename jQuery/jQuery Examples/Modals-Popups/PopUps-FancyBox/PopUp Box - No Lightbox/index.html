@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+
+	<style>
+	.extra-info {
+	    display: inline-block;
+	    width: 20px;
+	    height: 20px;
+	    background: red;
+	    color: white;
+	    font-weight: normal;
+	    text-align: center;
+	    line-height: 20px;
+	}
+
+	.extra-info__wrap {
+	    display: none;
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    left: 0;
+	    bottom: 0;
+
+	    -webkit-transform-style: preserve-3d;
+	    -moz-transform-style: preserve-3d;
+	    transform-style: preserve-3d;
+
+	    background: rgba(0, 0, 0, 0.80);
+	}
+
+	.extra-info__content {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);    
+
+	    width: 90%;
+	    padding: 20px;
+	    margin-left: -45%;
+	    background: white;
+
+	    > p {
+	        margin: 0 0 1em;
+	    }
+	}
+	</style>
+</head>
+
+<body>
+
+	<span class="extra-info">i</span>
+
+<div class="extra-info__wrap">
+			<div class="extra-info__content">
+				<p>In the event of unexpected circumstances we can not guarantee the venue will be open for your desired date.</p>
+
+				<p>We strongly advise making contact with the venue before travel.</p>
+
+				<a class="extra-info__close" href="#">Close</a>
+			</div>
+		</div>
+
+<!-- Vendor -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				$( ".extra-info" ).click(function() {
+				  $( ".extra-info__wrap" ).show();
+				  return false;
+				});
+
+
+				$( ".extra-info__close" ).click(function() {
+				  $( ".extra-info__wrap" ).hide();
+				  return false;
+				});
+
+			});
+
+		</script>
+
+</body>
+
+</html>

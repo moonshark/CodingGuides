@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sticky Element</title>
+
+<style type="text/css">
+
+/* Animation for sliding in header */
+
+@-webkit-keyframes inpage-search-slide{0%{top:-90px}30%{top:-90px}100%{top:0}}
+@-moz-keyframes inpage-search-slide{0%{top:-90px}30%{top:-90px}100%{top:0}}
+@-o-keyframes inpage-search-slide{0%{top:-90px}30%{top:-90px}100%{top:0}}
+@keyframes inpage-search-slide{0%{top:-90px}30%{top:-90px}100%{top:0}}
+		
+.fixed {
+	    position: fixed;
+	    z-index: 100;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	   /* -webkit-animation: inpage-search-slide 1000ms 1;
+	    -moz-animation: inpage-search-slide 1000ms 1;*/
+	    animation: inpage-search-slide 1000ms 1;
+}
+
+#sticky-element {
+	background: green;
+	padding: 10px;
+	width: 500px;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script>
+
+$(function(){
+   initStickyBookingStrip();
+});
+
+function initStickyBookingStrip() {
+    if ($('#sticky-element').length == 0) {
+        return;
+    }
+    var target_offset = $('#sticky-element').offset().top;
+    var stickyBookingStrip = function () {
+        var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+
+        if (scroll_top > (target_offset + 50)) {
+            $('#sticky-element').addClass('fixed');
+        }
+        else {
+            $('#sticky-element').removeClass('fixed');
+        }
+    }
+
+    // run our function on load
+    stickyBookingStrip();
+
+    // and run it again every time you scroll
+    $(window).scroll(function () {
+        if ($(window).width() >= 767) {
+            stickyBookingStrip();
+        }
+    });
+}
+</script>
+
+
+</head>
+<body>
+
+<!-- everything below is just content to fill the page -->
+
+<section id="main">
+
+<div id="content" style="font-size: 18px; width: 500px;">
+	
+		<h1>Sticky Element that also works only at a certain screen size</h1>
+		
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada convallis mauris in rutrum. Suspendisse dolor lorem, consequat sit amet rutrum at, cursus ut felis. Aliquam pellentesque sodales enim. Vivamus sed adipiscing arcu. Duis tincidunt iaculis lobortis. Sed laoreet mollis tempus. Nam cursus magna in mauris pellentesque vestibulum. Ut non risus a enim pellentesque tincidunt. Maecenas vulputate dolor eu sem convallis convallis. Nulla viverra pharetra tortor, eu adipiscing risus imperdiet a. Nam eu nibh vitae diam accumsan tempus vel eget nisl. Quisque et urna lacus, a mollis ipsum.
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+
+	</div>
+
+	<div id="sticky-element">Stick this to the top</div>
+
+	<div id="content" style="font-size: 18px; width: 500px;">
+		
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada convallis mauris in rutrum. Suspendisse dolor lorem, consequat sit amet rutrum at, cursus ut felis. Aliquam pellentesque sodales enim. Vivamus sed adipiscing arcu. Duis tincidunt iaculis lobortis. Sed laoreet mollis tempus. Nam cursus magna in mauris pellentesque vestibulum. Ut non risus a enim pellentesque tincidunt. Maecenas vulputate dolor eu sem convallis convallis. Nulla viverra pharetra tortor, eu adipiscing risus imperdiet a. Nam eu nibh vitae diam accumsan tempus vel eget nisl. Quisque et urna lacus, a mollis ipsum.
+		</p>
+
+		<p>
+		Mauris in augue elit, sed posuere justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lectus a eleifend tincidunt, urna sapien sodales magna, id dictum ipsum nisi non diam. Nam tempor interdum molestie. In vel sapien id augue varius adipiscing et at lectus. Ut et justo eget urna vulputate tempus in vitae est. Quisque imperdiet dapibus metus sit amet hendrerit. Proin sapien augue, suscipit quis blandit eget, pharetra eget orci. Integer massa lacus, pretium non vehicula sit amet, facilisis sed nisi. Donec ut dui et nunc volutpat laoreet ac a leo. In a dignissim dui. Phasellus pretium odio eget mi luctus a gravida nunc rutrum. Nullam nulla nisl, porta quis euismod eu, consectetur ut purus. Morbi consectetur tincidunt bibendum. Nam hendrerit tempor cursus.
+		</p>
+		<p>
+		Proin cursus, enim sodales elementum cursus, mi eros molestie justo, varius scelerisque ligula eros non diam. Donec malesuada, nisl vel venenatis egestas, orci dui euismod elit, facilisis vulputate arcu turpis vel tellus. Proin faucibus eleifend imperdiet. Quisque eu quam eget nunc dapibus lobortis. Aenean molestie mi et dolor lacinia id luctus ligula ultricies. Sed mauris velit, venenatis quis dapibus quis, pulvinar quis dolor. Mauris vitae lectus mi. Donec tincidunt sem eget lacus laoreet malesuada. Mauris aliquet faucibus diam, sed adipiscing metus rhoncus eu.
+		</p>
+
+				<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+				<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+
+		<p>
+		Sed sit amet ligula sed tellus laoreet auctor. In hac habitasse platea dictumst. Aenean at magna ut arcu vehicula euismod. Vestibulum mollis lobortis elementum. Curabitur pharetra, turpis vitae rhoncus condimentum, justo ligula condimentum nulla, non fringilla dolor felis ullamcorper velit. Nullam posuere porta enim non lacinia. Vivamus eu ipsum vel metus faucibus adipiscing sit amet sed mauris. Suspendisse mauris mauris, consectetur egestas interdum ut, blandit non magna. Proin quis gravida felis. Nunc neque lorem, facilisis nec scelerisque sed, condimentum rhoncus nunc. Aenean semper rutrum lectus vel porttitor. Vivamus sodales consectetur porttitor. Vestibulum quis rhoncus tellus. Aenean ut dignissim risus. 
+		</p>
+		
+	</div>
+	
+</section><!-- #main -->
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tabs</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+  <style>
+
+  .cf:before,
+  .cf:after {
+      content: " ";
+      display: table;
+  }
+
+  .cf:after {
+      clear: both;
+  }
+
+  .navigation__icon {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAASCAYAAACq26WdAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozOWViZmQ2OC02Y2E3LTQxOTctYjk1YS04YmJmZDBhZWNhZjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkE0NDIwMkY5NTlGMTFFNDhEMkJDMTFFRDUzNjIxMEIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkE0NDIwMkU5NTlGMTFFNDhEMkJDMTFFRDUzNjIxMEIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplMDM0NzNmMi1kNTc0LTRjZGMtOWMxYy1hNTE4NzRhMWY4NGQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzllYmZkNjgtNmNhNy00MTk3LWI5NWEtOGJiZmQwYWVjYWYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+RDbhqwAAAEFJREFUeNpi/P//PwMI3JK3YKAlUHt4goGJgY6ABY3/nwZ2MMIYA+ozRlpaRlefDV/LRlPjaAIZTY2jqZF8ABBgAHV0CTB45K26AAAAAElFTkSuQmCC");
+    position: absolute;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    right: 20px;
+    top: 40px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-indent: -9999px;
+  }
+
+  .navigation__icon.close {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAWCAYAAADeiIy1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjY5NEMwQzQ0QTMxNDExRTQ4MjBEQ0Q1NTRFN0Q2QTBGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjY5NEMwQzQ1QTMxNDExRTQ4MjBEQ0Q1NTRFN0Q2QTBGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Njk0QzBDNDJBMzE0MTFFNDgyMERDRDU1NEU3RDZBMEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Njk0QzBDNDNBMzE0MTFFNDgyMERDRDU1NEU3RDZBMEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz63qn6RAAABnElEQVR42rzWTSgEYRzH8R0rhy3KxcGFHOTg4OTlgiRyEC6EUgpRwtXLSaGclou3EslFklw2JXkpnDhJeTnsHpbiQInaaHyf+tM02Z1ndrd96lOzNc3vP//5P09rmKbpScVKt/64zStP6sMLgxd/12meFK1oQVnYR4PL5/Viwk3QAOqwixbNkGEsYRIVukGzmEcGttDpEDIGP9Rk9eNcN8iUCmdkYNbRF+XeaUzhG11YdtM6a6Xj8GJRwn+XgTmMIoJWbLodBnvFI3Ltl3CvVD6ETzRjR3sfxViq8g8sSJvaUYx3NOLI1YZ1WCv4wqqEqOt6nCWyj/5bPrTZiuyWNiYtKBMBeYNHDEore7Ch0xmd1mVLSBmCqMU9rrEn38snUxeJ941ycCghd6iUEI8MgDo9XtEkob54gnJxjBKpXoWEbPeo47kGz9LWgLRZOygfpyjCJarxFOXeK1QhLMUcSLu1gtZQIKOrKn5xaPGNhKhvWIpt3aAO2TfqG7xpTuaDhJ1YThLHqQvHOERjrZC0MaENm9AyUvXn5EeAAQACvVdb/bK/pwAAAABJRU5ErkJggg==");
+  }
+
+  .slideup,
+  .slidedown {
+      height: 0;
+      overflow-y: hidden;
+      -webkit-transition: height 0.4s ease-in-out;
+      -moz-transition: height 0.4s ease-in-out;
+      -o-transition: height 0.4s ease-in-out;
+      transition:height 0.4s ease-in-out;
+  }
+  .slidedown {
+    /* Change height depending on menu*/
+      height: 310px;
+  }
+
+
+  @media (min-width: 767px) {
+    .slideup,
+    .slidedown {
+      height: auto;
+          overflow-y: visible;
+    }
+
+    .slidedown {
+      height: auto;
+    }
+  }
+
+  </style>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    // Slide Down Navigation
+    $(".navigation__icon").click(function () {
+      $(".navigation__icon").toggleClass('close');
+      $(".navigation__slide").toggleClass("slidedown slideup");
+    });
+
+  });
+
+  </script>
+
+</head>
+<body>
+
+  <a class="navigation__icon" href="#nogo">Menu</a>
+
+  <div class="navigation__slide slideup">
+
+        <nav class="navigation cf" role="navigation">
+         <ul>
+            <li><a href="/" data-tabid="#tab1" class="link">Live flights</a>
+            </li>
+            <li><a href="/" data-tabid="#tab2" class="link">To &amp; From</a></li>
+            <li><a href="/" data-tabid="#tab3" class="link">At the Airport</a></li>
+            <li><a href="/" data-tabid="#tab4" class="link">Shopping</a></li>
+            <li><a href="/" data-tabid="#tab5" class="link">Destinations</a></li>
+         </ul>
+        </nav>
+</div>
+
+<div>
+  <h1>Title here</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+// General Styling
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  font-family: lato;
+}
+
+.content {
+  font-family: lato;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  
+  &__left {
+    float: left;
+    width:65%;
+  }
+  
+  &__sidebar {
+    width: 30%;
+    float: right;
+    
+    // this is needed to fix the panel to the bottom when it is unstuck.
+    
+    ol {
+      padding: 0;
+          background: rgba(0, 168, 225, 0.05);
+    border: 1px solid rgba(0, 168, 225, 0.5);
+      padding: 20px;
+    }
+    
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 2;
+    }
+  }
+}
+
+
+
+.content:before {
+    content: '';
+    display: table;
+}
+
+.content:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+// Sticky Part Needed.
+
+.at_bottom {
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+}

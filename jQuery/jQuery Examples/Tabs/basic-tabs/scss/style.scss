@@ -1,0 +1,15 @@
+.tabs {
+  padding-top: 50px;
+}
+
+
+
+
+.tabs__tab {
+  display: none;
+  padding-top: 50px;
+}
+
+.tabs__tab.js-active {
+  display: block;
+}

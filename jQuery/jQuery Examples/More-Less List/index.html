@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tabs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <style>
+
+  .cf:before,
+  .cf:after {
+      content: " ";
+      display: table;
+  }
+
+  .cf:after {
+      clear: both;
+  }
+
+  .list li:nth-of-type(5) ~ li {
+      display: none;
+  }
+
+
+  </style>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $('.more').click(function(){
+            var ul = $(this).siblings('.list');
+           
+            // finish any currently running animations
+            ul.finish();
+           
+            if (ul.hasClass('show-more'))
+            {
+                ul.removeClass('show-more');
+               
+                // hide the list options above number 3, then animate the slide
+                ul.find('li:nth-of-type(5) ~ li').hide({ duration: '400', complete: function() { ul.animate({height: '100%'}, 'slow'); }});
+            }
+            else
+            {
+                ul.addClass('show-more');
+                ul.css({height: ul.css('height')});
+                ul.find('li').show({complete: function() { ul.animate({height: '100%'}, 'slow'); }});
+            }
+           
+        return false;
+        });
+
+  });
+
+  </script>
+
+</head>
+<body>
+
+<ul class="list">
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+  <li>Test list item here</li>
+</ul>
+<a class="more" href="#nogo">more</a>
+
+
+</body>
+</html>

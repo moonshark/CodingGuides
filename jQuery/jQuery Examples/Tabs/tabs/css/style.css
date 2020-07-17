@@ -1,0 +1,27 @@
+
+  
+  .content-tabs__group {
+    width: 100%;
+		text-align: center;
+  }
+
+	.content-tabs__item {
+		display: inline-block;
+	}
+	
+	.content-tabs__link {
+		display: block;
+		padding: 15px;
+	}
+  
+  .content-tabs__link--active {
+		background: #ccc;
+	}
+
+	.content-tabs__tab{
+		display: none;
+	}
+  
+  .content-tabs__tab--active{
+		display: block;
+	}

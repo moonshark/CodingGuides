@@ -1,0 +1,52 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+
+/* ---- isotope ---- */
+
+.isotope {
+  max-width: 1600px;
+}
+
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .item ---- */
+
+.item {
+  float: left;
+  width: 20%;
+  height: 200px;
+  background: green;
+  margin-bottom: 20px;
+}
+
+.register {
+  height: 500px;
+  background: cyan;
+}
+
+.item.w2 {width: 55%; background: red; height: 400px;}
+
+.item.w3 {width: 75%; background: yellow; height: 400px;}
+
+.stamp {
+  position: absolute;
+  width: 20%;
+  background: orange;
+  right: 0;
+  top: 0;
+  height: 400px;
+  margin-bottom: 20px;
+}

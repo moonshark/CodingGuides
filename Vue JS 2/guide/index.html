@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Guide</title>
+  
+  
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Prism Editor -->
+    <link rel="stylesheet" href="https://unpkg.com/vue-prism-editor/dist/VuePrismEditor.css">
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.15.0/themes/prism-tomorrow.css">
+
+    <!-- PrismJS-->
+    <script src="https://unpkg.com/vue-prism-editor@0.6.1/dist/VuePrismEditor.umd.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.15.0/prism.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <h1>Vue JS 2 Guide</h1>
+
+      <div id="vue-app">
+
+        <!-- Calling Vue data to the DOM -->
+        <section>
+          <div class="intro">
+            <h2>Calling Vue data to the DOM</h2>
+          </div>
+
+          <div class="examples">
+
+
+            <vue-prism-editor code="// Call greet() function within the h1
+ <p>{{ greet('afternoon') }}</p>" language="js"></vue-prism-editor>
+            <p>{{ greet('afternoon') }}</p>
+
+
+            <vue-prism-editor code="// Show name and job within the vue file
+{{ name }}'s' job is {{job}} and you are {{age}}" language="js"></vue-prism-editor>
+            <p>{{ name }}'s' job is {{job}} and you are {{age}}</p>
+
+
+            <vue-prism-editor code="// If we want to bind data to different properties
+<a v-bind:href='website'>Using the website property</a>" language="js"></vue-prism-editor>
+            <a v-bind:href="website">Using the website property</a>
+
+            <vue-prism-editor code="// This is a shortened version
+<a :href='website'>A shortened version</a>" language="js"></vue-prism-editor>
+            <a :href="website">A shortened version</a>
+
+            <vue-prism-editor code="// Output websiteTag as HTML to the DOM
+<p v-html='websiteTag'></p>" language="js"></vue-prism-editor>
+            <p v-html="websiteTag"></p>
+
+            <vue-prism-editor code="// This binds the name data. It will not update automatically
+<input type='text' v-bind:value='name'>" language="js"></vue-prism-editor>
+            <input type="text" v-bind:value="name">
+        </div>
+
+            <div class="code">
+              <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    name: "Christopher",
+    age: 39,
+    job: "Designer",
+    website: "https://www.google.com",
+    websiteTag: "<a href='https://www.google.com'>Another link</a>",
+  },
+  methods: {
+    greet: function(time){
+      return 'Good ' + time + " " + this.name;
+    }
+  }
+});
+        </code></pre>
+            </div>
+
+
+
+        </section>
+
+        <!-- Events - v-on -->
+        <section>
+          <div class="intro">
+            <h2>Events - <code>v-on</code></h2>
+            <p>Add <code>v-on</code> and then whether is is a click, double click, hover etc. You can shorten <code>v-on:click</code> to <code>@click</code></p>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="// Listen for an event once
+<button v-on:click='add(1)''>Add a Year</button>
+                                  
+// Shorter way instead of v-on
+<button @click='subtract(1)'>Subtract a Year</button>                          
+<button v-on:dblclick='add(10)'>Add 10 Years</button>                         
+<button @dblclick='subtract(10)'>Subtract 10 Years</button>" language="js"></vue-prism-editor>
+            <button v-on:click="add(1)">Add a Year</button>
+            <button @click="subtract(1)">Subtract a Year</button>
+            <button v-on:dblclick="add(10)">Add 10 Years</button>
+            <button @dblclick="subtract(10)">Subtract 10 Years</button>
+
+            <p>My age is {{age}}</p>
+
+            <vue-prism-editor code="// Move mouse over the canvas to show co-ordinates
+ <div id='canvas' v-on:mousemove='updateXY'>{{x}}, {{y}}</div>" language="js"></vue-prism-editor>
+            <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    age: 39,
+    x: 0,
+    y: 0
+  },
+  methods: {
+    
+    add: function(inc){
+      this.age += inc;
+    },
+    
+    subtract: function(dec){
+      this.age -= dec;
+    },
+    
+    updateXY: function(event) {
+      // Access event object
+      this.x = event.offsetX;
+      this.y = event.offsetY;
+    }
+  }
+});
+        </code></pre>
+          </div>
+
+        </section>
+
+        <!-- Event Modifiers v-on:click -->
+        <section>
+          <div class="intro">
+            <h2>Event Modifiers</h2>
+            <p>By applying modifiers to the <code>v-on:click</code> you can do other things. For example, prevent a link from working.</p>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="// Click on the button, but instead of the link, show an alert
+ <a v-on:click.prevent='click' href='https://www.google.com'>Removing default action of the href</a>" language="js"></vue-prism-editor>
+            <a v-on:click.prevent="click" href="https://www.google.com">Removing default action of the href</a>
+
+            <vue-prism-editor code="// This would only allow you to listen to the click once
+ <button v-on:click.once='add(1)''>Add a Year (Only should work once)</button>" language="js"></vue-prism-editor>
+            <button v-on:click.once="add(1)">Add a Year (Only should work once)</button>
+            <p>My age is {{age}}</p>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    age: 39
+  },
+  methods: {
+    
+    add: function(inc){
+      this.age += inc;
+    },
+    
+    click: function() {
+      alert("You Clicked me");
+    }
+  }
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Keyboard events - v-on:keyup.tab -->
+        <section>
+          <div class="intro">
+            <h2>Keyboard events - <code>v-on:keyup.tab</code></h2>
+            <p>Listening to the user keypress, so inputting in a field as an example. Here is a <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers" target="_blank">list of ones you can use</a>.</p>
+          </div>
+          <div class="examples">
+
+            <vue-prism-editor code="&sol;&sol; This watches the input and runs the logName func when you hit enter.
+ <input type='text' id='name' v-on:keyup.enter='logName'>
+
+ // Will only fire the function when you hit Alt and Enter
+ <input type='text' id='age' v-on:keyup.alt.enter='logAge'>" language="js"></vue-prism-editor>
+            <label for="name">Name:</label>
+            <input type="text" id="name" v-on:keyup.enter="logName">
+
+            <!-- 
+          <vue-prism-editor code="// Will only fire the function when you hit Alt and Enter
+ <input type='text' id='age' v-on:keyup.alt.enter='logAge'>" language="js"></vue-prism-editor> -->
+            <label for="age">Age:</label>
+            <input type="text" id="age" v-on:keyup.alt.enter="logAge">
+        </div>
+            <div class="code">
+              <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+  },
+  methods: {    
+    logName: function() {
+      alert("You entered your name");
+    },
+    logAge: function() {
+      alert("You entered your age");
+    }
+  }
+});
+        </code></pre>
+            </div>
+        </section>
+
+        <!-- Two Way Data Binding - v-model="" -->
+        <section>
+          <div class="intro">
+            <h2>Two Way Data Binding - <code>v-model=""</code> </h2>
+            <p>A way to get the value from the input and add into the span. As you add the name and add, it automatically updates the <code>name</code> and <code>age</code> variable</p>
+          </div>
+          <div class="examples">
+            <vue-prism-editor code="<input type='text' id='name' v-model='name'>
+ <span>Entered: {{name}}</span>
+                                  
+ <input type='text' id='age' v-model='age'>
+ <span>Entered: {{age}}</span>" language="js"></vue-prism-editor>
+
+            <!--           <vue-prism-editor code="<input type='text' id='name' v-model='name'>
+ <span>Entered: {{name}}</span>" language="js"></vue-prism-editor> -->
+            <div class="form-row-item">
+              <label for="name">Name:</label>
+              <input type="text" id="name" v-model="name">
+              <span>Entered: {{name}}</span>
+            </div>
+
+            <!--           <vue-prism-editor code="<input type='text' id='age' v-model='age'>
+ <span>Entered: {{age}}</span>" language="js"></vue-prism-editor> -->
+            <div class="form-row-item">
+              <label for="age">Age:</label>
+              <input type="text" id="age" v-model="age">
+              <span>Entered: {{age}}</span>
+            </div>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  // Element on the page this instance is going to control
+  el: "#vue-app",
+  data: {
+    name: "Christopher",
+    age: 39
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Computed Properties -->
+        <section>
+          <div class="intro">
+            <h2>Computed Properties</h2>
+            <p>It is more efficient to use a computed property most of the time as it only runs what it needs, when methods all run. For any complex logic, you should use a computed property.</p>
+          </div>
+          <div class="examples">
+            <vue-prism-editor code="<button v-on:click='a++'>Add to A</button>
+ <button v-on:click='b++'>Add to B</button>
+ <p>A - {{ a }}</p>
+ <p>B - {{ b }}</p>" language="js"></vue-prism-editor>
+            <button v-on:click="a++">Add to A</button>
+            <button v-on:click="b++">Add to B</button>
+            <p>A - {{ a }}</p>
+            <p>B - {{ b }}</p>
+
+            <vue-prism-editor code="<p>Age + A = {{ addToA }}</p>
+ <p>Age + B = {{ addToB }}</p>" language="js"></vue-prism-editor>
+            <p>Age + A = {{ addToA }}</p>
+            <p>Age + B = {{ addToB }}</p>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    a: 0,
+    b: 0
+  },
+  computed: {
+    addToA: function() {
+      // Return a age with a added to it
+      return this.a + this.age;
+    },
+    addToB: function() {
+      return this.b + this.age;
+    }
+  }
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Dynamic CSS -->
+        <section>
+          <div class="intro">
+            <h2>Dynamic CSS</h2>
+            <p>Dynamically add a class. <code>available = !available</code>, this means on click it will change the available to true and false</p>
+          </div>
+          <div class="examples">
+
+
+            <!--           <h3>Example 1</h3>
+          <vue-prism-editor code="// Clicking on it will change the class from true to false
+<div v-on:click='available = !available' v-bind:class=''{available:available}''>
+  <span>Peter</span>
+</div>" language="js"></vue-prism-editor>
+          <div v-on:click="available = !available" v-bind:class="{available:available}" class="dynamic-css">
+            <span>Peter</span>
+          </div> -->
+
+            <!--           <h3>Example 2</h3> -->
+            <vue-prism-editor code="<button v-on:click='nearby = !nearby'>Toggle nearby</button>
+ <button v-on:click='available = !available'>Toggle Available</button>" language="js"></vue-prism-editor>
+            <button v-on:click="nearby = !nearby">Toggle nearby</button>
+            <button v-on:click="available = !available">Toggle Available</button>
+
+            <vue-prism-editor code="<div v-bind:class='compClasses'>
+  <span>Peter</span>
+ </div>" language="js"></vue-prism-editor>
+            <div v-bind:class="compClasses" class="dynamic-css">
+              <span>Peter</span>
+            </div>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    available: false,
+    nearby: false
+  },
+  computed: {
+    compClasses: function() {
+      return {
+        available: this.available,
+        nearby: this.nearby
+      }
+    }
+  }
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Conditionals - v-if, v-show, v-else-if -->
+        <section>
+          <div class="intro">
+            <h2>Conditionals - <code>v-if</code> <code>v-show</code> <code>v-else-if</code></h2>
+            <!--           <p>The below buttons will toggle and the class will change whether it is true or false on click</p> -->
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="<button v-on:click='error = !error'>Toggle Error</button>
+ <button v-on:click='success = !success'>Toggle Success</button>
+                                  
+// If the error data is true, this will show. If it is not it is removed from the DOM
+ <p v-if='error'>There has been an error</p>
+                                  
+// It only checks this if the above is false
+<p v-else-if='success'>Yes, it worked</p>" language="js"></vue-prism-editor>
+
+            <button v-on:click="error = !error">Toggle Error</button>
+            <button v-on:click="success = !success">Toggle Success</button>
+
+            <p v-if="error">There has been an error</p>
+            <p v-else-if="success">Yes, it worked</p>
+
+
+            <vue-prism-editor code="// This is going to do a similar thing as the above, but instead of removing from the DOM, it just add's display: none.
+<p v-show='error2'>There has been an error</p>
+<p v-show='success2'>Yes, it worked</p>" language="js"></vue-prism-editor>
+
+            <button v-on:click="error2 = !error2">Toggle Error</button>
+            <button v-on:click="success2 = !success2">Toggle Success</button>
+
+            <p v-show="error2">There has been an error</p>
+            <p v-show="success2">Yes, it worked</p>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    error: false,
+    success: false,
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Looping through lists with v-for -->
+        <section>
+          <div class="intro">
+            <h2>Looping through lists with <code>v-for</code></h2>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="// The below loops through each character within the data
+ // property defined in the js called characters
+<ul>
+  <li v-for='character in characters'>{{ character }}</li>
+ </ul>" language="js"></vue-prism-editor>
+            <ul>
+              <li v-for="character in characters">{{ character }}</li>
+            </ul>
+
+            <vue-prism-editor code="// Pull array of objects into a list item.
+// To show the index you would add brackets around
+// the first item and add index to it
+<ul>
+  <li v-for=''(ninja, index) in ninjas'>{{ index }} .{{ ninja.name }} - {{ ninja.age }}</li>
+ </ul>" language="js"></vue-prism-editor>
+            <ul>
+              <li v-for="(ninja, index) in ninjas">{{ index }} .{{ ninja.name }} - {{ ninja.age }}</li>
+            </ul>
+
+            <vue-prism-editor code="// You can see that each of these below is in a new div. So lots of code
+<div v-for='(ninja, index) in ninjas'>
+  <h3>{{ index }} .{{ ninja.name }}, {{ninja.age}} years old</h3>
+ </div>" language="js"></vue-prism-editor>
+            <div v-for="(ninja, index) in ninjas">
+              <h3>{{ index }} .{{ ninja.name }} , {{ ninja.age }} years old</h3>
+            </div>
+
+            <vue-prism-editor code="// To prevent a new tag being made, you can change it to be a template
+<template>
+  <h3>{{ index }} .{{ ninja.name }}, {{ninja.age}} years old</h3>
+ </template>" language="js"></vue-prism-editor>
+            <template v-for="(ninja, index) in ninjas">
+              <h3>{{ index }} .{{ ninja.name }} , {{ ninja.age }} years old</h3>
+            </template>
+
+
+            <vue-prism-editor code="// First cycling through this array. Then getting the value
+// and the key from each object.
+<template v-for='ninja in ninjas'>
+  <div v-for='(val,key) in ninja'>
+    <p>{{ key }} - {{val}}</p>
+  </div>
+ </template>" language="js"></vue-prism-editor>
+
+            <template v-for="ninja in ninjas">
+              <div v-for="(val,key) in ninja">
+                <p>{{ key }} - {{val}}</p>
+              </div>
+            </template>
+
+          </div>
+
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    // Array
+    characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+    // Array of Objects
+    ninjas: [
+      { name: 'Ryu', age: 25 },
+      { name: 'Yoshi', age: 35 },
+      { name: 'Ken', age: 55 }
+    ]
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- PunchBag Game -->
+        <section>
+          <div class="intro">
+            <h2>PunchBag Game</h2>
+          </div>
+          <div class="examples">
+
+            <vue-prism-editor code="// apply burst bag when ended is true
+<div class='bag' v-bind:class='{ burst: ended }'></div>
+          
+<div class='bag-health'>
+  <div v-bind:style='{width: health + %}'></div>
+</div>
+          
+<div class='controls'>
+// Set to v-show and will only hide when ended is true
+  <button v-on:click='punch' v-show='!ended'>Punch</button>
+  <button v-on:click='restart'>Restart</button>
+</div>" language="js"></vue-prism-editor>
+
+            <!-- apply burst bag when ended is true -->
+            <div class="bag" v-bind:class="{ burst: ended }"></div>
+
+            <div class="bag-health">
+              <div v-bind:style="{width: health + '%'}"></div>
+            </div>
+
+            <div class="controls">
+              <!-- This shows whilst ended is false -->
+              <button v-on:click="punch" v-show="!ended">Punch</button>
+              <button v-on:click="restart">Restart</button>
+            </div>
+
+
+
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    health: 100,
+    ended: false
+  },
+  methods: {
+    punch: function() {
+      this.health -= 10; // Takes off 10
+      if (this.health <= 0) {
+        this.ended = true;
+      }
+    },
+    restart: function() {
+      this.health = 100; // Back to 100%;
+      this.ended = false // Resets back to false
+    }
+  }
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!-- Refs -->
+        <section>
+          <div class="intro">
+            <h2>Refs</h2>
+            <p>Grab an element and accces data about that element.</p>
+          </div>
+          <div class="examples">
+            <p>Find out information once input has some value. To do this, use <code>ref=""</code></p>
+
+            <vue-prism-editor code="<input type='text' ref='input'>
+<button v-on:click='readRefs'>Submit</button>
+<p>Your fav food: {{output}}</p>" language="js"></vue-prism-editor>
+
+            <label for="">What is your fav food?</label>
+            <input type="text" ref="input">
+            <button v-on:click="readRefs">Submit</button>
+            <p>Your fav food: {{output}}</p>
+
+            <hr>
+
+            <h3>Find the innerText of the div</h3>
+            <vue-prism-editor code="<div ref='test'>Champions 19 Times</div>" language="js"></vue-prism-editor>
+            <div ref="test">Champions 19 Times</div>
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+Vue.component('vue-prism-editor', VuePrismEditor)
+new Vue({
+  el: "#vue-app",
+  data: {
+    output: 'Your fav food'
+  },
+  methods: {
+    readRefs: function() {
+      // Log all the refs on the page when it is ran
+      console.log(this.$refs);
+      
+      // Update the ouput data with the value
+      this.output = this.$refs.input.value;
+      
+      // Find the refs for the div.
+      console.log(this.$refs.test.innerText);
+    }
+  }
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!--  -->
+        <section>
+          <div class="intro">
+            <h2></h2>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="" language="js"></vue-prism-editor>
+
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    // Array
+    characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+    // Array of Objects
+    ninjas: [
+      { name: 'Ryu', age: 25 },
+      { name: 'Yoshi', age: 35 },
+      { name: 'Ken', age: 55 }
+    ]
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!--  -->
+        <section>
+          <div class="intro">
+            <h2></h2>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="" language="js"></vue-prism-editor>
+
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    // Array
+    characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+    // Array of Objects
+    ninjas: [
+      { name: 'Ryu', age: 25 },
+      { name: 'Yoshi', age: 35 },
+      { name: 'Ken', age: 55 }
+    ]
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+
+        <!--  -->
+        <section>
+          <div class="intro">
+            <h2></h2>
+          </div>
+          <div class="examples">
+
+
+            <vue-prism-editor code="" language="js"></vue-prism-editor>
+
+          </div>
+          <div class="code">
+            <pre class="language-markup">
+        <code class="language-js">
+new Vue({
+  el: "#vue-app",
+  data: {
+    // Array
+    characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+    // Array of Objects
+    ninjas: [
+      { name: 'Ryu', age: 25 },
+      { name: 'Yoshi', age: 35 },
+      { name: 'Ken', age: 55 }
+    ]
+  },
+});
+        </code></pre>
+          </div>
+        </section>
+      </div>
+      <!-- Multiple Vue Instances -->
+      <section>
+        <div class="intro">
+          <h2>Multiple Vue Instances & Re-usable Components</h2>
+          <p>To add multiple Vue instances to the page, you just simply save each one to a variable, then change the ID for each. You use a variable for each instance so you can access them from within other apps.</p>
+
+          <p>It is better to try and put into one or two instances rather than lots bundled together.</p>
+
+          <p>To add in a component you just simply use the tag which matches the name assigned to it in js.</p>
+        </div>
+
+        <div class="examples">
+
+          <div id="vue-app-one">
+
+            <vue-prism-editor code="<div id='vue-app-one'>
+  {{title}}
+  <greeting></greeting>
+</div>" language="js"></vue-prism-editor>
+
+            <h3>{{title}}</h3>
+            <greeting></greeting>
+          </div>
+          <div id="vue-app-two">
+
+            <vue-prism-editor code="<div id='vue-app-two'>
+  {{title}}
+  <greeting></greeting> 
+                                    
+  <button v-on:click='changeTitle'>Change App One Title</button>
+</div>" language="js"></vue-prism-editor>
+
+            <h3>{{title}}</h3>
+            <greeting></greeting>
+            <button v-on:click="changeTitle">Change App One Title</button>
+          </div>
+
+
+        </div>
+        <div class="code">
+          <pre class="language-markup">
+        <code class="language-js">
+// Making a re-usable component. 1st parameter is the name, 2nd is the output.
+Vue.component('greeting', {
+  
+  // Add a button to run the function when you hit the button
+  template: '&lt;p&gt;Hey there, I am {{name}}. &lt;button v-on:click=&quot;changeName&quot;&gt;Change Name&lt;/button&gt;&lt;/p&gt;',
+  
+  // Data MUST be a function so when used on multiple instances, when you change
+  // the name, it will only change on that one and not all of them
+  data: function() {
+    return {
+      name: 'Mo Salah'
+    }
+  },
+  methods: {
+    changeName: function(){
+      this.name = 'Sadio Mane';
+    }
+  }
+});
+
+var one = new Vue({
+  el: '#vue-app-one',
+  data: {
+    title: 'Vue App One'
+  }
+});
+
+var two = new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: 'Vue App Two'
+  },
+  methods: {
+    changeTitle: function(){
+      one.title = 'This has been changed';
+    }
+  }
+});
+
+// Changing outside of the vue will mean it automatically does this.
+// two.title = 'Changed from outside';
+        </code></pre>
+        </div>
+      </section>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

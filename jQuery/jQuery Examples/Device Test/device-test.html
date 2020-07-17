@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A custom super responsive and bootstrap friendly version of bxSlider v4.1.2">
+    <meta name="author" content="rahisify.com">
+    <title>Browser Test</title>
+
+    <style type="text/css">
+
+
+/* Normal Screens */
+
+.no-touch-device {
+   background: pink;
+}
+
+.no-touch-device .touch {
+    display: none;
+    visibility: hidden;
+   }
+
+
+/* Touch Screens */
+
+.prel-touch-device {
+  background: yellow;
+}
+
+.prel-touch-device .touch {
+  display: block;
+  visibility: visible;
+}
+
+
+
+.touch-device {
+  background: orange;
+}
+
+/* Hide what i do not want to see on mobile */
+
+.touch-device .desktop,
+.prel-touch-device .desktop {
+  display: none;
+  visibility: hidden;
+}
+
+
+    </style>
+
+  </head>
+
+  <body>
+  
+
+    
+
+<p class="desktop">This is a desktop view</p>
+
+<p class="touch">This is mobile view and ipad view</p>
+
+<p class="touch">This is mobile view and ipad view</p>
+  
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Vendor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+(function() {
+    //I use jQuery for simplicity
+    var preliminaryTouch = false;
+    //Assume all devices are no touch device
+    $('html').addClass('no-touch-device');
+    //Check the user agent string
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        preliminaryTouch = true;
+    }
+
+    if( preliminaryTouch ) {
+        //Do something for touch devices
+       $('html').addClass('prel-touch-device');
+    }
+})();
+
+$(document).on('touchstart', function() {
+    $('html').removeClass('no-touch-device prel-touch-device').addClass('touch-device');
+});
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+  .nav-search {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .nav-search__icon {
+    display: inline-block;
+    background: red;
+    padding: 20px;
+
+  }
+
+  .nav-search__btn {
+      display: none;
+      background: green;
+      border: none;
+      padding: 9px 20px;
+  }
+
+  .nav-search__field {
+      position: absolute;
+      background: blue;
+      right: 100%;
+      top: 0;
+      height: 40px!important;
+      border: none;
+      padding: 4px;
+      width: 230px!important;
+  }
+  </style>
+
+  <script type="text/javascript">
+   // Search Icon
+
+$(function () {
+  $('.nav-search__icon').click(function (e) {
+      e.stopPropagation();
+      $('.nav-search__field').stop().toggle('slide', {
+          direction: 'right'
+      }, 450);
+
+      $(".nav-search__field").focus(function(){
+        $('.nav-search__btn').show();
+        $('.nav-search__icon').hide();
+      });
+
+      $('input').focusout(function(){
+        $(this).stop().toggle('slide', {
+            direction: 'right'}, 450);
+      });
+      
+  });
+
+  /* This hides the search panel when clicking off the element */
+
+ // $('main').click(function(){
+     //  $('.nav-search__field, .nav-search__btn').hide();
+   //    $('.nav-search__icon').show();
+ // });
+
+
+});
+  </script>
+</head>
+<body>
+
+<div class="nav-search">
+        <form class="nav-search__form" method="get" action="/search">
+            <a class="nav-search__icon" href="#nogo"></a>
+            <input class="nav-search__field" type="search" placeholder="Search" style="display: none;">
+            <input class="nav-search__btn" type="submit" value="">
+        </form>
+      </div>
+
+
+</body>
+</html>

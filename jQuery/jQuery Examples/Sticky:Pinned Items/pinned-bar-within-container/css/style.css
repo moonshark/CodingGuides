@@ -1,0 +1,51 @@
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  font-family: lato;
+}
+
+.content {
+  font-family: lato;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.content__left {
+  float: left;
+  width: 65%;
+}
+.content__sidebar {
+  width: 30%;
+  float: right;
+}
+.content__sidebar ol {
+  padding: 0;
+  background: rgba(0, 168, 225, 0.05);
+  border: 1px solid rgba(0, 168, 225, 0.5);
+  padding: 20px;
+}
+.content__sidebar a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.content:before {
+  content: '';
+  display: table;
+}
+
+.content:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.at_bottom {
+  position: absolute;
+  top: auto;
+  bottom: 0px;
+}

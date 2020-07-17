@@ -1,0 +1,27 @@
+
+/**** Demos ****/
+
+#post-area {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+#post-area .post  {
+  width:32%;
+  background:#ececec;
+   position:relative;
+   margin-bottom: 15px;
+   margin-left: 15px;
+ }
+
+
+/**** Corner stamp ****/
+
+.corner-stamp {
+  height: 340px;
+  width: 32%;
+  float: right;
+  background: red;
+  margin-bottom: 15px;
+}
+

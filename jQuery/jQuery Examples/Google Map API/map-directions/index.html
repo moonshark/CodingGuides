@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+
+<meta name="robots" content="noindex, nofollow"><!-- REMOVE THIS LINE FOR GO LIVE -->
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<style>
+	.location {
+	    position: relative;
+	}
+
+	.location>.inner {
+    position: relative;
+}
+
+	.location__directions {
+	    position: absolute;
+	    left: 1.25rem;
+	    bottom: 2.5rem;
+	    margin: 0;
+	    background: #fff;
+    		width: 220px;
+        box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.3);
+	}
+
+	.location__directions .starting-point {
+    background: #EEEDEE;
+    padding: 1.25rem 0.9375rem;
+}
+
+.location__directions .starting-point p {
+    margin: 0;
+    font-weight: 700;
+    color: #113274;
+    background: url("../images/location-pin.png") no-repeat left top;
+    padding-left: 25px;
+    font-size: 16px;
+}
+
+.location__directions .starting-point p a {
+	display: block;
+    font-size: 11px;
+    font-size: 0.6875rem;
+    color: #626262;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.location__directions .addresses p {
+    position: relative;
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #626262;
+    line-height: 17px;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    background: url("../images/directions-dot.png") repeat-y left 20px;
+}
+
+.location__directions .addresses p:before {
+    position: absolute;
+    left: -3px;
+    top: 3px;
+    background: #fff;
+    content: "";
+    width: 11px;
+    height: 11px;
+    border: 3px solid #113274;
+    border-radius: 50%;
+}
+
+.location__directions .addresses p:last-child {
+    padding-bottom: 0;
+    background: none;
+}
+
+.location__directions .addresses p:last-child:before {
+    border-color: #E61843;
+}
+
+.location__directions .distance {
+    background: #EEEDEE;
+    padding: 0.9375rem;
+    text-align: center;
+}
+
+.location__directions .distance p {
+    margin: 0.625rem 0 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.location__directions .distance .btn {
+    width: 100%;
+    margin: 0.9375rem 0;
+        font-size: 16px;
+    font-size: 1rem;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.location__directions .distance__view-map {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-decoration: underline;
+}
+
+.info__box {
+	background: white;
+}
+
+</style>
+</head>
+
+<body>
+		
+<!-- On the homepage ONLY the header is slightly deeper, please
+add the class below for this to take the styling
+<header class="header header--home"> -->
+
+<section class="location">
+    <div id="location__map"
+         data-latitude="50.894933" 
+         data-longitude="-1.398927" 
+         data-location-description="Some description about the location" 
+         data-location-name="The location name">
+        <div id="google-map" style="height:500px; width:100%;">
+        </div>
+    </div>
+    <div class="inner">
+        <div id="travel-result" class="location__directions" style="display:none;">
+            <div class="starting-point">
+                <p><span id="start-location"></span><br /><a id="change-location" href="#" title="Change your location">Change your location</a></p>
+                <form id="change-location-form" class="form form--inline" style="display:none;">
+                    <input id="map-postcode" type="text" tabindex="1" placeholder="Postcode or town" />
+                    <a id="search" href="#" class="btn btn--outline">Search</a>
+                </form>
+            </div>
+            <div id="results" style="display:none;">
+                <div class="addresses">
+                    <p id="directions-from"></p>
+                    <p id="directions-to"></p>
+                </div>
+                <div class="distance">
+                    <i class="fa fa-car"></i>
+                    <p>
+                        <strong id="travel-time"></strong><br />
+                        <span id="distance-mileage"></span>
+                    </p>
+                    <a class="btn btn--outline" href="#">Share</a>
+                    <a class="distance__view-map" href="#">View in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add jQuery library -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry"></script>
+<script src="js/infobox.js"></script>
+<script src="js/maps-directions.js"></script>
+
+<script>
+	
+</script>
+</body>
+</html>

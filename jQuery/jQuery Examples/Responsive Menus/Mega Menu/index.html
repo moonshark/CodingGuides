@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tabs</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+  <style>
+
+  .cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+  .navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .navigation li {
+    float: left;
+    list-style-type: none;
+  }
+
+  .navigation li a {
+    display: block;
+    padding: 10px 10px 50px;
+  }
+
+  .mega-menu {
+    display: none;
+    background: red;
+    height: 400px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+  }
+
+  @media only screen and (max-width : 767px) {
+  .mega-menu {
+    display: none!important;
+  }
+}
+
+  </style>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+      $('.link').hover(
+      function () {
+          var tab = $(this).data("tabid");
+
+          $('.navigation .link').removeClass('link--active');
+          $(this).addClass('link--active');
+          $(".mega-menu > div").stop().hide();
+
+          $(".mega-menu").show();
+          $(tab).fadeIn(100);
+      });
+ 
+    $(".link, .mega-menu").click(function(e)
+    {
+        e.stopPropagation(); // stop the click function below being called if we click in the mega menu or a link
+    });
+
+
+    $(".link, .mega-menu").mouseover(function (e) {
+        e.stopPropagation(); // stop the click function below being called if we click in the mega menu or a link
+    });
+
+    $('.mega-menu').mouseleave(function()
+      { 
+        $('.mega-menu').hide();
+        $('.navigation .link').removeClass('link--active');
+      });
+
+    $("header").mouseover(function ()
+    {
+        $(".mega-menu").hide(); // hide the mega menu if we click on the body
+        $('.navigation .link').removeClass('link--active');
+});
+
+    // This hides the mega menu when clicking away
+
+    $('html').on('touchstart', function(e) {
+        $('.mega-menu').hide();
+        $('.navigation .link').removeClass('link--active');
+    })
+    $(".mega-menu").on('touchstart',function(e) {
+        e.stopPropagation();
+    });
+
+});
+
+
+
+  </script>
+
+</head>
+<body>
+
+<nav class="navigation cf" role="navigation">
+   <ul class="cf">
+      <li><a href="/" data-tabid="#tab1" class="link">Menu Link</a>
+      </li>
+      <li><a href="/" data-tabid="#tab2" class="link">Menu Link</a></li>
+      <li><a href="/" data-tabid="#tab3" class="link">Menu Link</a></li>
+   </ul>
+</nav>
+
+
+<div class="mega-menu">
+
+  <div id="tab1" class="inner">
+      Mega Menu Content
+  </div>
+
+  <div id="tab2" class="inner">
+      Mega Menu Content
+  </div>
+
+  <div id="tab3" class="inner">
+      Mega Menu Content
+  </div>
+
+</div>
+
+</body>
+</html>

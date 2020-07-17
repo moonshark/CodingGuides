@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    
+    <style>
+
+        .slideup, .slidedown {
+            height: 0;            
+            overflow-y: hidden;
+            -webkit-transition: height 0.8s ease-in-out;
+            -moz-transition: height 0.8s ease-in-out;
+            -o-transition: height 0.8s ease-in-out;
+            transition:height 0.8s ease-in-out;
+        }
+        .slidedown {            
+            height: 150px ;                    
+        }    
+    </style>
+  </head>
+
+  <body>
+
+      <button id="Trigger">Trigger Slideup/SlideDown</button>
+
+          
+            <nav class="navigation slideup" role="navigation">
+               <ul>
+                    <li><a href="#nogo">Live flights</a></li>
+                    <li><a href="#nogo">To &amp; From</a></li>
+                    <li><a href="#nogo">At the Airport</a></li>
+                    <li><a href="#nogo">Shopping</a></li>
+                    <li><a href="#nogo">Destinations</a></li>
+               </ul>
+            </nav>
+
+
+
+    <script data-require="jquery@2.0.3" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+        
+        $("#Trigger").click(function () {
+          $(".navigation").toggleClass("slidedown slideup");
+          //  if ($("#Slider").hasClass("slideup"))
+          //    $("#Slider").removeClass("slideup").addClass("slidedown");
+          //  else
+          //      $("#Slider").removeClass("slidedown").addClass("slideup");
+        });
+    </script>
+  </body>
+</html>

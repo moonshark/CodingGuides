@@ -1,0 +1,67 @@
+.masthead {
+  width: 100%;
+  background: #162449;
+  height: 50px;
+}
+
+.masthead nav {
+  display: none;
+}
+
+.masthead ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .masthead nav {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+
+.masthead nav li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2rem;
+  height: 50px;
+  line-height: 50px;
+}
+
+
+.masthead nav li:hover .dropdown,
+.masthead nav li .hover .dropdown {
+  display: block;
+}
+
+
+.masthead nav li a {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.masthead .dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: -2rem;
+  background: #162449;
+}
+
+.masthead .dropdown li {
+  display: block;
+  margin: 0;
+  height: 3.5rem;
+  line-height: 3.5rem;
+}
+
+.masthead .dropdown li a {
+  text-transform: none;
+  padding: 0;
+  color: #fff;
+}

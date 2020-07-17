@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>js popup box</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script>
+(function () {
+
+    $.fn.popup = function (options) {
+
+        this.each(function (i, item) {
+
+            var gui = $(item);
+
+            if (options == "show") {
+
+                show(gui)
+            
+            } else if (options == "hide") {
+
+                hide(gui);
+            
+            } else {
+
+                init(gui);
+            }
+        });
+    }
+
+    function init(gui) {
+        $(gui).add(gui.find('[rel="close"]')).on('click touchstart', function(e) {
+            hide(gui);
+            e.preventDefault();
+        });
+
+        gui.find('.popup__block').on('click touchstart', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    function show(gui) {
+        $(".popup").hide();
+
+        gui.show();
+    }
+
+    function hide(gui) {
+        gui.hide();
+    }
+
+
+    function initUi() {
+    initPopups();
+  }
+
+
+    function initPopups() {
+
+    $('.popup').popup();
+
+    $('a[rel="popup"]').click(function () {
+      var a = $(this);
+      $(a.attr('href')).popup('show');
+    });
+  }
+
+  $(document).ready(function () {
+    initUi();
+  })
+
+}());
+
+</script>
+
+  <style>
+/*
+
+UNCOMMENT THIS TO GET SASS 
+
+  .popup {
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: rgba(200, 197, 197, 0.6);
+
+  &__block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-height: 80%;
+    padding: 40px;
+    border-right: 1px solid $border;
+    border-bottom: 1px solid $border;
+    text-align: center;
+    background: #fff;
+    overflow-y: auto; 
+    @include transform(translate(-50%, -50%));
+
+    @include mq(tablet) {
+      width: 80%;
+      text-align: left;
+    }
+
+    @include mq(wide) {
+      width: 50%;
+    }
+
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: $grey;
+    cursor: pointer;
+
+    &:after {
+      content: 'x';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-indent: 0;
+      @include font-size(28);
+      @include transform(translate(-50%, -50%));
+    }
+  }
+}
+*/
+
+
+  .popup {
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: rgba(200, 197, 197, 0.6);
+}
+
+  .popup__block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 80%;
+    padding: 40px;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+    text-align: center;
+    background: #fff;
+    overflow-y: auto; 
+        -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+      width: 50%;
+
+  }
+
+  .popup__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: black;
+    cursor: pointer;
+}
+
+.popup__close:after {
+  content: 'x';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-indent: 0;
+  font-size: 28px;
+      -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+
+  </style>
+
+</head>
+<body>
+
+<a href="#find-trip" rel="popup">Find<br />My trip</a>
+
+
+<div id="find-trip" class="popup">
+    <div class="popup__block">
+      <h4>Find your trip</h4>
+      
+      content here
+
+      <a rel="close" class="popup__close" href="#">Close</a>
+    </div><!-- /.popup__block -->
+  </div><!-- /.popup -->
+
+
+
+
+</body>
+</html>

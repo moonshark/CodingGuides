@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tabs</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+  .cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+body {
+  position: relative;
+  left: 0;
+  -moz-transition: left 500ms ease-in-out;
+  -o-transition: left 500ms ease-in-out;
+  -webkit-transition: left 500ms ease-in-out;
+  -ms-transition: left 500ms ease-in-out;
+  transition: left 500ms ease-in-out;
+}
+
+.slide-body {
+  left: -250px;
+}
+
+.main-nav {
+  position: fixed;
+  right: -250px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 10;
+
+  width: 250px;
+  display: block;
+  background: red;
+  padding-top: 50px;
+    -moz-transition: right 500ms ease-in-out;
+  -o-transition: right 500ms ease-in-out;
+  -webkit-transition: right 500ms ease-in-out;
+  -ms-transition: right 500ms ease-in-out;
+  transition: right 500ms ease-in-out;
+}
+
+.main-nav.expand-menu {
+    right: 0;
+  }
+
+.menu-btn {
+  background: black;
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: right;
+}
+
+/*.main-header.slide-nav  {
+  right: 250px;
+  left: -250px;
+}*/
+
+
+@media (min-width: 767px) {
+  .main-nav {
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}
+
+  </style>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $('.menu-btn').click(function() {
+          $('.main-nav').toggleClass('expand-menu');
+          $('body').toggleClass('slide-body');
+        //  $('.main-header').toggleClass('slide-nav');
+        e.stopPropagation();  
+      });
+
+
+    $('body').on('touchstart', function () {
+
+        //Check if menu was expanded
+        if ($('body').hasClass('slide-body')) {
+
+          if ($('.main-nav').hasClass('expand-menu')) {
+
+            $('.main-nav').toggleClass('expand-menu');
+            $('body').toggleClass('slide-body');
+           // $('.main-header__top').toggleClass('slide-nav');
+
+          }
+
+        }
+
+    });
+
+
+    $('nav').on('touchstart', function (e) {
+        e.stopPropagation();
+    });
+
+  });
+
+  </script>
+
+</head>
+<body>
+
+<div class="main-header">
+    <div class="inner cf">
+        <div>
+            Logo Here
+        </div>
+
+        <a class="menu-btn"></a>
+    </div>
+</div>
+
+<nav class="main-nav" role="navigation">
+    <div class="inner cf">
+        <ul>
+            <li class="active"><a href="#nogo">Home</a></li>
+            <li><a href="#nogo">Kitchens</a></li>
+            <li><a href="#nogo">Why Tom Howley?</a></li>
+            <li><a href="#nogo">Showrooms</a></li>
+            <li><a href="#nogo">About us</a></li>
+        </ul>
+    </div><!--/.inner -->
+</nav>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+</body>
+</html>

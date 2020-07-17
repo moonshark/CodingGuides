@@ -1,0 +1,103 @@
+.panel-blue,
+.flex-control-paging li a.flex-active,
+.panel-how-it-works .flex-control-paging li a:hover,
+.panel-how-it-works .flex-control-paging li a.flex-active,
+.panel-register .reg-wrap {
+	background:#0397d6;
+	background: -moz-radial-gradient(center, ellipse cover,  #0397d6 0%, #0481b6 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#0397d6), color-stop(100%,#0481b6));
+	background: -webkit-radial-gradient(center, ellipse cover,  #0397d6 0%,#0481b6 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #0397d6 0%,#0481b6 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #0397d6 0%,#0481b6 100%);
+	background: radial-gradient(ellipse at center,  #0397d6 0%,#0481b6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0397d6', endColorstr='#0481b6',GradientType=1 );
+}
+.panel-overview.panel-blue {
+	background:url(../images/blue/panel-2.jpg) no-repeat center center;
+	background-size: cover;
+}
+.btn,
+.panel-news .btn {
+	background-color: #0397d6;
+	color: #fff;
+}
+.btn:hover,
+.btn:focus,
+.panel-news .btn:hover,
+.panel-news .btn:focus {
+	background-color: #026995;
+}
+.panel-news article time {
+	color: #026995;
+}
+.panel-blue * {
+	color:#fff;
+}
+.panel-how-it-works .flexslider h3 {
+	border-bottom-color: #026995;
+}
+.panel-faq .faq-list li, 
+.panel-faq .faq-list a {
+	color:#2a2a2a;
+}
+.panel-news hgroup {
+	border-bottom-color: #fff;
+}
+.panel-overview .cta,
+.panel-news article .cta,
+.btn,
+.flex-direction-nav a,
+.panel-pricing .pricing .seperator,
+#page-header .menu-toggle,
+#page-header .reg-toggle {
+	background-image:url(../images/blue/sprite.png);
+}
+.panel-how-it-works #tabs .tab-airport a,
+.panel-how-it-works #tabs .ribbon-left,
+.panel-how-it-works #tabs li.tab-airport.active:before {
+	background-color:#fff;
+	color:#026995;
+}
+.panel-how-it-works #tabs .tab-hotel a,
+.panel-how-it-works #tabs .ribbon-right,
+.panel-how-it-works #tabs li.tab-hotel.active:before {
+	background-color:#026995;
+	color:#fff;
+}
+.panel-how-it-works #tabs li.active a:before {
+	background-image:url(../images/blue/arrow.png);
+}
+
+
+
+
+.flex-control-nav {
+	bottom: -80px;
+}
+/*.panel-how-it-works #tabs li.tab-hotel.active a:before {
+	background-image:url(../images/blue/arrow-rev.png);
+}*/
+
+
+/* 2x */
+@media only screen and (-webkit-min-device-pixel-ratio:1.5), 
+only screen and (-o-min-device-pixel-ratio:3/2), 
+only screen and (min-device-pixel-ratio:1.5) {
+	.panel-overview .cta,
+	.panel-news article .cta,
+	.btn,
+	.flex-direction-nav a,
+	.panel-pricing .pricing .seperator,
+	#page-header .menu-toggle,
+	#page-header .reg-toggle {
+		background-size:80px 555px;
+		background-image:url(../images/blue/2x/sprite.png);
+	}
+
+	.panel-how-it-works #tabs li.active a:before {
+		background-image:url(../images/2x/blue/arrow.png);
+	}
+	/*.panel-how-it-works #tabs li.tab-hotel.active a:before {
+		background-image:url(../images/2x/blue/arrow-rev.png);
+	}*/
+}

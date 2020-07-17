@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+	<title>bxSlider</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+  <!-- Demo CSS -->
+  <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="screen" />
+
+
+</head>
+<body>
+
+
+<section class="slider">
+  <ul class="bxslider">
+    <li class="lazy" data-original="img/slider-1.jpg" style="background-image: url('img/spacer.gif');">
+	    content here
+		</li>
+
+    <li class="lazy" data-original="img/slider-2.jpg" style="background-image: url('img/spacer.gif');">
+      content here
+    </li>
+
+    <li class="lazy" data-original="img/slider-3.jpg" style="background-image: url('img/spacer.gif');">
+      content here
+    </li>
+
+    <li class="lazy" data-original="img/slider-4.jpg" style="background-image: url('img/spacer.gif');">
+      content here
+    </li>
+
+    <li class="lazy" data-original="img/slider-5.jpg" style="background-image: url('img/spacer.gif');">
+      content here
+    </li>
+  </ul>
+</section>
+
+
+  <!-- jQuery
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <!-- bxSlider Javascript file -->
+  <script src="js/jquery.bxslider.min.js"></script>
+
+  <!-- LazyLoad Javascript file -->
+  <script src="js/lazy-load.js"></script>
+
+  <script>
+  $(function() {
+     $(".lazy").lazyload({
+       effect : "fadeIn"
+     });
+  });
+  </script>
+
+  <script>
+
+  $(document).ready(function(){
+    $(".bxslider").bxSlider( {
+        infiniteLoop: true,
+        auto: true,
+        pause: 6000,
+
+       onSlideAfter: function(){
+         // do mind-blowing JS stuff here
+         setTimeout(function() { $(window).trigger("scroll"); }, 100);
+       }
+    });
+  });
+
+  </script>
+</body>
+</html>

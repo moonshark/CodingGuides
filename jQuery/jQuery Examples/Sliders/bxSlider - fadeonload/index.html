@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+	<title>bxSlider</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+  <!-- Demo CSS -->
+  <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="screen" />
+
+
+</head>
+<body>
+
+<div class="hero-container">
+<div class="bxslider__wrapper">
+  <ul class="bxslider">
+    <li>
+	    <img src="http://nuwildroots.files.wordpress.com/2010/06/bachelor-button.jpg" />
+		</li>
+		<li>
+	    <img src="http://nuwildroots.files.wordpress.com/2010/06/bachelor-button.jpg" />
+		</li>
+		<li>
+	    <img src="http://nuwildroots.files.wordpress.com/2010/06/bachelor-button.jpg" />
+		</li>
+  </ul>
+</div>
+</div>
+
+content
+
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!-- bxSlider Javascript file -->
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider({
+        mode: 'fade',
+        infiniteLoop: true,
+        controls: false,
+        hideControlOnEnd: true,
+      });
+
+      $(".bxslider__wrapper").fadeIn(3000);
+    });
+  </script>
+</body>
+</html>

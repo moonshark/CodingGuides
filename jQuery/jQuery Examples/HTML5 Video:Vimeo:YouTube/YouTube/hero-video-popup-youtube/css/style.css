@@ -1,0 +1,70 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #ccc;
+}
+.hero__overlay {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.no-background-blend-mode .hero__overlay {
+  background: rgba(27, 82, 83, 0.6) !important;
+}
+.hero__overlay {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 300ms linear;
+  opacity: 0;
+}
+.hero__overlay--active {
+  opacity: 1;
+}
+.hero__modal {
+  width: 90%;
+  margin: 30px auto 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero__close {
+  position: absolute;
+  z-index: 15;
+  right: 0;
+  bottom: 100%;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em;
+}
+.hero__close:before, .hero__close:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  margin-left: -15px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+.hero__close:after {
+  transform: rotate(-45deg);
+}
+.hero a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: black;
+}

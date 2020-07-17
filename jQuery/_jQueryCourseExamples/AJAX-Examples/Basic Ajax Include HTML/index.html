@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  var xhr = new XMLHttpRequest(); // step 1
+ // step 2
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      document.getElementById('ajax').innerHTML = xhr.responseText;
+    }
+  };
+  // step 3
+  xhr.open('GET', 'sidebar.html'); // includes the sidebar.html into the page
+
+  function sendAJAX() {
+    xhr.send(); // step 4, this is activated by the click
+    document.getElementById('load').style.display = 'none'; // hide the button once it is visible
+  }
+
+
+  function sendAJAXAlt() {
+    $('#ajaxAlt').load('sidebar.html');
+  }
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+             <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+          </div>
+          <ul id="ajax">
+          </ul>
+        </div>
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX using only jQuery</h1>
+             <button id="load" onclick="sendAJAXAlt()" class="button">Bring it using jQuery!</button>
+          </div>
+          <ul id="ajaxAlt">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

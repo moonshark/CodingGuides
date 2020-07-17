@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hero Video Popup - YouTube</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="hero">
+  <a class="hero__play" href="#nogo">Play Video</a>
+</div>
+
+<!-- The following is only needed when the video is in the html
+	otherwise the who .hero__overlay html can be removed -->
+<div class="hero__overlay">
+	<div class="hero__modal">
+		<a class="hero__close" href="#">Close</a>
+		
+		<iframe allowscriptaccess="always" id="hero-video" class="hero__player" src="https://www.youtube.com/embed/1NSA8ycGfKg?enablejsapi=1&html5=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    
+	</div><!-- /.hero__modal -->		
+</div><!-- /.hero__overlay -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

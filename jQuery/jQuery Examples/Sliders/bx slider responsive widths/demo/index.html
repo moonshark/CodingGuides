@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A custom super responsive and bootstrap friendly version of bxSlider v4.1.2">
+    <meta name="author" content="rahisify.com">
+    <title>BxSlider Rahisified - A custom super responsive and bootstrap friendly version of bxSlider v4.1.2</title>
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+  </head>
+
+  <body>
+  
+
+    
+ <!-- BxSlider -->
+      <ul class="bxslider">
+        <li><img src="images/pic1.jpg" /></li>
+        <li><img src="images/pic2.jpg" /></li>
+        <li><img src="images/pic3.jpg" /></li>
+        <li><img src="images/pic4.jpg" /></li>
+        <li><img src="images/pic5.jpg" /></li>
+        <li><img src="images/pic6.jpg" /></li>
+      </ul>
+      <!-- /BxSlider -->
+
+  
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Vendor -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+  <script src="js/jquery.bxslider-rahisified.js"></script>
+<script>
+  $(window).load(function() {
+ 
+    $('.bxslider').bxSlider({
+        slideMargin: 5,
+        pager: false,
+        adaptiveHeight: true,
+        autoReload: true,
+        pager: true,
+        controls:true,
+        breaks: [{screen:0, slides:1, pager:false},{screen:460, slides:2},{screen:768, slides:3}],
+        nextText: '<span class="icon" aria-hidden="true"></span>',
+        prevText: '<span class="icon" aria-hidden="true"></span>',
+        onSliderLoad: function(){
+            $(".bxslider").css("visibility", "visible");
+          }
+      });
+ 
+ 
+}); // end of window.load 
+</script>
+  </body>
+</html>

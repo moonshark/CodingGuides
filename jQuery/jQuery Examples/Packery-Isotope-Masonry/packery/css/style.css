@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.packery {
+  max-width: 1600px;
+}
+
+/* clearfix */
+.packery:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+/* width used for gutter */
+.gutter-sizer {
+  width: 2%;
+}
+
+.item {
+  width: 23.5%;
+  height: 200px;
+  float: left;
+  background: #C09;
+}
+
+.item.w2 { width:   49%; background: #9C0; height: 400px; }
+.item.w4 { width:  73%; background: #90C; height: 400px; }
+
+.stamp {
+  position: absolute;
+  width: 23.5%;
+  height: 300px;
+  background: red;
+  top:0;
+  right: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .stamp {
+    width: 100%;
+  }
+
+  .item.w2 {
+    width: 85%;
+    margin-left: 6%;
+  }
+
+  .item.w4 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .item {
+    width: 40%;
+    margin-left: 5%;
+  }
+}

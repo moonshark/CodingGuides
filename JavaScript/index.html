@@ -1,0 +1,3458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JavaScript Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex" />
+  <style>
+
+    .token.cdata, .token.comment, .token.doctype, .token.prolog {
+    color: #9db0c3;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    input {
+    padding: 10px;
+    width: 300px;
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    button{
+      border: none;
+      color: #f8f9fa;
+      background: #000;
+      padding: 5px 10px;
+      width: auto;
+      text-transform: uppercase;
+    }
+  section {
+    margin: 40px 0;
+    /* padding: 20px; */
+    /* border: 1px solid #ccc; */
+    /* background: #f8f9fa; */
+  }
+
+  h1 {
+    margin-bottom: 30px;
+     text-transform: uppercase;
+     font-weight: 300;
+  }
+
+  section h2 {
+    position: relative;
+        font-size: 17px;
+        margin-bottom: 30px;
+        /* text-transform: uppercase; */
+        font-weight: 600;
+        padding-bottom: 5px;
+        padding-left: 15px;
+  }
+
+  section h2 em {
+    font-size: 14px;
+    /* text-transform: none; */
+    font-weight: normal;
+  }
+
+   section h2::before {
+     content: "";
+     display: block;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     width: 3px;
+     background: #000;
+   }
+
+  /* section p {
+    padding: 5px;
+    background: #f8f9fa;
+  } */
+
+  section p.intro {
+    padding: 0;
+    background: none;
+  }
+
+  hr {
+    margin: 40px 0;
+    background: #f8f9fa;
+  }
+
+  :not(pre)>code[class*=language-],
+  pre[class*=language-] {
+    background: #f8f9fa;
+    padding: 0 15px;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .form {
+    margin: 30px;
+    padding: 20px 15px;
+  }
+
+  .form__row {
+    margin-bottom: 20px;
+  }
+
+  .form__row:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .form__row label {
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 140px;
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  .form__row input[type="submit"],
+    .form__row input[type="button"],
+     .form__row button {
+    margin-left: 160px;
+  }
+
+  .container {
+    padding: 40px 15px;
+  }
+
+  .accordion {
+    list-style: none;
+    padding: 0;
+  }
+
+  .accordion .inner {
+    /* padding-left: 1em; */
+    overflow: hidden;
+    display: none;
+  }
+
+  .accordion li {
+    margin: .5em 0;
+  }
+
+  .accordion li a.toggle {
+    width: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fefefe;
+    padding: 20px 15px;
+    transition: background .3s ease;
+    font-weight: 300;
+  }
+
+  .accordion li a.toggle:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+#myProgress {
+width: 100%;
+height: 20px;
+position: relative;
+border: 1px solid #ccc;
+margin-bottom: 20px;
+}
+
+#myBar {
+width: 10px;
+height: 100%;
+position: absolute;
+background-color: blue;
+}
+
+
+  </style>
+
+  
+
+
+</head>
+
+<body>
+
+  <!-- HTML Escape URL - https://www.freeformatter.com/html-escape.html -->
+
+  <div class="container">
+
+    <h1> JavaScript</h1>
+
+    <p>Using videos from Udemy - The Complete JavaScript Course and Udemy The Complete JavaScript Course Build a Real World Project.</p>
+
+    <ul class="accordion">
+      
+      <li>
+        <a class="toggle" href="javascript:void(0);">Basic Use of Variables and displaying them</a>
+        <div class="inner">
+          <section>
+            <h2>Declaring Variables - String, Boolean, Number, Undefined, NaN</h2>
+            <p>You can use use <code>var</code>, <code>let</code> or <code>const</code>. If using <code>const</code> then this cannot be changed.</p>
+            <pre><code class="language-js">
+// write value on to screen using variable
+let age = 37; // decimal
+let name = &quot;Chris&quot;; // string
+const dateOfBirth = 1981; // this is a constant
+
+// Declare Variables with no value just yet and declared as 'undefined'
+var job, isMarried;
+
+// To later declare a value, you can do it like this
+job = &quot;Web Designer&quot;;
+isMarried = true;
+
+// You can change values later on too
+age=&quot;38&quot;;
+
+document.write(&quot;&lt;p&gt;&lt;strong&gt;&quot; + name + &quot;&lt;/strong&gt; is &lt;strong&gt; &quot; + age + &quot;&lt;/strong&gt; ,and is a &lt;strong&gt;&quot; + job + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+        </code></pre>
+            <script type="text/javascript">
+            // write value on to screen using variable
+            let age = 37; // decimal
+            let name = "Chris"; // string
+            const dateOfBirth = 1981; // this is a constant
+
+             // Declare Variables with no value just yet and declared as 'undefined'
+             var job, isMarried;
+
+             // To later declare a value, you can do it like this
+             job = "Web Designer";
+             isMarried = true;
+            
+            // You can change values later on too
+             age="38";
+
+            document.write("<p><strong>" + name + "</strong> is <strong> " + age + "</strong>, and is a <strong>" + job + "</strong></p>");
+            
+            </script>
+          </section>
+
+          <!-- <section>
+            <pre><code class="language-js">
+            </code></pre>
+            <script type="text/javascript">
+
+            </script>
+          </section> -->
+
+          <section>
+            <pre><code class="language-js">
+var c; // this will be 'undefined' as not given a value
+document.write(&quot;&lt;p&gt;A variable with no value - &lt;strong&gt;&quot; + c + &quot;&lt;/strong&gt; ,then try adding a number to it - &lt;strong&gt;&quot; + (c + 2) + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+            </code></pre>
+            <script type="text/javascript">
+                var c; // this will be 'undefined' as not given a value
+                document.write("<p>A variable with no value - <strong>" + c + "</strong> , then try adding a number to it - <strong>" + (c + 2) + "</strong></p>");
+            </script>
+          </section>
+
+          <hr />
+          <section>
+            <h2>Variable Scope</h2>
+            <p>There is local scope and global scope. When you declare a variable inside of the if statement then this is not available outside, as it is local to that if statement. If you declare a variable outside of the if statement then you can either change it like this <code>ageOfPerson = 30;</code> - which will change it globally as well, or change it only within the if statement <code>let ageOfPerson = 30;</code>. If you have a further if statement within another, then if you use the variable again it will use the value that is defined in the if statement and not the global variable.</p>
+            <pre><code class="language-js">
+let ageOfPerson = 40;
+
+if(true) {
+  let ageOfPerson = 30;
+  let personsName = 'Chris'; // This is only valid inside this code block, not outside
+  // ageOfPerson = 30; then it would reassign the main variable this value too as not using let
+  document.write(&quot;&lt;p&gt;Inside the if statement the age is - &lt;strong&gt;&quot; + ageOfPerson + &quot;&lt;/strong&gt;, and the name is &quot; + personsName + &quot;&lt;/p&gt;&quot;);
+
+  if(true) {
+    document.write(&quot;&lt;p&gt;The variable uses the same value within the code block, not the global variable - &lt;  strong&gt;&quot; + ageOfPerson + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+  }
+}
+document.write(&quot;&lt;p&gt;However outside it is - &lt;strong&gt;&quot; + ageOfPerson + &quot;&lt;/strong&gt;You cannot use the variable personsName as it was declared within the if statement so it is not global.&lt;/p&gt;&quot;);
+
+// The variable personsName cannot be used outside of the if statement as it is
+            </code></pre>
+            <script type="text/javascript">
+               let ageOfPerson = 40;
+
+               if(true) {
+                 let ageOfPerson = 30;
+                 let personsName = 'Chris'; // This is only valid inside this code block, not outside
+                 // ageOfPerson = 30; then it would reassign the main variable this value too as not using let
+                 document.write("<p>Inside the if statement the age is - <strong>" + ageOfPerson + "</strong>, and the name is " + personsName + "</p>");
+
+                 if(true) {
+                  document.write("<p>The variable uses the same value within the code block, not the global variable  - <strong>" + ageOfPerson + "</strong></p>");
+                 }
+               }
+               document.write("<p>However outside it is - <strong>" + ageOfPerson + "</strong>. You cannot use the variable personsName as it was declared within the if statement so it is not global.</p>");
+
+               // The variable personsName cannot be used outside of the if statement as it is 
+            </script>
+          </section>
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Working with the DOM</a>
+        <div class="inner">
+          <section>
+            <h2>Get element using a Query Selector <em>(preferred method)</em></h2>
+            <pre><code class="language-js">
+// This only gets the first p tag, not all of them
+const para = document.querySelector('p');
+
+// Target a class name
+const para2 = document.querySelector('.error');
+
+// Grab all p tags
+const paraAll = document.querySelectorAll('p');
+
+// Grab 2nd p tag
+console.log(paraAll[1]);
+
+// Get each paragraph on the page by cycling through
+paraAll.forEach(paraTag =&gt; {
+  console.log(paraTag.innerText);
+});
+            </code></pre>
+            <script type="text/javascript">
+              // This only gets the first p tag, not all of them
+              const para = document.querySelector('p');
+
+              // Target a class name
+              const para2 = document.querySelector('.error');
+
+              // Grab all p tags
+              const paraAll = document.querySelectorAll('p');
+
+              // Grab 2nd p tag
+              console.log(paraAll[1]);
+
+              // Get each paragraph on the page by cycling through
+              paraAll.forEach(paraTag => {
+                console.log(paraTag.innerText);
+              });
+            </script>
+<hr />
+            <h2>Get elements by ID</h2>
+
+            <pre><code class="language-js">
+// Get element by ID, no need for #
+const title = document.getElementById('page-title');
+            </code></pre>
+            <script type="text/javascript">
+            // Get element by ID, no need for #
+            const title = document.getElementById('page-title'); 
+            </script>
+            <hr />
+            <h2>Get element by Class</h2>
+            <pre><code class="language-js">
+ // This can grab multiple instances, no need for a dot.
+ const errors = document.getElementsByClassName('error');
+            </code></pre>
+            <script type="text/javascript">
+              // This can grab multiple instances, no need for a dot.
+            const errors = document.getElementsByClassName('error');
+            </script>
+                        <hr />
+                        <h2>Get element by Tag Name</h2>
+                        <pre><code class="language-js">
+// Stores all P tags on a page
+const tagNames = document.getElementsByTagName('p');
+            </code></pre>
+                        <script type="text/javascript">
+                        // Stores all P tags on a page
+                        const tagNames = document.getElementsByTagName('p');
+                        </script>
+          <hr />
+          <h2>Change Text</h2>
+          <p class="change-this">This is an intro paragraph.</p>
+          <pre><code class="language-js">
+const changeThis = document.querySelector('.change-this');
+changeThis.innerText = 'This is a new intro';
+            </code></pre>
+          <script type="text/javascript">
+                const changeThis = document.querySelector('.change-this');
+                changeThis.innerText = 'This is a new intro';
+          </script>
+          <hr />
+          <h2>Change HTML inside a tag</h2>
+          <div class="content">This is an intro paragraph.</div>
+          <pre><code class="language-js">
+const content = document.querySelector('.content');
+content.innerHTML = '&lt;p&gt;Changing this too&lt;/p&gt;';
+            </code></pre>
+          <script type="text/javascript">
+const content = document.querySelector('.content');
+content.innerHTML = '<p>Changing this too</p>';
+          </script>
+          <hr />
+          <h2>Add to HTML inside a tag</h2>
+          <p class="content-2">Here is some copy.</p>
+          <pre><code class="language-js">
+const contentTwo = document.querySelector('.content-2');
+contentTwo.innerHTML += ' Here is some more';
+            </code></pre>
+          <script type="text/javascript">
+const contentTwo = document.querySelector('.content-2');
+contentTwo.innerHTML += ' Here is some more';
+          </script>
+          <hr />
+          <h2>Cycle through array and add into HTML</h2>
+          <p class="team">The starting 11 for today's game is: </p>
+          <pre><code class="language-js">
+const team = document.querySelector('.team');
+const footballPlayers = ['alisson', 'taa', 'vvd', 'matip', 'robertson', 'fabinho', 'gini', 'hendo', 'salah', 'mane', 'bobby'];
+
+footballPlayers.forEach(footballPlayer =&gt; {
+  team.innerHTML += `${footballPlayer} `;
+});
+            </code></pre>
+          <script type="text/javascript">
+          const team = document.querySelector('.team');
+          const footballPlayers = ['alisson', 'taa', 'vvd', 'matip', 'robertson', 'fabinho', 'gini', 'hendo', 'salah', 'mane', 'bobby'];
+
+          footballPlayers.forEach(footballPlayer => {
+            team.innerHTML += `${footballPlayer} `;
+          });
+
+          </script>
+
+          <hr />
+          <h2>Get and Set attributes</h2>
+          <p class="link">Some dummy text with a <a href="https://www.bbc.co.uk">dummy link</a></p>
+          <pre><code class="language-js">
+const pageLink = document.querySelector('.link &gt; a');
+
+// Choose the attribute to change, then what to change this too.
+pageLink.setAttribute('href', 'https://www.google.com');
+
+// Also change the text inside the link
+pageLink.innerText = 'Visit Google';
+            </code></pre>
+          <script type="text/javascript">
+          const pageLink = document.querySelector('.link > a');
+
+          // Choose the attribute to change, then what to change this too.
+          pageLink.setAttribute('href', 'https://www.google.com');
+
+          // Also change the text inside the link
+          pageLink.innerText = 'Visit Google';
+          </script>
+<hr />
+
+<h2>Add CSS styling to a tag</h2>
+<p class="style-this" style="color: red;">This is red originally...</p>
+<pre><code class="language-js">
+// This method only overwrites the value, not add to it
+const sampleText = document.querySelector('.style-this');
+
+// This does not add to the style, this would just remove current style values
+//sampleText.setAttribute('style', 'margin: 10px');
+
+// See what is inside the sampleText
+console.log(sampleText.style);
+console.log(sampleText.style.color);
+
+// Add to the existing styling
+sampleText.style.margin = '10px';
+sampleText.style.background = 'none';
+sampleText.style.color = 'orange';
+sampleText.style.fontSize = '20px';
+
+// Remove some styling, just use an empty string
+sampleText.style.padding = '';
+            </code></pre>
+<script type="text/javascript">
+//  This method only overwrites the value, not add to it
+const sampleText = document.querySelector('.style-this');
+
+// This does not add to the style, this would just remove current style values
+//sampleText.setAttribute('style', 'margin: 10px');
+
+// See what is inside the sampleText
+console.log(sampleText.style);
+console.log(sampleText.style.color);
+
+// Add to the existing styling
+sampleText.style.margin = '10px';
+sampleText.style.background = 'none';
+sampleText.style.color = 'orange';
+sampleText.style.fontSize = '20px';
+
+// Remove some styling, just use an empty string
+sampleText.style.padding = '';
+</script>
+
+<hr />
+
+<h2>Add/Remove class to an item</h2>
+<div class="content-box another-class testing">Here is some dummy copy</div>
+<pre><code class="language-js">
+const contentBox = document.querySelector('.content-box');
+
+// Show all classes on the tag
+console.log(contentBox.classList);
+
+contentBox.classList.add('yet-another-one');
+contentBox.classList.remove('testing');
+            </code></pre>
+<script type="text/javascript">
+const contentBox = document.querySelector('.content-box');
+
+// Show all classes on the tag
+console.log(contentBox.classList);
+
+contentBox.classList.add('yet-another-one');
+contentBox.classList.remove('testing');
+</script>
+
+<hr />
+
+<h2>Toggle a Class</h2>
+
+<span class="page-title">This is a title</span>
+<pre><code class="language-js">
+const pageTitle = document.querySelector('.page-title');
+
+// Add class
+pageTitle.classList.toggle('test');
+
+// Run it again to remove
+pageTitle.classList.toggle('test');
+            </code></pre>
+<script type="text/javascript">
+const pageTitle = document.querySelector('.page-title');
+
+// Add class
+pageTitle.classList.toggle('test');
+
+// Run it again to remove
+pageTitle.classList.toggle('test');
+</script>
+
+
+<hr />
+
+<h2>Cycle through HTML to add Class names</h2>
+<p>This is a challenge on the tutorial. Whenever a p tag has success or erorr then add the class.</p>
+
+<div class="box">
+  <h3 class="page-title">This is a title</h3>
+  <p>Lorem success ipsum</p>
+  <p>Lorem ipsum lorem</p>
+  <p>Lorem error ipsum</p>
+  <p>Lorem ipsum success</p>
+  <p>Lorem error ipsum</p>
+  <p>Lorem ipsum lorem</p>
+  <p>success lotem ipsum</p>
+</div>
+<pre><code class="language-js">
+// Select all p tags within the container box
+const box = document.querySelectorAll('.box p');
+
+box.forEach(boxItem =&gt; {
+  // using innerHTML does similar, but not always show all of it
+  if (boxItem.textContent.includes('success')) {
+    boxItem.classList.add('success');
+  } else if (boxItem.textContent.includes('error')) {
+    boxItem.classList.add('error');
+  }
+});
+            </code></pre>
+<script type="text/javascript">
+// Select all p tags within the container box
+const box = document.querySelectorAll('.box p');
+
+box.forEach(boxItem => {
+  // using innerHTML does similar, but not always show all of it
+  if (boxItem.textContent.includes('success')) {
+      boxItem.classList.add('success');
+  } else if (boxItem.textContent.includes('error')) {
+    boxItem.classList.add('error');
+  }
+});
+</script>
+
+
+<hr />
+
+<h2>Cycle through HTML Collection to add Class names</h2>
+<p>This is different to the one above, this cycles through all the children of the container and adds a class.</p>
+
+<article class="box">
+  <h3>This is a title</h3>
+  <p>Lorem success ipsum</p>
+  <p>Lorem ipsum lorem</p>
+</article>
+<pre><code class="language-js">
+// First get a constant of the container
+const article = document.querySelector('article.box');
+
+// Then use an array to cycle through each child and add a class.
+Array.from(article.children).forEach(child =&gt; {
+  child.classList.add('success');
+});
+            </code></pre>
+<script type="text/javascript">
+// First get a constant of the container
+const article = document.querySelector('article.box');
+
+// Then use an array to cycle through each child and add a class.
+Array.from(article.children).forEach(child => {
+  child.classList.add('success');
+});
+</script>
+
+
+<hr />
+
+<h2>Find the parent element</h2>
+<p>How to target a parent of an item</p>
+
+<article class="box">
+  <h2 class="box__title">This is a title</h2>
+  <p>Here is some text</p>
+</article>
+<pre><code class="language-js">
+// Get the title
+const boxTitle = document.querySelector('.box__title');
+// Pick the parent of the title
+boxTitle.parentElement.classList.add('error');
+// Next sibling to the box__title
+boxTitle.nextElementSibling.add('success');
+            </code></pre>
+<script type="text/javascript">
+// Get the title
+const boxTitle = document.querySelector('.box__title');
+// Pick the parent of the title
+boxTitle.parentElement.classList.add('error');
+// Next sibling to the box__title
+boxTitle.nextElementSibling.add('success');
+</script>
+
+
+          </section>
+
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">String Methods - editing, finding values and Concatenation</a>
+        <div class="inner">
+                    <section>
+                      <pre><code class="language-js">
+// Concatenation Method
+let concatString = 'Blog is ' + title + ' by ' + author + ' has ' + likes + ' likes';
+            </code>
+            </pre>
+                      <script type="text/javascript">
+                      const title = 'Best reads of 2019';
+                      const author = 'Chris';
+                      const likes = 30;
+
+                      // Concatenation Method
+                      let concatString = 'Blog is ' + title + ' by ' + author + ' has ' + likes + ' likes';
+                      </script>
+
+                      <pre><code class="language-js">
+// Template String Method
+let concatStringAlt = `Blog is ${title} by ${author} has ${likes} likes`;
+            </code>
+            </pre>
+                      <script type="text/javascript">
+                      // const title2 = 'Best reads of 2019';
+                      // const author = 'Chris';
+                      // const likes = 30;
+
+                      // Template String Method
+                      let concatStringAlt = `Blog is ${title} by ${author} has ${likes} likes`;
+                      </script>
+                    </section>
+          <section>
+            <h2>Normal Concat vs Template String Method</h2>
+            <p>Template Strings use backticks around the main string and then uses <code>${}</code> around each variable instead of using <code>+</code> to concat each.</p>
+            <pre><code class="language-js">
+let resultConcat = 'The blog called ' + title + ' by ' + author + ' has ' + likes + ' likes';
+let resultTemplateStr = `The blog called ${title} by ${author} has ${likes} likes`;
+            </code>
+            </pre>
+            <script type="text/javascript">
+          //  const title = 'Best reads of 2019';
+            // const author = 'Chris';
+            // const likes = 30;
+
+            // Concatenation Method 
+            let resultConcat = 'The blog called ' + title + ' by ' + author + ' has ' + likes + ' likes';
+            document.write("<p>" + resultConcat + "</p>");
+
+            // Template String Method
+            let resultTemplateStr = `The blog called ${title} by ${author} has ${likes} likes`;
+            document.write("<p>" + resultTemplateStr + "</p>");
+            </script>
+          </section>
+          <hr />
+          <section>
+            <h2>Ways to alter or edit strings</h2>
+
+            <pre><code class="language-js">
+let firstName = &quot;Chris&quot;;
+// Uppercase and Lowercase
+document.write(&quot;&lt;p&gt;Turn to uppercase &lt;strong&gt;&quot; + firstName.toUpperCase() + '&lt;/strong&gt;&lt;/p&gt;');
+document.write(&quot;&lt;p&gt;Turn to lowercase &lt;strong&gt;&quot; + firstName.toLowerCase() + '&lt;/strong&gt;&lt;/p&gt;');
+            </code>
+            </pre>
+            <script type="text/javascript">
+            let firstName = "Chris";
+            // Uppercase and Lowercase
+            document.write("<p>Turn to uppercase <strong>" + firstName.toUpperCase() + '</strong></p>');
+            document.write("<p>Turn to lowercase <strong>" + firstName.toLowerCase() + '</strong></p>');
+            </script>
+
+            <pre><code class="language-js">
+// Find an instance of a string
+let email = 'info@moonshark.co.uk';
+let result = email.lastIndexOf('r');
+            </code>
+            </pre>
+            <script type="text/javascript">
+            // Find an instance of a string
+            let email = 'info@moonshark.co.uk';
+            let result = email.lastIndexOf('r');
+            document.write("<p>Find where the last 'r' in 'info@moonshark.co.uk' - <strong>" + result + '</strong></p>');
+            </script>
+
+            <pre><code class="language-js">
+ // Show the start to the 10th character
+ let email = 'info@moonshark.co.uk';
+ let resultSlice = email.slice(0, 10);
+            </code>
+            </pre>
+            <script type="text/javascript">
+            // Show the start to the 10th character
+            let resultSlice = email.slice(0, 10);
+            document.write("<p>Cut the string starting at 0 and ending on the 10th Character - <strong>" + resultSlice + '</strong></p>');
+            </script>
+
+            <pre><code class="language-js">
+ // Choose start position then pick how many along, so below will be 14
+ let email = 'info@moonshark.co.uk';
+ let resultSubStr = email.substr(4, 10);
+            </code>
+            </pre>
+            <script type="text/javascript">
+            // Choose start position then pick how many along, so below will be 14
+
+             let resultSubStr = email.substr(4, 10);
+             document.write("<p>Similar to slice but instead choose start position and then choose the amount to show,  starting at 4 and then from there 10 along -  <strong>" + resultSubStr + '</strong></p>');
+            </script>
+
+            <pre><code class="language-js">
+// Replace parts of a string, picking the value and what you are replacing it with. It only replaces on of these values
+let email = 'info@moonshark.co.uk';
+let resultReplace = email.replace('.co.uk', '.com');
+            </code>
+            </pre>
+            <script type="text/javascript">
+            // Replace parts of a string, picking the value and what you are replacing it with. It only replaces on of these values
+            let resultReplace = email.replace('.co.uk', '.com');
+            document.write("<p>Replace .co.uk with .com',  <strong>" + resultReplace + '</strong></p>');
+            </script>
+
+            <pre><code class="language-js">
+let email = 'info@moonshark.co.uk';
+let resultReplaceAlt = email.replace('o', 'k');
+            </code>
+            </pre>
+            <script type="text/javascript">
+            let resultReplaceAlt = email.replace('o', 'k');
+            document.write("<p>Replace 'o' with 'k',  <strong>" + resultReplaceAlt + '</strong>. This shows that it only replaces the first value in the string and NOT every value</p>');
+            </script>
+          </section>
+
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">Converting String to Number, Number to String...</a>
+        <div class="inner">
+          <section>
+            <h2>Convert String to a Number</h2>
+            <p>If you do not convert the string to a number then you cannot add to it. You first need to convert to a number. You cannot convert a word into a number, only a string that is a number.</p>
+            <pre><code class="language-js">
+let finalScore = '100';
+convertedScore = Number(finalScore) + 1; // convert string to a number
+
+document.write(&quot;&lt;p&gt;&lt;strong&gt;&quot; + (finalScore + 1) + &quot;&lt;/strong&gt;. Convert the string to a number, &lt;strong&gt;&quot; + convertedScore + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+            </code></pre>
+            <script type="text/javascript">
+            let finalScore = '100';
+            convertedScore = Number(finalScore) + 1; // convert string to a number
+
+            document.write("<p><strong>" + (finalScore + 1) + "</strong>. Convert the string to a number, <strong>" + convertedScore + ",</strong> the type of variable this is - <strong>" + typeof convertedScore + "</strong></p>");
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Convert Number to a String</h2>
+            <pre><code class="language-js">
+let personsScore = 50;
+personsScore = String(50);
+
+// Find type of variable - typeof(personsScore)
+            </code></pre>
+            <script type="text/javascript">
+            let personsScore = 50;
+            personsScore = String(50);
+
+            // Find type of variable - typeof(personsScore)
+            document.write("<p><strong>" + personsScore + "</strong>. Is now a <strong>" + typeof(personsScore) + "</strong></p>");
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Convert Boolean Values</h2>
+            <p>When we convert something to Boolean, some are true and some are false. <br /><br />
+            <strong>Truthy Numbers</strong> = Minus Numbers, Positive Numbers<br />
+            <strong>Falsey Numbers</strong> = 0</p>
+
+            <pre><code class="language-js">
+let score = Boolean(100);
+document.write(&quot;&lt;p&gt;&lt;strong&gt;&quot; + score + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+            </code></pre>
+            <script type="text/javascript">
+            let score = Boolean(100);
+            document.write("<p><strong>" + score + "</strong></p>");
+            </script>
+
+            <p>This is using 0 to convert to boolean, which will change to <strong>false</strong>.</p>
+
+            <pre><code class="language-js">
+let score2 = Boolean(0);
+document.write(&quot;&lt;p&gt;&lt;strong&gt;&quot; + score2 + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+            </code></pre>
+            <script type="text/javascript">
+let score2 = Boolean(0);
+document.write("<p><strong>" + score2 + "</strong></p>");
+            </script>
+
+            <p>If you convert a string of <code>'0'</code> then this will be <strong>true</strong>, the only way to get <strong>false</strong> from a string is to set an empty string, <code>' '</code></p>
+          </section>
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">Functions</a>
+        <div class="inner">
+          <section>
+              <p>Functions are used to put reuseable code so not repeating yourself. Functions contain bits of code that run when called. Also keeps things easier to maintain.<br /><br /><strong>Hoisting</strong> - Where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local. HOWEVER, when declared as an expression like below then this is exectued in the order it is in the file.</p>
+          </section>
+          
+<hr />
+          <section>
+
+            <h2>Statement - performs some code</h2>
+            <p>This allows you to declare the functions anywhere, no matter where it is in the code.</p>
+            <pre><code class="language-js">
+// Statements - these perform code but not straight away getting a value
+function func1() {
+// code
+}
+func1();
+        </code></pre>
+
+            <script type="text/javascript">
+            // Statements - these perform code but not straight away getting a value
+            function func1() {
+              // code
+            }
+
+            func1();
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Expressions -  return a value</h2>
+            <p><strong>99% of the time it is best to use function expressions as you control when these are used in the code</strong>. JS does not hoist function expressions so you can only use the function AFTER you have defined it.</p>
+                        <pre><code class="language-js">
+ // Expressions - This will return a value, like the other ones below
+ const func2 = function() {
+  // code
+ };
+
+ func2();
+
+        </code></pre>
+
+            <script type="text/javascript">
+                  
+                  // Expressions - This will return a value, like the other ones below
+                  const func2 = function() {
+                  // code
+                  };
+
+                  func2();
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Passing an argument to a function and returning to a value</h2>
+            <pre><code class="language-js">
+ // Passing argument to a function
+ function calculateAge(yearOfBirth) {
+  var age = 2019 - yearOfBirth;
+  return age; // you can only use age variable inside of this function so you need to return it
+ }
+
+ var ageChris = calculateAge(1981); // the variable now has the value of 38.
+ var ageHolly = calculateAge(1987); // the variable now has the value of 32.
+
+document.write(`&lt;p&gt;Chris age is ${ageChris} and Hollys age is ${ageHolly} &lt;/p&gt;`);
+        </code></pre>
+            <script type="text/javascript">
+            // Passing argument to a function
+            function calculateAge(yearOfBirth) {
+              var age = 2019 - yearOfBirth;
+              return age; // you can only use age variable inside of this function so you need to return it
+            }
+           
+           var ageChris = calculateAge(1981); // the variable now has the value of 38.
+           var ageHolly = calculateAge(1987); // the variable now has the value of 32.
+
+           document.write(`<p>Chris age is  ${ageChris}  and Hollys age is ${ageHolly} </p>`);
+            </script>
+
+            <p>This is another example of passing a value to a function and using the return value.</p>
+
+             <pre><code class="language-js">
+const calcArea = function(radius) {
+  return 3.14 * radius**2;
+}
+const area = calcArea(5);
+
+document.write(`&lt;p&gt;The area is ${area}&lt;/p&gt;`);
+        </code></pre>
+             <script type="text/javascript">
+                const calcArea = function(radius) {
+                  return 3.14 * radius**2;
+                }
+                const area = calcArea(5);
+
+                document.write(`<p>The area is ${area}</p>`);
+             </script>
+
+            <pre><code class="language-js">
+ // Using the above for another function so calling functions within functions
+const yearsUntilRetirement = function(name, year) {
+
+  let age = calculateAge(year);
+  let retirement = 65 - age;
+
+  // If do not do this and they are already retired the value is - years.
+  if (retirement &gt;= 0) {
+  document.write(`${name} retires in ${retirement} years &lt;br /&gt;`);
+  } else {
+  document.write(`${name} is already retired');
+  }
+
+}
+
+ yearsUntilRetirement(&quot;Chris&quot;, 1981);
+ yearsUntilRetirement(&quot;Holly&quot;, 1987);
+ yearsUntilRetirement(&quot;Susan&quot;, 1955);
+ yearsUntilRetirement(&quot;Keith&quot;, 1951);
+        </code></pre>
+            <script type="text/javascript">
+// Using the above for another function so calling functions within functions
+
+const yearsUntilRetirement = function(name, year) {
+  let age = calculateAge(year);
+  let retirement = 65 - age;
+
+  // If do not do this and they are already retired the value is - years.
+  if (retirement >= 0) {
+    document.write(`${name} retires in ${retirement} years <br />`);
+  } else {
+    document.write(`${name} is already retired`);
+  }
+
+}
+
+yearsUntilRetirement("Chris", 1981);
+yearsUntilRetirement("Holly", 1987);
+yearsUntilRetirement("Susan", 1955);
+yearsUntilRetirement("Keith", 1951);
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Passing a parameter to a function</h2>
+            <pre><code class="language-js">
+function message(personsName) {
+  document.write(`&lt;p&gt;Good morning ${personsName} , happy birthday&lt;/p&gt;`);
+}
+
+// Now insert the parameter that you want to use. Without quotes does not work
+message(&quot;Chris&quot;);
+        </code></pre>
+            <script type="text/javascript">
+            // Passing Parameters to a function
+            // var personsName = "Chris"; // string
+            function message(personsName) {
+              document.write(`<p>Good morning ${personsName} , happy birthday</p>`);
+            }
+            // Now insert the parameter that you want to use. Without quotes does not work
+            message("Chris");
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Passing multiple parameters</h2>
+            <pre><code class="language-js">
+// Passing multiple parameters
+function examResult(nameTwo, marks, grade) {
+  document.write(`&lt;p&gt;${nameTwo} your marks are ${marks} and your final grade is ${grade}&lt;/p&gt;`);
+}
+examResult(&quot;Chris&quot;, &quot;98&quot;, &quot;A+&quot;);
+        </code></pre>
+            <script type="text/javascript">
+            // var nameTwo = "Chris"; // string
+
+            // Passing multiple parameters
+            function examResult(nameTwo, marks, grade) {
+              document.write(`<p>${nameTwo} your marks are ${marks} and your final grade is ${grade}</p>`);
+            }
+            examResult("Chris", "98", "A+");
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Calling a function from another function</h2>
+            <pre><code class="language-js">
+function function1() {
+  document.write("<p>This is function 1</p>");
+}
+function function2() {
+  function1();
+}
+
+function2();
+        </code></pre>
+            <script type="text/javascript">
+            function function1() {
+              document.write("<p>This is function 1</p>");
+            }
+
+            function function2() {
+              function1();
+            }
+
+            function2();
+
+            </script>
+          </section>
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">Arrow Functions</a>
+        <div class="inner">
+          <section>
+            <p>An arrow function is a shorter way of writing a function. You remove the word <code>function</code> followed by <code>=></code> and then if there is one parameter you can remove the <code>return</code> keyword along with the <code>{}</code>. </p>
+            <pre><code class="language-js">
+// regular function
+const calculateArea = function(radius) {
+  return 3.14 * radius**2;
+}
+
+// As only 1 parameter, remove () and remove return
+const calculateArea = radius =&gt; 3.14 * radius**2;
+
+// If there are two or more parameters
+const calculateArea = (width, height) =&gt; 3.14 * radius**2;
+
+// If there are NO parameters
+const calculateArea = () =&gt; 3.14 * radius**2;
+        </code></pre>
+
+            <script type="text/javascript">
+              // regular function
+              const calculateArea = function(radius) {
+                return 3.14 * radius**2;
+              }
+
+              // arrow function
+              // const calculateArea = (radius) => {
+              //   return 3.14 * radius**2;
+              // };
+
+              // A shorter way, this ONLY works when there is one parameter
+              // const calculateArea = radius => {
+              // return 3.14 * radius**2;
+              // };
+
+               // This can be shortened even more by removing return and brackets
+               const calculateArea = radius => 3.14 * radius**2;
+
+               // If there are two or more parameters
+               const calculateArea = (width, height) => 3.14 * radius**2;
+
+              // If there are NO parameters
+              const calculateArea = () => 3.14 * radius**2;
+            </script>
+
+            <p>So, taking the above into account, the following are how you would change to an arrow function.</p>
+
+                        <pre><code class="language-js">
+// Normal Function
+const greet = function() {
+  return 'Hello World';
+}
+
+// Arrow function
+const greet2 = () =&gt; 'hello, world';
+
+const greetResult = greet2();
+document.write(&quot;&lt;p&gt;&quot; + greetResult + &quot;&lt;/p&gt;&quot;);
+        </code></pre>
+
+                        <script type="text/javascript">
+                        // Normal Function
+                        const greet = function() {
+                          return 'Hello World';
+                        }
+                        
+                        // Arrow function
+                        const greet2 = () => 'hello, world';
+
+                        const greetResult = greet2();
+                       document.write("<p>" + greetResult + "</p>");
+
+                        </script>
+
+                        <pre><code class="language-js">
+// Normal function
+const bill = function(products, tax) {
+  let total = 0;
+
+  for(let i = 0; i &lt; products.length; i++) {
+    total += products[i] + products[i] * tax;
+  }
+  return total;
+}
+
+// Arrow function, keep the paranthesis as have more than one parameter
+const bill = (products, tax) =&gt; {
+  let total = 0;
+
+  for(let i = 0; i &lt; products.length; i++) {
+    total +=products[i] + products[i] * tax;
+  }
+  return total;
+};
+        </code></pre>
+
+                        <script type="text/javascript">
+                        // Normal function
+                        const bill = function(products, tax) {
+                          let total = 0;
+
+                          for(let i = 0; i < products.length; i++) {
+                            total += products[i] + products[i] * tax;
+                          }
+                          return total;
+                        }
+
+                        // Arrow function, keep the paranthesis as have more than one parameter
+                        const bill = (products, tax) => {
+                          let total = 0;
+
+                          for(let i = 0; i < products.length; i++) {
+                            total +=products[i] + products[i] * tax;
+                          }
+                            return total;
+                          };
+                        </script>
+          </section>
+
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">Call back Functions & Foreach</a>
+        <div class="inner">
+          <section>
+            <p>This is when you pass in a function as an argument instead of a singular value. </p>
+            <pre><code class="language-js">
+const myFunction = (callbackFunc) =&gt; {
+  let value = 50;
+  callbackFunc(value);
+}
+
+myFunction(value =&gt; {
+  document.write(&quot;&lt;p&gt;&quot; + value + &quot;&lt;/p&gt;&quot;);
+});
+        </code></pre>
+
+            <script type="text/javascript">
+
+            const myFunction = (callbackFunc) => {
+              let value = 50;
+              callbackFunc(value);
+            }
+
+            myFunction(value => {
+               document.write("<p>" + value + "</p>");
+            });
+            </script>
+          </section>
+
+          <section>
+            <p><code>forEach</code> itierates over an array, like a for loop.</p>
+            <pre><code class="language-js">
+let people = ['mario', 'luigi', 'ryu', 'chris', 'chun-li' ];
+
+people.forEach((person, index) =&gt; {
+  document.write(`&lt;p&gt; ${person} ${index} &lt;/p&gt;`);
+});
+        </code></pre>
+
+            <script type="text/javascript">
+let people = ['mario', 'luigi', 'ryu', 'chris', 'chun-li' ];
+
+people.forEach((person, index) => {
+  //document.write(`<p> ${person} ${index} </p>`);
+});
+            </script>
+            <p>The above could turn to this if you use a call back function instead of adding this within the <code>forEach</code></p>
+<pre><code class="language-js">
+let people = ['mario', 'luigi', 'ryu', 'chris', 'chun-li'];
+
+const logPerson = (person, index) =&gt; {
+  document.write(`&lt;p&gt; ${index} - hello${person} &lt;/p&gt;`);
+}
+
+people.forEach(logPerson2);
+        </code></pre>
+            <script type="text/javascript">
+let people2 = ['mario', 'luigi', 'ryu', 'chris', 'chun-li'];
+
+const logPerson2 = (person, index) => {
+  //document.write(`<p> ${index} - hello${person} </p>`);
+}
+
+people2.forEach(logPerson2);
+            </script>
+          </section>
+
+           <section>
+             <p>Below is how you could use this to add names to a list item in the HTML</p>
+             <pre><code class="language-js">
+const ul = document.querySelector('.staff-members');
+const staff = ['mario', 'luigi', 'ryu', 'chris', 'chun-li'];
+let html = ``; // empty HTML string with backticks
+
+staff.forEach(person =&gt; {
+  // create HTML template
+  html += `&lt;li&gt;${person}&lt;/li&gt;`; // adds a new li in the HTML
+});
+
+// Now add this into the HTML
+ul.innerHTML = html;
+        </code></pre>
+
+        <ul class="staff-members"></ul>
+
+<script type="text/javascript">
+const ul = document.querySelector('.staff-members');
+const staff = ['mario', 'luigi', 'ryu', 'chris', 'chun-li'];
+let html = ``; // empty HTML string with backticks
+
+staff.forEach(person => {
+  // create HTML template
+  html += `<li>${person}</li>`; // adds a new li in the HTML
+});
+
+// Now add this into the HTML
+ul.innerHTML = html;
+</script>
+
+
+           </section>
+
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Operators - Add, Minus, Multiply</a>
+        <div class="inner">
+          <section>
+            <h2>Assignment Operators</h2>
+
+            <pre>
+<code class="language-js">
+ // Assignment variable
+ let marks = 90,
+     marks2 = 90,
+     marks3 = 90,
+     marks4 = 100,
+     marks5 = 56;
+
+ marks += 10; // marks = marks + 10;
+ marks2 -= 10; // marks2 = marks2 - 10;
+ marks3 *= 10; // marks3 = marks3 * 10;
+ marks4 ++; // mark4 = marks + 1;
+ marks5 /= 2; // marks5 = marks5 / 2
+
+ document.write(&quot;&lt;p&gt;90 + 10 - &lt;strong&gt;&quot; + marks + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+ document.write(&quot;&lt;p&gt;90 - 10 - &lt;strong&gt;&quot; + marks2 + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+ document.write(&quot;&lt;p&gt;90 * 10 - &lt;strong&gt;&quot; + marks3 + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+ document.write(&quot;&lt;p&gt;100 + 1 - &lt;strong&gt;&quot; + marks4 + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+ document.write(&quot;&lt;p&gt;56 / 2 - &lt;strong&gt;&quot; + marks5 + &quot;&lt;/strong&gt;&lt;/p&gt;&quot;);
+</code>
+                    </pre>
+
+            <script type="text/javascript">
+            // Assignment variable
+            let marks = 90,
+                 marks2 = 90,
+                 marks3 = 90,
+                 marks4 = 100,
+                 marks5 = 56;
+
+            marks += 10; // marks = marks + 10;
+            marks2 -= 10; // marks2 = marks2 - 10;
+            marks3 *= 10; // marks3 = marks3 * 10;
+            marks4 ++; // mark4 = marks + 1;
+            marks5 /= 2; // marks5 = marks5 / 2
+
+            document.write("<p>90 + 10 - <strong>" + marks + "</strong><br />");
+            document.write("90 - 10 - <strong>" + marks2 + "</strong></br />"); 
+            document.write("90 * 10 - <strong>" + marks3 + "</strong></br />");
+            document.write("100 + 1 - <strong>" + marks4 + "</strong></br />");
+            document.write("56 / 2 - <strong>" + marks5 + "</strong></p>");
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Math Operators</h2>
+            <pre><code class="language-js">
+var physics;
+var chem;
+var maths;
+
+var total;
+var avg;
+var percentage;
+
+physics=80;
+chem=70;
+maths=90;
+
+total= physics+chem+maths; // add all of the above up
+avg=total/3; // as 3 tests are taken
+percentage=total/300*100; // max marks is 300 from 3 tests out of 100
+document.write(&quot;&lt;p&gt;Your total is &quot; + total + &quot; out of 300, percentage is &quot; + percentage + &quot;%&quot;);
+            </code></pre>
+
+            <script type="text/javascript">
+            var physics;
+            var chem;
+            var maths;
+
+            var total;
+            var avg;
+            var percentage;
+
+            physics = 80;
+            chem = 70;
+            maths = 90;
+
+            total = physics + chem + maths;
+            avg = total / 3;
+            percentage = total / 300 * 100; // max marks is 300 from 3 tests out of 100
+            document.write("<p>Your total marks are " + total + " out of 300 and your percentage is " + percentage + "%");
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Operator Precedence</h2>
+            <p>Understanding which operators JS does before others, see more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">here.</a>. The higher the number the order they are done from highest to lowest.</p>
+            <pre><code class="language-js">
+var now = 2019;
+var birthYear = now - 38;
+// 2019 - 38
+//1981
+
+birthYear = now - 26 * 2;
+// 2019 - 52 = 1967.
+//The 26 * 2 is done before the minus
+
+var ageChris = 38;
+var ageHolly = 32;
+var ageLisa;
+var ageKeith=68;
+var ageSusan=64;
+
+ageLisa = (3 + 5) * 4 - 6;
+// 3+5 then * 4. Then minus 6.
+
+ageChris = ageHolly = (3 + 5) * 4 - 6;
+// this would do the calculation to make 26, then it would make ageHolly 26, then ageChris 26.
+
+ageKeith++;
+// same as adding 1 to the value of Keith
+
+ageSusan *=2;
+// same as 64 * 2
+
+document.write("Lisa is " + ageLisa + "<br />");
+document.write("Chris is " + ageChris + "<br />");
+document.write("Holly is " + ageHolly + "<br />");
+document.write("Keith is " + ageKeith + "<br />");
+document.write("Susan is " + ageSusan);
+            </code></pre>
+            <script type="text/javascript">
+
+                    var now = 2019;
+                    var birthYear = now - 38;
+                    // 2019 - 38
+                    //1981
+
+                    birthYear = now - 26 * 2;
+                    // 2019 - 52 = 1967.
+                    //The 26 * 2 is done before the minus
+
+                    var ageChris = 38;
+                    var ageHolly = 32;
+                    var ageLisa;
+                    var ageKeith=68;
+                    var ageSusan=64;
+                    
+                    ageLisa = (3 + 5) * 4 - 6;
+                     // 3+5 then * 4. Then minus 6.
+
+                    ageChris = ageHolly = (3 + 5) * 4 - 6;
+                    // this would do the calculation to make 26, then it would make ageHolly 26, then ageChris 26.
+
+                    ageKeith++;
+                    // same as adding 1 to the value of Keith
+
+                    ageSusan *=2;
+                    // same as 64 * 2
+                  
+                    document.write("Lisa is " + ageLisa + "<br />");
+                    document.write("Chris is " + ageChris + "<br />");
+                    document.write("Holly is " + ageHolly + "<br />");
+                    document.write("Keith is " + ageKeith + "<br />");
+                    document.write("Susan is " + ageSusan);
+
+            </script>
+          </section>
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">if/else/switch Statements</a>
+        <div class="inner">
+          <section>
+            <h2>Using IF/Else Statement with Nesting</h2>
+            <pre><code class="language-js">
+var personAge=23;
+var gender=&quot;girl&quot;;
+
+if(personAge==23){
+  if(gender == &quot;boy&quot;) {
+    document.write(&quot;&lt;p&gt;Your are a boy and you are 23.&lt;/p&gt;&quot;);
+  } else {
+    document.write(&quot;&lt;p&gt;Your are a girl and you are 23.&lt;/p&gt;&quot;);
+  }
+} else {
+  document.write(&quot;&lt;p&gt;Your are not 23.&lt;/p&gt;&quot;);
+}
+                    </code></pre>
+            <script type="text/javascript">
+            var personAge = 23;
+            var gender = "girl";
+
+            if (personAge == 23) {
+              if (gender == "boy") {
+                document.write("<p>Your are a boy and you are 23.</p>");
+              } else {
+                document.write("<p>Your are a girl and you are 23.</p>");
+              }
+            } else {
+              document.write("<p>Your are not 23.</p>");
+            }
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Using boolean values and method of showing is equal too</h2>
+            <pre><code class="language-js">
+var isMarried = false;
+
+// if isMarried is true
+if( isMarried ) {
+document.write(&quot;&lt;p&gt;You are married&lt;/p&gt;&quot;);
+} else {
+document.write(&quot;&lt;p&gt;You are NOT married&lt;/p&gt;&quot;);
+}
+                    </code></pre>
+            <script type="text/javascript">
+            
+            var isMarried = false;
+
+              // if isMarried is true
+            if( isMarried ) {
+              document.write("<p>You are married</p>");
+            } else {
+              document.write("<p>You are NOT married</p>");
+            }
+            </script>
+          </section>
+<hr />
+           <section>
+             <h2>Using == and === and how each is different</h2>
+             <p>This is called type cohersion. If only '==' is used it compared a string and number, if '===' then these must be the same type to be true. ALWAYS use the '===' comparison operator.</p>
+             <pre><code class="language-js">
+// Only using == will compare the two numbers and JS sees it the same
+if (23 == "23") {
+  document.write("<p>Equal to 23 as sees it the same</p>");
+}
+
+// Using === then it will not work as they are not the same, different types.
+if (23 === "23") {
+  document.write("<p>This will not work as it is not the same type</p>");
+}
+                    </code></pre>
+             <script type="text/javascript">
+            
+            // Only using == will compare the two numbers and JS sees it the same
+             if (23 == "23") {
+               document.write("<p>Equal to 23 as sees it the same</p>");
+             }
+            
+            // Using === then it will not work as they are not the same, different types.
+             if (23 === "23") {
+             document.write("<p>This will not work as it is not the same type</p>");
+             }
+             </script>
+           </section>
+<hr />
+           <section>
+             <h2>Basic Boolean Logic - OR and AND</h2>
+             <p>This is using the && (and), || (or) and ! (not)</p>
+             <pre><code class="language-js">
+const password = 'p@ssw0rd1';
+
+if (password.length &gt;= 12 &amp;&amp; password.includes('@')) {
+  document.write(&quot;&lt;p&gt;This is a secure password&lt;/p&gt;&quot;);
+// both of the statements in the second half of the condition below for statement need to be true
+} else if (password.length &gt;= 8 || password.includes('@') &amp;&amp; password.length &gt; 5 ) {
+  document.write(&quot;&lt;p&gt;This is above 8 characters&lt;/p&gt;&quot;);
+} else {
+document.write(&quot;&lt;p&gt;This is not a secure password&lt;/p&gt;&quot;);
+}
+
+var ageofPerson = 16;
+
+if (ageofPerson >= 20) {} // false
+if (ageofPerson < 30) {} // true
+if (!ageofPerson < 30) {} // false. ageofPerson is less than 30, but then the ! reverses the result.
+if (ageofPerson>= 20 && ageofPerson < 30) {} // false
+if (ageofPerson>= 20 || ageofPerson < 30) {} //true
+                    </code></pre>
+             <script type="text/javascript">
+
+             const password = 'p@ssw0rd1';
+            
+            if (password.length >= 12 && password.includes('@')) {
+              document.write("<p>This is a secure password</p>");
+              // both of the statements in the second half of the condition below for statement need to be true
+            } else if (password.length >= 8 || password.includes('@') && password.length > 5 ) {
+              document.write("<p>This is above 8 characters</p>");
+            } else {
+              document.write("<p>This is not a secure password</p>");
+            }
+
+            var ageofPerson = 16;
+
+            if (ageofPerson >= 20) {} // false
+            if (ageofPerson < 30) {} // true
+            if (!ageofPerson < 30) {} // false. ageofPerson is less than 30, but then the ! reverses the result.
+            if (ageofPerson>= 20 && ageofPerson < 30) {} // false
+            if (ageofPerson>= 20 || ageofPerson < 30) {} //true
+
+             </script>
+           </section>
+<hr />
+          <section>
+            <h2>Switch Statement</h2>
+            <p class="intro">This is used instead of multiple if statements, this is a more efficient method. The break terminates the programme instead of checking every case. We use the break statement each time so it can leave the switch statement as otherwise it will not return the value.</p>
+            <pre><code class="language-js">
+var grade = &quot;C&quot;;
+
+switch (grade) {
+  case &quot;A&quot;:
+    document.write(&quot;&lt;p&gt;Excellent&lt;/p&gt;&quot;);
+    // The break is needed so it can break out the statement once it reaches the correct case
+    break;
+  case &quot;B&quot;:
+    document.write(&quot;&lt;p&gt;Very Good&lt;/p&gt;&quot;);
+    break;
+  case &quot;C&quot;:
+    document.write(&quot;&lt;p&gt;Not bad&lt;/p&gt;&quot;);
+    break;
+
+  // Similar to else as if not matching the above will just do the below
+  default:
+  document.write(&quot;&lt;p&gt;Did not get A, B or C so too bad!&lt;/p&gt;&quot;);
+}
+                    </code></pre>
+
+            <script type="text/javascript">
+            var grade = "C";
+
+            switch (grade) {
+              case "A":
+                document.write("<p>Excellent</p>");
+                // The break is needed so it can break out the statement once it reaches the correct case
+                break;
+              case "B":
+                document.write("<p>Very Good</p>");
+                break;
+              case "C":
+                document.write("<p>Not bad</p>");
+                break;
+                // Similar to else as if not matching the above will just do the below
+              default:
+                document.write("<p>Did not get A, B or C so too bad!</p>");
+            }
+
+            </script>
+          </section>
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Ternary Operator - x ? y : z</a>
+        <div class="inner">
+          <section>
+            <h2>Ternary Operator - x ? y : z</h2>
+            <p>This is how a common <code>if/else</code> statement is shown</p>
+
+<pre><code class="language-js">
+var age = 19;
+var canDrive;
+
+if (age > 16) {
+  canDrive = 'yes';
+} else {
+  canDrive = 'no';
+}
+
+</code></pre>
+
+<p>You can use the ternary operator as the shortcut for the if-else statement as follows:</p>
+
+<pre><code class="language-js">
+var age = 19;
+var canDrive = age > 16 ? 'yes' : 'no';
+
+</code></pre>
+
+<p>In general, the syntax of the ternary operator is as follows:</p>
+
+<pre><code class="language-js">
+var result = condition ? expression_1 : expression_2;
+
+</code></pre>
+
+          <p>The <code>condition</code> is an expression that evaluates to a Boolean value, either <code> true</code> or <code>false</code>. If the condition is <code>true</code>, the ternary operator returns <code>expression_1</code>, otherwise it returns the <code>expression_2</code>.</p>
+
+          <p>It is a best practice to use the ternary operator when it makes the code easier to read. If the logic contains many if...else statements, you shouldn’t use the ternary operators</p>
+
+<pre><code class="language-js">
+let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
+
+//if (weather.IsDayTime) {
+//  timeSrc = 'img/day.svg';
+// } else {
+//   timeSrc = 'img/night.svg';
+// }
+
+time.setAttribute('src', timeSrc)
+  </code></pre>
+          </section>
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Looping</a>
+        <div class="inner">
+          <section>
+            <h2>For Loop</h2>
+            <p>A way to loop an execute a certain part of code multiple times.</p>
+
+            <pre><code class="language-js">
+// 1) Initialise variable - x=0
+// 2) Then condition - while x is less than 5
+// 3) Then increment it - add one to x each time do the loop
+
+var names = ['Chris', 'Holly', 'Lisa', 'Keith', 'Susan'];
+
+for (var x = 0; x &lt; names.length; x++) {
+  document.write(&quot;&lt;p&gt;&quot; + names[x] + &quot;&lt;/p&gt;&quot;);
+}
+
+// This is how to start at number 4 in the array and display them counting backwards
+for (var x = names.length - 2; x &gt;= 0; x--) {
+  document.write(&quot;&lt;p&gt;&quot; + names[x] + &quot;&lt;/p&gt;&quot;);
+}
+          </code></pre>
+
+            <script type="text/javascript">
+            // 1) Initialise variable - x=0
+            // 2) Then condition - while x is less than 5
+            // 3) Then increment it - add one to x each time do the loop
+
+            var names = ['Chris', 'Holly', 'Lisa', 'Keith', 'Susan'];
+
+            for (var x = 0; x < names.length; x++) {
+              document.write("<p>" + names[x] + "</p>");
+            }
+
+            // This is how to start at number 4 in the array and display them counting backwards
+            for (var x = names.length - 2; x >= 0; x--) {
+              document.write("<p>" + names[x] + "</p>");
+            }
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>While Loop</h2>
+            <p>For and While used for the same purpose to repeat set of code a number of times. Syntax is different to for loop. In for loop we had 3 parameter, we had intialise, condition, increment but in while only one parameter.</p>
+            <pre><code class="language-js">
+var counter=0; // While the code is true do the following
+
+while(counter&lt;5){
+  document.write(&quot;&lt;p&gt;This is the code inside the loop&lt;/p&gt;&quot;);
+
+  // Then adjust the counter by 1 each time loop executes
+  counter++;
+}
+          </code></pre>
+
+            <script type="text/javascript">
+            var counter = 0;
+            // While the code is true do the following
+            while (counter < 5) {
+              document.write("<p>This is the code inside the loop</p>");
+
+              // Then adjust the counter by 1 each time loop executes
+              counter++;
+            }
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Do/While Loop</h2>
+            <p>Similar to a while loop. The code is always ran at least once, then the condition is checked.</p>
+            <pre><code class="language-js">
+  var counter=0;
+
+  do{
+    document.write(&quot;&lt;p&gt;Hello&lt;/p&gt;&quot;);
+    counter++;
+  }while(counter &lt; 5);
+          </code></pre>
+
+            <script type="text/javascript">
+            var counter = 0;
+
+            do {
+              document.write("<p>Hello</p>");
+              counter++;
+            } while (counter < 5);
+
+            </script>
+          </section>
+
+<hr />
+          <section>
+            <h2>Break</h2>
+            <p>Breaks out of a loop without it having to do all of the tests each time.</p>
+            <pre><code class="language-js">
+for(var i = 1; i &lt;=5; i++) {
+  document.write(&quot;&lt;p&gt;&quot; + i + &quot;&lt;/p&gt;&quot;);
+
+    // After 3 loops it then enters this statement and ends
+    if(i === 3) {
+      break;
+    }
+}
+          </code></pre>
+
+            <script type="text/javascript">
+            for(var i = 1; i <=5; i++) {
+              document.write("<p>" + i + "</p>");
+              
+              // After 3 loops it then enters this statement and ends
+              if(i === 3) {
+                break;
+              }
+            }
+            </script>
+          </section>
+<hr />
+
+                    <section>
+                      <h2>Continue</h2>
+                      <p>This does not exit the loop, it just means when it is true then that will not be included in the loop</p>
+                      <pre><code class="language-js">
+ for (var i = 1; i &lt;= 5; i++) {
+
+  // On the 3rd iteration it will not print out the p tag, instead skip it and then carry on and do another loop
+  if (i === 3) {
+    continue;
+  }
+
+ document.write(&quot;&lt;p&gt;&quot; + i + &quot;&lt;/p&gt;&quot;);
+ }
+          </code></pre>
+
+                      <script type="text/javascript">
+                      for (var i = 1; i <= 5; i++) {
+                  
+                        // On the 3rd iteration it will not print out the p tag, instead skip it and then carry on and do another loop
+                        if (i === 3) {
+                          continue;
+                        }
+
+                        document.write("<p>" + i + "</p>");
+                      }
+                      </script>
+                    </section>
+
+
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Event Handling</a>
+        <div class="inner">
+          <section>
+            <p>Basic type of event handler that does an alert when you click the buttonl</p>
+            <pre><code class="language-js">
+  &lt;form&gt;
+    &lt;input type=&quot;button&quot; value=&quot;Click Me!&quot; onclick=&quot;alert('You have clicked the button');&quot; /&gt;
+  &lt;/form&gt;
+          </code></pre>
+            <form>
+              <input type="button" value="Click Me!" onclick="alert('You have clicked the button');" />
+            </form>
+          </section>
+<hr />
+          <section>
+            <h2>Using Objects in JavaScript</h2>
+            <p>An object would be something like a person. Then each object will have many properties (name, age, weight etc). Then there are methods which is the kind of things an object can do or perform.</p>
+            <pre><code class="language-js">
+  var x = "this is a variable"; // object is X. The property length can be calculated from the object
+
+  document.write(x.length);
+          </code></pre>
+            <script type="text/javascript">
+            // object: person - has properties and methods.
+            // prop: name, age, weight, height - there can be many properties
+            // methods: drive a car, eat food, sleep - kind of things object could do or perform
+
+            var x = "this is a variable"; // object is X. The property length can be calculated from the object
+            document.write(x.length);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Creating Objects</h2>
+            <p>This is how to create an object. We created a constructor of an object. Then instances of the object into variables. You then access its properties by doing something like person1.name which will then show you the values stored in it.</p>
+            <pre><code class="language-js">
+  // this is a constructor to create an object
+  function person(name, age){
+    // initialise the name, age with this, which uses the properties of this function
+    this.name=name;
+    this.age=age;
+  }
+
+  // creating instances of an object
+  var person1 = new person(&quot;Chris&quot;, 37);
+  var person2 = new person(&quot;Holly&quot;, 31);
+
+  // access the object values by using the variable name and .name or .age
+  document.write(&quot;Your name is &quot; + person2.name + &quot; and your age is &quot; + person2.age);
+          </code></pre>
+            <script type="text/javascript">
+            // this is a constructor to create an object
+            function person(name, age) {
+              // initialise the name, age with this, which uses the properties of this function
+              this.name = name;
+              this.age = age;
+            }
+
+            // creating instances of an object
+            var person1 = new person("Chris", 37);
+            var person2 = new person("Holly", 31);
+
+            // access the object values by using the variable name and .name or .age
+            document.write("Your name is " + person2.name + " and your age is " + person2.age);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Initializing Objects</h2>
+            <p>This is another way of creating an object and a more efficient method. First create an object name, then assign property names and then values to those properties.</p>
+            <pre><code class="language-js">
+  // object name, then assign property names and then the values to those properties.
+  person = {name: &quot;Chris&quot;, age: 37};
+  person2 = {name: &quot;Holly&quot;, age: 31};
+
+  document.write(&quot;Your name is &quot; + person.name + &quot;and the age is &quot; + person.age);
+          </code></pre>
+            <script type="text/javascript">
+            // object name, then assign property names and then the values to those properties.
+            person = {
+              name: "Chris",
+              age: 37
+            };
+            person2 = {
+              name: "Holly",
+              age: 31
+            };
+
+            document.write("Your name is " + person.name + " and the age is " + person.age);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Adding Methods to Objects</h2>
+            <pre><code class="language-js">
+  // create a constructor called people and assign name and age
+  function people(name, age){
+    this.name=name;
+    this.age=age;
+    this.yearsUntilRetirement = yearsLeft; // when this is called it goes to the yearsLeft function
+  }
+
+  function yearsLeft(){
+    var numYears = 65-this.age;
+    return numYears; // return this value back to the function people.
+  }
+
+  var person= new people(&quot;Chris&quot;, 37);
+
+  document.write(&quot;You have &quot; + person.yearsUntilRetirement() + &quot; until retirement&quot;);
+          </code></pre>
+            <script type="text/javascript">
+            // create a constructor called people and assign name and age
+            function people(name, age) {
+              this.name = name;
+              this.age = age;
+              this.yearsUntilRetirement = yearsLeft; // when this is called it goes to the yearsLeft function
+            }
+
+            function yearsLeft() {
+              var numYears = 65 - this.age;
+              return numYears; // return this value back to the function people.
+            }
+
+            var person = new people("Chris", 37);
+
+            document.write("You have " + person.yearsUntilRetirement() + " until retirement");
+
+            </script>
+          </section>
+        </div>
+      </li>
+
+      <li>
+        <a class="toggle" href="javascript:void(0);">Arrays</a>
+        <div class="inner">
+          <section>
+            <p>Add values into an array.</p>
+            <pre><code class="language-js">
+// always make a new array using the keyword new Array.
+var arrayNameExample = new Array (&quot;Chris&quot;, &quot;Holly&quot;, &quot;Susan&quot;, &quot;Keith&quot;, &quot;Lisa&quot;, &quot;Harry&quot;);
+
+// Change a value in an array
+arrayNameExample[1] = 'Divock';
+
+// or it can be done like this
+var arrayNameExampleAlt = ["Chris", "Holly", "Susan", "Keith", "Lisa", "Harry"];
+
+document.write(&quot;The name is &quot; + arrayNameExample[2] + &quot; and there are currently &quot; + arrayNameExample.length + &quot; items in the array&quot;);
+        </code></pre>
+            <script type="text/javascript">
+            // always make a new array using the keyword new Array.
+            var arrayNameExample = new Array("Chris", "Holly", "Susan", "Keith", "Lisa", "Harry");
+
+            // Change a value in an array
+            arrayNameExample[1] = 'Divock';
+            document.write("The name in the second position of the array is now " + arrayNameExample[1] + " . ");
+
+            // or it can be done like this
+            var arrayNameExampleAlt = ["Chris", "Holly", "Susan", "Keith", "Lisa", "Harry"];
+
+            document.write("The name is " + arrayNameExample[2] + " and there are currently " + arrayNameExample.length + " items in the array");
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Creating Arrays by other Methods</h2>
+            <p>Instead of listing all array elements as we did above, you can also do it this way.</p>
+            <pre><code class="language-js">
+// Give value how many things want to store in the array, we assign 3
+var personsName = new Array(6);
+
+personsName[0] = 'Chris';
+personsName[1] = 'Holly';
+personsName[2] = 'Susan';
+personsName[3] = 'Keith';
+personsName[4] = 'Lisa';
+personsName[5] = 'Harry';
+
+document.write(personsName[1]);
+        </code></pre>
+            <script type="text/javascript">
+            // Give value how many things want to store in the array, we assign 3
+            var personsName = new Array(6);
+
+            personsName[0] = 'Chris';
+            personsName[1] = 'Holly';
+            personsName[2] = 'Susan';
+            personsName[3] = 'Keith';
+            personsName[4] = 'Lisa';
+            personsName[5] = 'Harry';
+
+            document.write("The name is " + personsName[1]);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Adding different data types together in an Array</h2>
+            <p>You can add multiple different values together in an array and also add, remove and get the values of the item.</p>
+            <pre><code class="language-js">
+let personArray = ['Chris', 'Dutton', 1981, 'web designer', false];
+
+// Adds element to the end of an array
+personArray.push('Liverpool');
+
+// unshift adds element to the beginning of the array
+personArray.unshift('Mr.');
+
+// pop - remove the last one
+personArray.pop();
+
+// shift - removes first element
+personArray.shift();
+
+// // Concat - adds to the array to make another array, keeping the original array, so there are 2, one called personArray the other newPersonArray.
+let newPersonArray = personArray.concat(['Liverpool', 38]);
+
+// // indexOf - returns the position of the element and returns a number. This would return '1'
+var indexOfPersonArray = personArray.indexOf('Dutton');
+
+// If the element is not there it return -1.
+if (personArray.indexOf('builder') === -1) {
+// Web designer in an array, so this will run
+document.write(&quot;Chris is NOT a builder &lt;br /&gt;&quot;);
+}
+
+document.write(&quot;This is what is in the array &quot; + personArray + &quot;&lt;br /&gt;&quot;);
+document.write(&quot;The position in the array is &quot; + indexOfPersonArray);
+        </code></pre>
+            <script type="text/javascript">
+           let personArray = ['Chris', 'Dutton', 1981, 'web designer', false];
+            
+             // Adds element to the end of an array
+            personArray.push('Liverpool');
+
+             // unshift adds element to the beginning of the array
+             personArray.unshift('Mr.');
+
+             // pop - remove the last one
+             personArray.pop();
+
+             // shift - removes first element
+            personArray.shift();
+
+            // // Concat - adds to the array to make another array, keeping the original array, so there are 2, one called personArray the other newPersonArray.
+            let newPersonArray = personArray.concat(['Liverpool', 38]);
+
+            // // indexOf - returns the position of the element and returns a number. This would return '1'
+            var indexOfPersonArray = personArray.indexOf('Dutton');
+
+             // If the element is not there it return -1.
+            if (personArray.indexOf('builder') === -1) {
+              // Web designer in an array, so this will run
+              document.write("Chris is NOT a builder <br />");
+            }
+
+             document.write("This is what is in the array " + personArray + "<br />");
+             document.write("The position in the array is " + indexOfPersonArray);
+            </script>
+          </section>
+
+<hr />
+          <section>
+            <h2>Join items that are inside an array into a String - Not a Good Method</h2>
+            <p>Join converts the elements of an array into a string and can add an element between them each time.</p>
+            <pre><code class="language-js">
+var str = new Array(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;,&quot;D&quot;);
+
+// this converts what is in the array to a string and the '|' is the element chosen to separate each.
+var string = str.join(&quot; | &quot;);
+
+document.write(string);
+        </code></pre>
+            <script type="text/javascript">
+            var str = new Array("A", "B", "C", "D");
+            // this converts what is in the array to a string and the '|' is the element chosen to separate each. 
+            var string = str.join(" | ");
+            document.write(string);
+
+            </script>
+          </section>
+
+          <!-- <section>
+            <h2>Pop/Remove Last Item</h2>
+            <p>The Pop object 'pop's out' the last item in the array. Originally there are 4 items in the array...</p>
+            <pre><code class="language-js">
+// To remove the last element so instead of 4 will show 3
+var popExample = new Array(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;,&quot;D&quot;);
+
+popExample.pop();
+document.write(popExample.length);
+        </code></pre>
+            <script type="text/javascript">
+            // To remove the last element so instead of 4 will show 3
+            var popExample = new Array("A", "B", "C", "D");
+            popExample.pop();
+
+            document.write("There is now one less in the array, now there is " + popExample.length);
+
+            </script>
+          </section> -->
+<hr />
+          <section>
+            <h2>Add, Sort and Reverse Array Items</h2>
+            <p>You can do various things to an array like add elements to it, sort it, reverse and may others.</p>
+            <pre><code class="language-js">
+var string = new Array(&quot;B&quot;, &quot;C&quot;, &quot;A&quot;, &quot;D&quot;);
+
+// Reverses the order
+string.reverse();
+
+// Adds an additional element
+string.push(&quot;E&quot;);
+
+// Sorts the elements
+string.sort();
+
+// convert array to string just so can see on screen
+var stringString = string.join();
+document.write(stringString);
+        </code></pre>
+            <script type="text/javascript">
+            var string = new Array("B", "C", "A", "D");
+
+            // Reverses the order
+            string.reverse();
+
+            // Adds an additional element
+            string.push("E");
+
+            // Sorts the elements
+            string.sort();
+
+            // convert array to string just so can see on screen
+            var stringString = string.join();
+            document.write(stringString);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Store Values into an Array from User input</h2>
+            <p>Each time a person adds a name it will go into the array.</p>
+            <pre><code class="language-js">
+var names = new Array(3);
+
+// This stores a user input into a variable
+var names = prompt(&quot;Enter name&quot;, &quot; &quot;);
+document.write(names);
+
+// You can use a Loop to ask 3 times to fill the array.  Set i to 0 as start at the beginning. Then less than 3 and add 1 to i
+for (i=0; i&lt;3; i++) {
+
+// ask for name and store in names
+names[i] = prompt(&quot;Add names&quot;, &quot; &quot;);
+
+}
+
+// Output all of the names
+document.write(names[0] + names[1] + names[2]);
+        </code></pre>
+            <script type="text/javascript">
+            var names = new Array(3);
+
+            // This stores a user input into a variable
+            // var names=prompt("Enter name", " ");
+            // document.write(names);
+
+            // Loop 3 times to ask for 3 names. Set i to 0 as start at the beginning. Then less than 3 and add 1 to i
+            for (i = 0; i < 3; i++) {
+              // ask for name and store in names
+              ////   names[i] = prompt("Add names", " ");
+            }
+
+            // Output all of the names
+            document.write(names[0] + names[1] + names[2]);
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Printing Array Elements - Best Method</h2>
+            <p>Printing out array elements instead of having to join as a string which is the best method of doing this.</p>
+            <pre><code class="language-js">
+var namesA = new Array(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;);
+
+// Loops through array. Instead of putting i&lt;4, this is a better method so not limited
+for (i = 0; i &lt; namesA.length; i++) {
+  // outputs all elements in an array and puts a breaking tag
+  document.write(namesA[i] + &quot;&lt;/br&gt;&quot;);
+}
+        </code></pre>
+            <script type="text/javascript">
+            var namesA = new Array("A", "B", "C", "D", "E");
+
+            // Loops through array. Instead of putting i<4, this is a better method so not limited
+            for (i = 0; i < namesA.length; i++) {
+              // outputs all elements in an array and puts a breaking tag
+              document.write(namesA[i] + "</br>");
+            }
+
+            </script>
+          </section>
+<hr />
+          <section>
+            <h2>Associative Arrays</h2>
+            <p>It is a different type of array. Instead of using a number to get the value from an array, like name[2] you can assign it certain values and access certain elements.</p>
+            <pre><code class="language-js">
+var personInfo = new Array();
+
+personInfo[&quot;color&quot;]=&quot;blue&quot;;
+
+document.write(personInfo[&quot;color&quot;]);
+        </code></pre>
+            <script type="text/javascript">
+            var personInfo = new Array();
+
+            personInfo["color"] = "blue";
+
+            document.write(personInfo["color"]);
+
+            </script>
+          </section>
+        </div>
+      </li>
+      <li>
+        <a class="toggle" href="javascript:void(0);">Objects & Forms</a>
+        <div class="inner">
+          <section>
+            <h2>Objects</h2>
+
+            <p>Objects in JavaScript have properties and things they can do (methods)...</p>
+
+            <p>For example, a <strong>blog object</strong> would have<br /><br /><strong>properties of: </strong>: title, content, author <br /><strong>methods of: </strong>publish, unpublish, delete</p>
+
+            <p>Access arrays like arrayName[1]. The order of the values are important.
+            <hr />
+              <h2>Object Literals</h2>
+            <p>Objects - you use the key name to find the value of that object. In an object you can target a specific part, like name, job etc. Each value has a name, and then a key. Object can have any value/key in any order.</p>
+
+            <p>Data mutation is being able to change values easily.</p>
+            <pre><code class="language-js">
+// Object literal most common way of making objects
+var person = {
+  // key : value pairs are properties
+  name: 'Chris',
+  lastName: 'Dutton',
+  yearOfBirth: 1981,
+  job: 'web designer',
+  isMarried: true,
+  family: [
+    { name: 'Keith', age: 67},
+    { name: 'Susan', age: 64},
+    { name: 'Holly', age: 31},
+    { name: 'Lisa', age: 44}
+  ],
+
+  // using a function within an object
+  calculateAge: function() {
+    // This refers to chris.yearOfBirth = 38, adds 38 to a new key of age
+    this.age = 2019 - this.yearOfBirth;
+  },
+
+  login: function () {
+    document.write(&quot;&lt;p&gt;The user logged out&lt;/p&gt;&quot;);
+  },
+
+  // You can reduce the function wording down from the above, BUT NOT USE AN ARROW function
+  // logFamily: function() {
+  logFamily() {
+    document.write(&quot;&lt;p&gt;This person's family is: &lt;/p&gt;&quot;);
+      this.family.forEach(familyMember =&gt; {
+        document.write(&quot; &quot; + familyMember.name, familyMember.age);
+    });
+  }
+  }
+
+// This runs the function in the object to get the age and adds the value to the the object
+person.calculateAge();
+
+// Another example of this
+person.login();
+
+// Cycle through elements of an object
+person.logFamily();
+
+// Show the age
+document.write(&quot;&lt;p&gt;The age is &quot; + person.age);
+
+// Log the result to console, now showing the age key
+console.log(person);
+
+// Data Mutation. To change the last name and the job
+person.lastName = 'Klopp';
+person['job'] = &quot;programmer&quot;;
+console.log(person);
+
+// Log the family members
+// document.write(&quot;&lt;p&gt;Family is &quot; + person.family.name + &quot; and to pick one of the family members &quot; + person.family[2] + &quot;&lt;/p&gt;&quot;);
+
+// Two main ways of finding the value of an object.
+
+// 1) You can get the value of an item by using the dot notation of the key.
+document.write(&quot;&lt;p&gt;The last name is now &quot; + person.lastName + &quot;&lt;/p&gt;&quot;);
+
+// 2) Naming the key like this. This is called
+document.write(&quot;&lt;p&gt;Another way of finding my last name of &quot; + person['lastName'] + &quot;&lt;/p&gt;&quot;);
+
+// You can also assign the job key to a variable like this
+var jobType = 'job';
+document.write(&quot;&lt;p&gt;Job is &quot; + person[jobType] + &quot;&lt;/p&gt;&quot;);
+            </code></pre>
+
+            <script type="text/javascript">
+
+            // Object literal most common way of making objects
+            var person = {
+              // key : value pairs are properties
+              name: 'Chris',
+              lastName: 'Dutton',
+              yearOfBirth: 1981,
+              job: 'web designer',
+              isMarried: true,
+              family: [
+                { name: 'Keith', age: 67},
+                { name: 'Susan', age: 64},
+                { name: 'Holly', age: 31},
+                { name: 'Lisa', age: 44}
+                ],
+
+              // using a function within an object
+              calculateAge: function() {
+                // This refers to chris.yearOfBirth = 38, adds 38 to a new key of age
+               this.age = 2019 - this.yearOfBirth;
+              },
+
+              login: function () {
+                document.write("<p>The user logged out</p>");
+              },
+
+              // You can reduce the function wording down from the above, BUT NOT USE AN ARROW function
+              //  logFamily: function() { 
+              logFamily() {
+                document.write("<p>This person's family is: </p>");
+                this.family.forEach(familyMember => {
+                      document.write(" " + familyMember.name, familyMember.age);
+                });
+              }
+            }
+
+            // This runs the function in the object to get the age and adds the value to the the object
+            person.calculateAge();
+
+            // Another example of this
+            person.login();
+
+            // Cycle through elements of an object
+            person.logFamily();
+
+            // Show the age
+            document.write("<p>The age is " + person.age);
+            
+            // Log the result to console, now showing the age key
+            console.log(person);
+
+            // Data Mutation. To change the last name and the job
+            person.lastName = 'Klopp';
+            person['job'] = "programmer";
+            console.log(person);
+
+            // Log the family members
+            // document.write("<p>Family is " + person.family.name + " and to pick one of the family members " + person.family[2] + "</p>");
+
+            // Two main ways of finding the value of an object.
+
+            // 1) You can get the value of an item by using the dot notation of the key.
+           document.write("<p>The last name is now " + person.lastName + "</p>");
+
+            // 2) Naming the key like this. This is called
+            document.write("<p>Another way of finding my last name of " + person['lastName'] + "</p>");
+
+            // You can also assign the job key to a variable like this
+            var jobType = 'job';
+            document.write("<p>Job is " + person[jobType] + "</p>");
+            </script>
+          </section>
+
+<hr />
+
+                    <section>
+                      <h2>Empty Object and adding to it</h2>
+                      <p>Another way of adding an object. This way shows how to create an empty one and then add top it.</p>
+                        <pre><code class="language-js">
+// new empty object with no data
+var holly = new Object();
+
+// you can add elements to this using data mutation.
+holly.name = 'Holly';
+holly.lastName = 'Dutton',
+holly['yearOfBirth'] = 1987;
+holly['job'] = 'Account Manager';
+holly['isMarried'] = true;
+
+console.log(holly);
+            </code></pre>
+
+
+                        <script type="text/javascript">
+                      
+                      // new empty object with no data
+                       var holly = new Object();
+
+                       // you can add elements to this using data mutation.
+                       holly.name = 'Holly';
+                       holly.lastName = 'Dutton',
+                       holly['yearOfBirth'] = 1987;
+                       holly['job'] = 'Account Manager';
+                       holly['isMarried'] = true;
+
+                       console.log(holly);
+                        </script>
+                    </section>
+<hr />
+           <section>
+             <h2>Math Objects</h2>
+             <pre><code class="language-js">
+const totalArea = 7.3;
+
+console.log(Math.round(totalArea)); // round up
+console.log(Math.floor(totalArea)); // round down
+console.log(Math.ceil(totalArea)); // round up
+console.log(Math.trunc(totalArea)); // truncate
+
+// Random numbers
+const randomNumber = Math.random();
+console.log(randomNumber); //this brings a number between 0-1
+console.log(Math.round(randomNumber * 100)); // random number between 0-100
+            </code></pre>
+            <script type="text/javascript">
+                const totalArea = 7.3;
+
+                console.log(Math.round(totalArea)); // round up
+                console.log(Math.floor(totalArea)); // round down
+                console.log(Math.ceil(totalArea)); // round up
+                console.log(Math.trunc(totalArea)); // truncate
+
+                // Random numbers
+                const randomNumber = Math.random();
+                console.log(randomNumber); //this brings a number between 0-1
+                console.log(Math.round(randomNumber * 100)); // random number between 0-100
+            </script>
+             <pre><code class="language-js">
+// Calculate value of PI
+document.write(&quot;The value of PI is &quot; + Math.PI);
+
+function getcube(){
+  var number=document.getElementById(&quot;number&quot;).value;
+  var result = Math.sqrt(number);
+  alert(&quot;The square root of &quot; + number + &quot; is &quot; + result);
+}
+            </code></pre>
+
+            <form class="form">
+              <div class="form__row">
+                <label for="number">Enter No:</label>
+                  <input type="text" id="number" name="number"/>
+              </div>
+              <div class="form__row">
+                <input type="button" value="find square root" onclick="getcube()"/>
+              </div>
+              </form>
+
+             <script type="text/javascript">
+                  // Calculate value of PI
+             //     document.write("The value of PI is " + Math.PI);
+
+                  function getcube(){
+                    var number=document.getElementById("number").value;
+                    var result = Math.sqrt(number);
+                    alert("The square root of " + number + " is " + result);
+                  }
+
+                  // var number = document.getElementById("number").value; // Ask User for a number
+                  // var result = Math.sqrt(number); // Calc square root
+                  // console.log(result);
+                  //alert(result); // Show the result
+             </script>
+           </section>
+<hr />
+           <section>
+              <h2>Date Objects</h2>
+             <p>This code gets a new date, then finds the min, hours and seconds. Then, using the setInterval calling this every 3 seconds. Check console log.</p>
+             <pre><code class="language-js">
+function printTime() {
+var now = new Date(); // new date
+var hours = now.getHours(); // find the hours
+var mins = now.getMinutes(); // find mins
+var secs = now.getSeconds(); // find seconds
+console.log(hours + &quot;:&quot; + mins + &quot;:&quot; + secs + &quot;&lt;br /&gt;&quot;);
+}
+// Call the above function, run it every 3 seconds
+setInterval(&quot;printTime()&quot;, 3000);
+            </code></pre>
+             <script type="text/javascript">
+
+              // New function which runs every 2s (2000ms)
+            //  function abc() {
+            //    document.write("Hello");
+            //  }
+            //  setInterval("abc()", 2000);
+
+            function printTime() {
+              var now = new Date(); // new date
+              var hours = now.getHours(); // find the hours
+              var mins = now.getMinutes(); // find mins
+              var secs = now.getSeconds(); // find seconds
+              console.log(hours + ":" + mins + ":" + secs + "<br />");
+            }
+// Call the above function, run it every 3 seconds
+          setInterval("printTime()", 3000);
+
+             </script>
+           </section>
+<hr />
+           <section>
+             <h2>Access Forms</h2>
+             <p>How to access the data within forms, first how to find how many elements and also what value is stored in an input field.</p>
+             <pre><code class="language-js">
+
+            </code></pre>
+
+            <form class="form" name="newForm">
+              <div class="form__row">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" placeholder="what is your username" value="Chris">
+              </div>
+              <div class="form__row">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+              </div>
+              <div class="form__row">
+                <input type="submit" value="Submit">
+              </div>
+              
+            </form>
+             
+             <script type="text/javascript">
+             // Access the form, then the name of the form and then the length
+              var formElements = document.newForm.length;
+              var username = document.newForm.username.value;
+              document.write("There are " + formElements + " elements within the form and the value in the username field is " + username );
+             </script>
+           </section>
+<hr />
+           <section>
+             <h2>Validating a Form</h2>
+             <p>This is how you can validate form elements. Using an if statement it is first getting the element from the form and then testing whether it has been checked. This can be done for all form elements, changing the .checked to the value it is looking for, like .value</p>
+             <pre><code class="language-js">
+function func1() {
+  // Check if the checkbox is checked by going to document &gt; form name &gt; element name &gt; isChecked
+  if (document.formBox.box.checked) {
+  alert(&quot;That box is checked&quot;);
+  } else {
+  alert(&quot;The box is not checked&quot;);
+  }
+}
+            </code></pre>
+            
+            <form name="formBox" class="form">
+              <div class="form__row">
+                <label for="box">Need Box?</label>
+                <input type="checkbox" name="box">
+              </div>
+              <div class="form__row">
+                    <input type="button" value="Click Me" OnClick="func1()">
+              </div>
+              
+            </form>
+
+              <script type="text/javascript">
+                    function func1() {
+                      // Check if the checkbox is checked by going to document > form name > element name > isChecked
+                      if (document.formBox.box.checked) {
+                        alert("That box is checked");
+                      } else {
+                        alert("The box is not checked");
+                      }
+                    }
+              </script>
+           </section>
+        </div>
+        </li>
+        <li>
+          <a class="toggle" href="javascript:void(0);">Final Examples</a>
+          <div class="inner">
+            <section>
+              <h2>Making a simple interest calculator</h2>
+              <p></p>
+              <pre><code class="language-js">
+ function calculate() {
+    // Get the values from the input fields entered
+    var principalAmount = document.getElementById(&quot;principalAmount&quot;).value;
+    var interestRate = document.getElementById(&quot;interestRate&quot;).value;
+    var numberOfYears = document.getElementById(&quot;numYears&quot;).value;
+
+    // Declaring the p tag so can add into this the result
+    result = document.getElementById(&quot;resultCalculation&quot;);
+
+    // The .innerHTML adds the following
+    result.innerHTML=&quot;The interest is &quot; + (principalAmount * interestRate * numberOfYears /100)
+ }
+            </code></pre>
+
+            <form class="form">
+              <div class="form__row">
+                <label for="principalAmount">Principal Amount</label>
+                <input type="text" id="principalAmount">
+              </div>
+              <div class="form__row">
+                <label for="interestRate">Rate of Interest</label>
+                <input type="number" id="interestRate">
+              </div>
+              <div class="form__row">
+                <label for="numYears">Number of Years</label>
+                <input type="number" id="numYears">
+              </div>
+              <div class="form__row">
+                <button onClick="calculate()">Calculate Interest</button>
+              </div>
+            </form>
+            <p id="resultCalculation"></p>
+              <script type="text/javascript">
+
+                    function calculate() {
+                      // Get the values from the input fields entered
+                      var principalAmount = document.getElementById("principalAmount").value;
+                      var interestRate = document.getElementById("interestRate").value;
+                      var numberOfYears = document.getElementById("numYears").value;
+
+                      // Declaring the p tag so can add into this the result
+                      result = document.getElementById("resultCalculation");
+
+                      // The .innerHTML adds the following
+                      result.innerHTML="The interest is " + (principalAmount * interestRate * numberOfYears /100);
+                    }
+              </script>
+            </section>
+<hr />
+             <section>
+               <h2>2. Using onmouseover to add effects</h2>
+               <p>The following are done on each tag using onmouseover to use their inbuilt functions if ever needed.</p>
+                <a href="#" onmouseover="document.body.style.background='red'">Red</a><br />
+                <a href="#" onmouseover="document.body.style.background='blue'">Blue</a><br />
+                <a href="#" onmouseover="document.body.style.background='green'">Green</a><br />
+                <a href="#" onmouseover="document.body.style.background='white'">No background</a>
+             </section>
+<hr />
+             <section>
+               <h2>Creating a Progress Bar</h2>
+               <pre><code class="language-js">
+
+function move() {
+    var myBar = document.getElementById(&quot;myBar&quot;);
+    var width = 10;
+    var speedOfProgress = setInterval(increaseProgressBar, 50);
+
+    // Increase the progress bar
+    function increaseProgressBar() {
+      if(width==100) {
+      clearInterval(speedOfProgress);
+      } else {
+      width++;
+      myBar.style.width=width+ &quot;%&quot;;
+      }
+    }
+}
+
+            </code></pre>
+
+
+                <div id="myProgress">
+                    <div id="myBar"></div>
+                </div>
+
+                <button onclick="move()">Click Here</button>
+
+               <script type="text/javascript">
+                    function move() {
+                        var myBar = document.getElementById("myBar");
+                        var width = 10;
+                        var speedOfProgress = setInterval(increaseProgressBar, 50);
+                      
+                      // Increase the progress bar
+                        function increaseProgressBar() {
+                          if(width==100) {
+                            clearInterval(speedOfProgress);
+                          } else {
+                            width++;
+                            myBar.style.width=width+ "%";
+                          }
+                        }
+                    }
+               </script>
+             </section>
+          </div>
+        </li>
+        <li>
+          <a class="toggle" href="javascript:void(0);">Coding Challenges</a>
+          <div class="inner">
+            <section>
+              <h2>Coding Challenge 1</h2>
+              <p>John and a friend invented a simple game where the player with the highest value of his height (in centimeters) plus five times his age wins.<br /><br />
+
+                1. Create variables for the heights and ages of two friends and assign them some values<br />
+                2. Calculate their scores<br />
+                3. Decide who wins and print the winner. Include the score. Don't forget that there can be a draw (both players with the same score).<br />
+
+                4. EXTRA: Add a third player and now decide who wins. Hint: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)</p>
+              <pre><code class="language-js">
+ var johnHeight = 182;
+ var johnAge = 38;
+
+ var chrisHeight = 182;
+ var chrisAge = 36;
+
+ var hollyHeight = 182;
+ var hollyAge = 38;
+
+ var johnTotal = johnAge + 5 * johnHeight;
+ var chrisTotal = chrisAge + 5 * chrisHeight;
+ var hollyTotal = hollyAge + 5 * hollyHeight;
+
+ document.write(&quot;John total is &quot; + johnTotal + &quot; and Chris total is &quot; + chrisTotal + &quot; and Holly score is &quot; + hollyTotal + &quot;&lt;br /&gt;&quot;);
+
+ // Step 1 without 3rd person
+ // if (johnTotal &gt; chrisTotal) {
+ // document.write(&quot;The winner is John with a total of &quot; + johnTotal);
+ // } else if (chrisTotal &gt; johnTotal){
+ // document.write(&quot;The winner is Chris with a total of &quot; + chrisTotal);
+ // }else if (johnTotal === chrisTotal){
+ // document.write(&quot;There is no winner, it is a draw&quot;); 
+ // }
+
+ if (johnTotal &gt; chrisTotal &amp;&amp; johnTotal &gt; hollyTotal) {
+ document.write(&quot;The winner is John with a total of &quot; + johnTotal);
+ } else if (chrisTotal &gt; johnTotal &amp;&amp; chrisTotal &gt; hollyTotal) {
+ document.write(&quot;The winner is Chris with a total of &quot; + chrisTotal);
+ } else if (hollyTotal &gt; johnTotal &amp;&amp; hollyTotal &gt; chrisTotal) {
+ document.write(&quot;The winner is Holly with a total of &quot; + hollyTotal);
+ } else {
+ document.write(&quot;It\'s a draw, no clear winner&quot;); // the slash prevents JS from closing the tag is used quotes
+ }
+            </code></pre>
+              <script type="text/javascript">
+
+                    var johnHeight = 182;
+                    var johnAge = 38;
+
+                    var chrisHeight = 182;
+                    var chrisAge = 36;
+
+                    var hollyHeight = 182;
+                    var hollyAge = 38;
+
+                    var johnTotal = johnAge + 5 * johnHeight;
+                    var chrisTotal = chrisAge + 5 * chrisHeight;
+                    var hollyTotal = hollyAge + 5 * hollyHeight;
+
+                    document.write("John total is " + johnTotal + " and Chris total is " + chrisTotal + " and Holly score is " + hollyTotal + "<br />");
+
+                    // Step 1 without 3rd person
+                    // if (johnTotal > chrisTotal) {
+                    // document.write("The winner is John with a total of " + johnTotal);
+                    // } else if (chrisTotal > johnTotal){
+                    // document.write("The winner is Chris with a total of " + chrisTotal);
+                    // }else if (johnTotal === chrisTotal){
+                    // document.write("There is no winner, it is a draw");
+                    // }
+
+                     if (johnTotal > chrisTotal && johnTotal > hollyTotal) {
+                     document.write("The winner is John with a total of " + johnTotal);
+                     } else if (chrisTotal > johnTotal && chrisTotal > hollyTotal) {
+                       document.write("The winner is Chris with a total of " + chrisTotal);
+                     } else if (hollyTotal > johnTotal && hollyTotal > chrisTotal) {
+                     document.write("The winner is Holly with a total of " + hollyTotal);
+                     } else {
+                       document.write("It\'s a draw, no clear winner");
+                     }
+
+              </script>
+            </section>
+
+<hr />
+            <section>
+              <h2>Coding Challenge 2</h2>
+              <p>1. Create an array with some years where persons were born.<br />
+                2. Create an empty array (just [])<br />
+                3. Use a loop to fill the array with the ages of the persons<br />
+                4. Use another loop to display whether each person is 18 or older, as well as their age<br />
+                5. Create a function called printFullAge which receives the factor of years as an argument, executes the step 2, 3 and 4 and returns a factor of true/false boolean values: true if the person is 19 and older, false if under 18<br />
+                6. Call the function with two different factors and store the results in two variables: full_1 and full_2<br /><br />
+
+                Example input: [1965, 2008, 1992]<br />
+                Example output: [true, false, true]<br /><br />
+
+                Hint: you can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... <br />You can also use the specific array methods.
+              </p>
+              <pre><code class="language-js">
+function printFullAge(years) {
+  var ages = [];
+  var fullAges = [];
+
+  for( var i = 0; i &lt; years.length; i++ ) {
+    // Add the age to the years array. 2019 - year of birth will equal the age
+    ages[i]=2019 - years[i];
+  }
+
+  for(i=0; i &lt;= ages.length - 1; i++) {
+    if(ages[i]&gt;= 18) {
+      document.write('&lt;p&gt;Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is of full age&lt;/p&gt;');
+      // puts element at the end of the array
+      fullAges.push(true);
+    } else {
+      document.write('&lt;p&gt;Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is NOT of full age&lt;/p&gt;');
+      fullAges.push(false);
+    }
+  }
+
+  return fullAges;
+
+}
+
+var years = [1981, 2002, 1945, 2014, 2000, 1977];
+// add the array items to the variable full_1
+var full_1 = printFullAge(years);
+
+// This is adding in 3 extra values using this variable
+var full_2 = printFullAge([2012, 1915, 1999]);
+            </code></pre>
+              <script type="text/javascript">
+              
+                function printFullAge(years) {
+                  var ages = [];
+                  var fullAges = [];
+
+                  for( var i = 0; i < years.length; i++ ) {
+                    // Add the age to the years array. 2019 - year of birth will equal the age
+                    ages[i]=2019 - years[i];
+                  }
+
+                  for(i=0; i <= ages.length - 1; i++) {
+                    if(ages[i]>= 18) {
+                      document.write('<p>Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is of full age</p>');
+                      // puts element at the end of the array
+                      fullAges.push(true);
+                    } else {
+                      document.write('<p>Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is NOT of full age</p>');
+                      fullAges.push(false);
+                    }
+                  }
+
+                  return fullAges;
+
+                }
+                
+                var years = [1981, 2002, 1945, 2014, 2000, 1977];
+                // add the array items to the variable full_1
+                var full_1 = printFullAge(years);
+
+                // This is adding in 3 extra values using this variable
+                var full_2 = printFullAge([2012, 1915, 1999]);
+             
+              </script>
+            </section>
+
+          </div>
+        </li>
+         <li>
+           <a class="toggle" href="javascript:void(0);">Black Jack ES2015 </a>
+           <div class="inner">
+             <section>
+               <h2>Blackjack</h2>
+               <p data-text-area>Welcome to Blackjack</p>
+
+               <button id="new-game-button">New Game!</button>
+              <button id="hit-button">Hit!</button>
+              <button id="stay-button">Stay</button>
+
+               <pre><code class="language-js">
+// Blackjack by Chris
+
+// Card variables
+let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'],
+    values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three', 'Two'];
+
+// DOM variables
+let textArea = document.querySelector('[data-text-area]'),
+    newGameButton = document.getElementById('new-game-button'),
+    hitButton = document.getElementById('hit-button'),
+    stayButton = document.getElementById('stay-button');
+
+// Game variables
+let gameStarted = false,
+  gameOver = false,
+  playerWon = false,
+  dealerCards = [],
+  playerCards = [],
+  dealerScore = 0,
+  playerScore = 0,
+  deck = [];
+
+// Hit and stay hidden
+hitButton.style.display = 'none';
+stayButton.style.display = 'none';
+showStatus();
+
+// New Game
+newGameButton.addEventListener('click', function(){
+  gameStarted = true;
+  gameOver = false;
+  playerWon = false;
+
+  deck = createDeck();
+  shuffleDeck(deck);
+  dealerCards = [getNextCard(), getNextCard()];
+  playerCards = [getNextCard(), getNextCard()];
+
+  newGameButton.style.display = 'none';
+  hitButton.style.display = 'inline-block';
+  stayButton.style.display = 'inline-block';
+  showStatus();
+});
+
+// Hit Button
+hitButton.addEventListener('click', function(){
+  playerCards.push(getNextCard());
+  checkForEndOfGame();
+  showStatus();
+});
+
+// Stay Button
+stayButton.addEventListener('click', function(){
+  gameOver = true;
+  checkForEndOfGame();
+  showStatus();
+});
+
+ // Create the deck and store all cards in deck
+function createDeck(){
+  let deck = [];
+  
+    // Cycle through each suit first
+    for (let suitIdx = 0; suitIdx &lt; suits.length; suitIdx++ ) {
+        // Loop through all of the values
+        for (let valueIdx=0; valueIdx &lt; values.length; valueIdx++) {
+          // create results into an object
+          let card={
+          suit: suits[suitIdx],
+          value: values[valueIdx]
+          }
+          // Add the card to the deck
+          deck.push(card);
+        }
+    }
+  return deck;
+} 
+          
+// Shuffle the cards, loop through all cards in the deck and swap cards so random 
+
+function shuffleDeck(deck) {
+  for (let i=0; i &lt; deck.length; i++) {
+  // Math.random * 52 will make a number between 1 and 51, then trunc will make sure that the number is not a decimal
+    let swapIdx=Math.trunc(Math.random() * deck.length);
+    let tmp=deck[swapIdx];
+    deck[swapIdx]=deck[i];
+    deck[i]=tmp;
+    }
+}
+
+  // Show the result
+  
+  function getCardString(card) {
+    // Show card value and suit - 10 of Hearts as an example
+    return card.value + ' of ' + card.suit;
+  }
+  
+  // Removes the card to show the new one
+  
+  function getNextCard(){
+    return deck.shift();
+  } 
+  
+  // Returns the value of the card - 1-10
+  
+function getCardNumericValue(card) {
+    switch(card.value) {
+        case 'Ace' :
+          return 1; 
+        case 'Two' :
+          return 2; 
+        case 'Three' :
+          return 3; 
+        case 'Four' :
+          return 4; 
+        case 'Five' :
+          return 5; 
+        case 'Six' :
+          return 6; 
+        case 'Seven' :
+          return 7;
+        case 'Eight' :
+          return 8; 
+        case 'Nine' :
+          return 9; 
+        default:
+          return 10;
+    }
+ }
+   
+  function getScore(cardArray) {
+    let score=0;
+    let hasAce=false;
+
+    for(let i=0; i &lt; cardArray.length; i++) {
+      let card=cardArray[i];
+      score +=getCardNumericValue(card);
+
+      if(card.value==='Ace' ) {
+        hasAce=true;
+      }
+    }
+
+    if (hasAce &amp;&amp; score + 10 &lt;=21) {
+      return score + 10;
+    }
+      return score;
+  }
+        
+function updateScores() {
+  dealerScore=getScore(dealerCards);
+  playerScore=getScore(playerCards);
+}
+  
+  // Check the scores
+function checkForEndOfGame() {
+  updateScores();
+
+if (gameOver) {
+  // let dealer take cards
+  while(dealerScore &lt; playerScore &amp;&amp; playerScore &lt;=21 &amp;&amp; dealerScore &lt;=21) {
+    dealerCards.push(getNextCard());
+    updateScores();
+  }
+}
+
+  if(playerScore&gt; 21) {
+    playerWon = false;
+    gameOver = true;
+  }
+  else if (dealerScore &gt; 21) {
+    playerWon = true;
+    gameOver = true;
+  }
+  else if (gameOver) {
+    if (playerScore &gt; dealerScore) {
+      playerWon = true;
+    }
+    else {
+      playerWon = false;
+    }
+  }
+}
+
+
+function showStatus(){
+  // If the game is NOT started
+  if (!gameStarted) {
+    textArea.innerText = &quot;Welcome to BlackJack&quot;;
+    return;
+  }
+
+  let dealerCardString = '';
+  for( let i = 0; i &lt; dealerCards.length; i++ ) {
+    dealerCardString +=getCardString(dealerCards[i]) + '\n' ;
+  }
+  
+  let playerCardString='' ;
+  for( let i=0; i &lt; playerCards.length; i++ ) {
+    playerCardString +=getCardString(playerCards[i]) + '\n' ;
+  }
+  
+  updateScores();
+  
+  textArea.innerText=
+    'Dealer has:\n' + dealerCardString + '(score: ' + dealerScore + ')\n\n' +
+    'Player has:\n' + playerCardString + '(score: ' + playerScore + ')\n\n' ;
+    
+    // If the game is over, print out a message
+    
+    if (gameOver) {
+      if(playerWon) {
+        textArea.innerText +=&quot;You Win!&quot; ;
+      } else {
+        textArea.innerText +=&quot;Dealer Wins!&quot; ;
+      }
+
+    newGameButton.style.display='inline-block' ;
+    hitButton.style.display='none' ;
+    stayButton.style.display='none' ;
+    }
+}
+            </code></pre>
+
+            
+            
+
+<script type="text/javascript">
+// Blackjack by Chris
+
+// Card variables
+let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'],
+    values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three', 'Two'];
+
+// DOM variables
+let textArea = document.querySelector('[data-text-area]'),
+    newGameButton = document.getElementById('new-game-button'),
+    hitButton = document.getElementById('hit-button'),
+    stayButton = document.getElementById('stay-button');
+
+// Game variables
+let gameStarted = false,
+  gameOver = false,
+  playerWon = false,
+  dealerCards = [],
+  playerCards = [],
+  dealerScore = 0,
+  playerScore = 0,
+  deck = [];
+
+// Hit and stay hidden
+hitButton.style.display = 'none';
+stayButton.style.display = 'none';
+showStatus();
+
+// New Game
+newGameButton.addEventListener('click', function(){
+  gameStarted = true;
+  gameOver = false;
+  playerWon = false;
+
+  deck = createDeck();
+  shuffleDeck(deck);
+  dealerCards = [getNextCard(), getNextCard()];
+  playerCards = [getNextCard(), getNextCard()];
+
+  newGameButton.style.display = 'none';
+  hitButton.style.display = 'inline-block';
+  stayButton.style.display = 'inline-block';
+  showStatus();
+});
+
+// Hit Button
+hitButton.addEventListener('click', function(){
+  playerCards.push(getNextCard());
+  checkForEndOfGame();
+  showStatus();
+});
+
+// Stay Button
+stayButton.addEventListener('click', function(){
+  gameOver = true;
+  checkForEndOfGame();
+  showStatus();
+});
+
+ // Create the deck and store all cards in deck
+function createDeck(){
+  let deck = [];
+  
+    // Cycle through each suit first
+    for (let suitIdx = 0; suitIdx < suits.length; suitIdx++ ) {
+        // Loop through all of the values
+        for (let valueIdx=0; valueIdx < values.length; valueIdx++) {
+          // create results into an object
+          let card={
+          suit: suits[suitIdx],
+          value: values[valueIdx]
+          }
+          // Add the card to the deck
+          deck.push(card);
+        }
+    }
+  return deck;
+} 
+          
+// Shuffle the cards, loop through all cards in the deck and swap cards so random 
+
+function shuffleDeck(deck) {
+  for (let i=0; i < deck.length; i++) {
+  // Math.random * 52 will make a number between 1 and 51, then trunc will make sure that the number is not a decimal
+    let swapIdx=Math.trunc(Math.random() * deck.length);
+    let tmp=deck[swapIdx];
+    deck[swapIdx]=deck[i];
+    deck[i]=tmp;
+    }
+}
+
+  // Show the result
+  
+  function getCardString(card) {
+    // Show card value and suit - 10 of Hearts as an example
+    return card.value + ' of ' + card.suit;
+  }
+  
+  // Removes the card to show the new one
+  
+  function getNextCard(){
+    return deck.shift();
+  } 
+  
+  // Returns the value of the card - 1-10
+  
+function getCardNumericValue(card) {
+    switch(card.value) {
+        case 'Ace' :
+          return 1; 
+        case 'Two' :
+          return 2; 
+        case 'Three' :
+          return 3; 
+        case 'Four' :
+          return 4; 
+        case 'Five' :
+          return 5; 
+        case 'Six' :
+          return 6; 
+        case 'Seven' :
+          return 7;
+        case 'Eight' :
+          return 8; 
+        case 'Nine' :
+          return 9; 
+        default:
+          return 10;
+    }
+ }
+   
+  function getScore(cardArray) {
+    let score=0;
+    let hasAce=false;
+
+    for(let i=0; i < cardArray.length; i++) {
+      let card=cardArray[i];
+      score +=getCardNumericValue(card);
+
+      if(card.value==='Ace' ) {
+        hasAce=true;
+      }
+    }
+
+    if (hasAce && score + 10 <=21) {
+      return score + 10;
+    }
+      return score;
+  }
+        
+function updateScores() {
+  dealerScore=getScore(dealerCards);
+  playerScore=getScore(playerCards);
+}
+  
+  // Check the scores
+function checkForEndOfGame() {
+  updateScores();
+
+if (gameOver) {
+  // let dealer take cards
+  while(dealerScore < playerScore && playerScore <=21 && dealerScore <=21) {
+    dealerCards.push(getNextCard());
+    updateScores();
+  }
+}
+
+  if(playerScore> 21) {
+    playerWon = false;
+    gameOver = true;
+  }
+  else if (dealerScore > 21) {
+    playerWon = true;
+    gameOver = true;
+  }
+  else if (gameOver) {
+    if (playerScore > dealerScore) {
+      playerWon = true;
+    }
+    else {
+      playerWon = false;
+    }
+  }
+}
+
+
+function showStatus(){
+  // If the game is NOT started
+  if (!gameStarted) {
+    textArea.innerText = "Welcome to BlackJack";
+    return;
+  }
+
+  let dealerCardString = '';
+  for( let i = 0; i < dealerCards.length; i++ ) {
+    dealerCardString +=getCardString(dealerCards[i]) + '\n' ;
+  }
+  
+  let playerCardString='' ;
+  for( let i=0; i < playerCards.length; i++ ) {
+    playerCardString +=getCardString(playerCards[i]) + '\n' ;
+  }
+  
+  updateScores();
+  
+  textArea.innerText=
+    'Dealer has:\n' + dealerCardString + '(score: ' + dealerScore + ')\n\n' +
+    'Player has:\n' + playerCardString + '(score: ' + playerScore + ')\n\n' ;
+    
+    // If the game is over, print out a message
+    
+    if (gameOver) {
+      if(playerWon) {
+        textArea.innerText +="You Win!" ;
+      } else {
+        textArea.innerText +="Dealer Wins!" ;
+      }
+
+    newGameButton.style.display='inline-block' ;
+    hitButton.style.display='none' ;
+    stayButton.style.display='none' ;
+    }
+}
+               </script>
+             </section>
+           </div>
+         </li>
+         <li>
+           <a class="toggle" href="javascript:void(0);">10. </a>
+           <div class="inner">
+             <section>
+               <h2></h2>
+               <p></p>
+               <pre><code class="language-js">
+
+            </code></pre>
+               <script type="text/javascript">
+
+               </script>
+             </section>
+           </div>
+         </li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+  $('.toggle').click(function(e) {
+    e.preventDefault();
+
+    var $this = $(this);
+
+    if ($this.next().hasClass('show')) {
+      $this.next().removeClass('show');
+      $this.next().slideUp(350);
+    } else {
+      $this.parent().parent().find('li .inner').removeClass('show');
+      $this.parent().parent().find('li .inner').slideUp(350);
+      $this.next().toggleClass('show');
+      $this.next().slideToggle(350);
+    }
+  });
+
+  </script>
+
+</body>
+
+</html>
