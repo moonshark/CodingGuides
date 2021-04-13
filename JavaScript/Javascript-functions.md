@@ -4,19 +4,19 @@ Functions take in values. Do some work and usually return a value.
 
 ![](function-definition.jpg)
 
-Defining the function. You can only use the variable within the function. Using `return` allows you to use the output
+**Defining the function.**
 
 ```javascript
 function calculateBill() {
-  const total = 100 * 1.13;
-  console.log(total);
+  const total = 100 * 1.13; // only use total in this function
   return total; // allows you to use this outside the func
 }
 ```
 
-This will not work
+**Calling the function**
 
 ```javascript
+// This will not work
 calculateBill("The bill is" + total);
 ```
 
@@ -27,7 +27,7 @@ You can use the return by either assigning a variable or using backticks
 const myTotal = calculateBill();
 console.log(myTotal);
 
-// 2 -  use backticks
+// 2 -  use backticks and interpolation
 console.log(`Your bill is £${calculateBill()});
 ```
 
